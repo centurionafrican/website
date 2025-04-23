@@ -14,9 +14,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/avatar";
 import { useRouter } from "next/navigation";
 import { CompanyLogo } from "../atoms/logo";
-import { useUser } from "@/contexts/userContext";
-import { useFetch } from "@/hooks";
-import { fetchUserProfile } from "@/services/user";
 import { AnimatePresence, motion } from "framer-motion";
 import HeaderTop from "./headerTop";
 
@@ -29,17 +26,6 @@ export default function Header({
 }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout, isAuthenticated, setUser } = useUser();
-  const { data } = useFetch(["profile"], () => fetchUserProfile());
-
-  useEffect(() => {
-    data && setUser(data.response);
-  }, [isAuthenticated, router, data]);
-
-  const handleLogout = () => {
-    logout();
-    router.push("/login");
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -211,87 +197,8 @@ export default function Header({
                 </Link>
               </motion.div>
             </div>
-            {!isAuthenticated && (
-              <motion.div className="flex gap-1" variants={buttonVariants}>
-                <Button
-                  variant="outline"
-                  onClick={() => router.push("/contact")}
-                >
-                  Contact us
-                </Button>
-              </motion.div>
-            )}
-            {isAuthenticated && (
-              <motion.div className="flex gap-1" variants={buttonVariants}>
-                {/* <Button
-                  variant='ghost'
-                  size='icon'
-                  className='relative bg-gray-50 h-9 w-9 flex items-center justify-center rounded-full'
-                >
-                  <Bell className='h-5 w-5' />
-                  <span className='absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full'></span>
-                </Button> */}
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <div className="flex items-center ml-4 cursor-pointer">
-                      <div
-                        className={`text-sm px-2 max-w-36 w-full truncate
-                        ${theme === "dark" ? "text-white" : "text-base"}
-                        `}
-                      >
-                        Hello, {user?.first_name}
-                      </div>
-                      <Avatar>
-                        <AvatarImage
-                          src="/avatars/admin.png"
-                          alt={`${user?.first_name ?? ""} ${user?.last_name ?? ""}`}
-                        />
-                        <AvatarFallback>
-                          {`${user?.first_name?.charAt(0) ?? ""}${user?.last_name?.charAt(0) ?? ""}`.toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                    </div>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56" align="end" forceMount>
-                    <DropdownMenuLabel
-                      className="font-normal cursor-pointer hover:bg-gray-50 rounded-sm"
-                      onClick={() => router.push("/account/profile")}
-                    >
-                      <div className="flex flex-col space-y-1 ">
-                        <p className="text-sm font-medium leading-none">
-                          {`${user?.first_name ?? ""} ${user?.last_name ?? ""}`}
-                        </p>
-                        <p className="text-xs leading-none text-gray-400">
-                          {user?.email}
-                        </p>
-                      </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem
-                      onClick={() => router.push("/account/quotations/create")}
-                    >
-                      <Icon name="plus" />
-                      <span>New insurance</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => router.push("/account")}>
-                      <Icon name="policies" />
-                      <span>My Policies</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => router.push("/account/vehicles")}
-                    >
-                      <Icon name="car" />
-                      <span>Vehicles</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={handleLogout}>
-                      <Icon name="logout" />
-                      <span>Log out</span>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </motion.div>
-            )}
+   
+     
           </div>
 
           {/* Mobile Navigation */}
@@ -326,66 +233,7 @@ export default function Header({
                       </Link>
                     </motion.div>
                   ))}
-                  {!isAuthenticated ? (
-                    <motion.div
-                      className="flex flex-col gap-2 pt-4"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.3 }}
-                    >
-                      <Button
-                        variant="outline"
-                        onClick={() => router.push("/contact")}
-                      >
-                        Contact us
-                      </Button>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      className="flex flex-col items-start justify-center gap-2 pt-4 bg-gray-50"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.3 }}
-                    >
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>My policies</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>Vehicles</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>Notifications</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                          handleLogout();
-                        }}
-                      >
-                        <LogOut className="h-4 w-4" />
-                        <span>Log out</span>
-                      </Button>
-                    </motion.div>
-                  )}
+      
                 </div>
               </motion.div>
             )}

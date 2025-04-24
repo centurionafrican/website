@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import Primary from "@/assets/images/aib_logo.svg";
-import LogoWhite from "@/assets/images/aib_logo_white.svg";
+import Primary from "@/assets/images/centurion.svg";
+import LogoWhite from "@/assets/images/centurion.svg";
 
 export function CompanyLogo({
   theme = "primary",
@@ -11,7 +11,7 @@ export function CompanyLogo({
   width?: number;
 }) {
   return (
-    <div className="relative w-[120px] sm:w-[160px] md:w-[200px] lg:w-[280px] h-auto">
+    <div className="relative w-[80px] sm:w-[80px] md:w-[120px] lg:w-[200px] h-auto">
       <Image
         src={theme === "primary" ? Primary : LogoWhite}
         alt="centurion"

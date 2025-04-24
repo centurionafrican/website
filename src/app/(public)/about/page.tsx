@@ -3,8 +3,8 @@ import { MainLayout } from "@/layouts/";
 import AboutScreen from "@/screens/about";
 
 export const metadata: Metadata = {
-  title: "About us | Alliance Insurance Brokers",
-  description: "Your dedicated insurance partner, today & tomorrow.",
+  title: "About us | Centurionafrica security group",
+  description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.png",

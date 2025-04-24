@@ -5,8 +5,8 @@ import AboutScreen from "@/screens/about";
 import ServicesScreen from "@/screens/services";
 
 export const metadata: Metadata = {
-  title: "Services  | Alliance Insurance Brokers",
-  description: "Your dedicated insurance partner, today & tomorrow.",
+  title: "Services  | Centurionafrica security group",
+  description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.png",

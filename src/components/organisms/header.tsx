@@ -17,6 +17,7 @@ export default function Header({
 }: HeaderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>("HOME");
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,16 +28,36 @@ export default function Header({
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      const sections = document.querySelectorAll('section[id]');
+      
+      let currentSection = "HOME";
+      
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionId = section.id.toUpperCase();
+        
+        // If the section top is near the top of the viewport (with some offset for better UX)
+        if (sectionTop <= 150) {
+          currentSection = sectionId;
+        }
+      });
+      
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
     
+    handleScroll();
+    
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   const navs = [
     {
@@ -178,51 +199,62 @@ export default function Header({
       initial="hidden"
       animate="visible"
     >
-      <div className="flex items-center justify-between  md:h-16 h:10 w-full max-w-7xl mx-auto lg:px-0">
+      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0">
         <motion.div variants={logoVariants}>
           <Link
             href="/"
-            className="flex items-center gap-2 self-center "
+            className="flex items-center gap-2 self-center"
           >
             <CompanyLogo theme="white" />
           </Link>
         </motion.div>
 
-        <div className="hidden lg:flex items-center space-x-8 ">
+        <div className="hidden lg:flex items-center space-x-8">
           <div className="space-x-8 flex flex-row justify-end">
             {navs.map((nav, idx) => (
               <motion.div key={idx} custom={idx} variants={navItemVariants}>
                 <Link
-                  href={nav.href}
-                  className="inline-flex items-center text-sm font-medium tracking-wider text-white hover:text-secondary transition-colors duration-200"
+                  href={`/#${nav.name.toLowerCase()}`}
+                  className={`inline-flex items-center text-sm font-medium tracking-wider transition-all duration-300 relative
+                    ${nav.name === activeSection 
+                      ? "text-secondary" 
+                      : "text-white hover:text-secondary/80"}`}
                 >
                   {nav.name}
+                  {nav.name === activeSection && (
+                    <motion.span
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
+                      layoutId="activeNavIndicator"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
                 </Link>
               </motion.div>
             ))}
           </div>
-               <motion.div 
-          className="hidden lg:block"
-          variants={contactBtnVariants}
-          whileHover="hover"
-        >
-          <Link 
-            href="/contact"
-            className="inline-flex items-center px-6 py-2 text-sm font-medium bg-secondary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
+          <motion.div 
+            className="hidden lg:block"
+            variants={contactBtnVariants}
+            whileHover="hover"
           >
-            CONTACT US
-            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
-        </motion.div>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center px-6 py-2 text-sm font-medium bg-secondary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
+            >
+              CONTACT US
+              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
 
-   
         <Button
           variant="ghost"
           size="icon"
-          className="lg:hidden text-white  w-auto"
+          className="lg:hidden text-white w-auto"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -248,9 +280,12 @@ export default function Header({
                     variants={menuItemVariants}
                   >
                     <Link
-                      href={nav.href}
+                      href={`/#${nav.name.toLowerCase()}`}
                       onClick={() => setIsOpen(false)}
-                      className="text-base font-medium text-white hover:text-secondary transition-colors duration-200 block py-2"
+                      className={`text-base font-medium block py-2 transition-colors duration-200
+                        ${nav.name === activeSection 
+                          ? "text-secondary" 
+                          : "text-white hover:text-secondary/80"}`}
                     >
                       {nav.name}
                     </Link>

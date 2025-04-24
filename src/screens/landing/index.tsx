@@ -2,15 +2,15 @@ import Hero from "@/components/screens/landing/Hero";
 import Services from "@/components/screens/landing/Services";
 import Contact from "@/components/screens/landing/Contact";
 import ChooseUs from "@/components/screens/landing/ChooseUs";
-import TrustedBy from "@/components/screens/landing/Trusted";
+import AboutSection from "@/components/screens/landing/ChooseUs";
 
 export default function LandingScreen() {
   return (
     <div className='flex flex-1 flex-col items-center justify-center landing_font '>
       <Hero />
-      <TrustedBy />
-      <Services />
-      <ChooseUs />
+      {/* <TrustedBy /> */}
+      {/* <Services /> */}
+      <AboutSection />
       <Contact />
     </div>
   );

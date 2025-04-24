@@ -39,7 +39,7 @@ const ContactForm = () => {
           phone: data.phone,
           subject: data.subject,
           message: data.message,
-          to_name: "Alliance Insurance Brokers"
+          to_name: "Centurionafrica security group"
         },
         PUBLIC_KEY
       );

@@ -11,7 +11,7 @@ export default function LandingScreen() {
       {/* <TrustedBy /> */}
       {/* <Services /> */}
       <AboutSection />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 }

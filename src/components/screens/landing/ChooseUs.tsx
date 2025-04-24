@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/atoms";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

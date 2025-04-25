@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { MainLayout } from "@/layouts/";
 import LandingScreen from "@/screens/landing";
 import AboutScreen from "@/screens/about";
-import ServicesScreen from "@/screens/services";
+import ServicesScreen from "@/screens/services/physical-security";
 import ProductScreen from "@/screens/products";
 
 export const metadata: Metadata = {
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",
-    shortcut: "/favicon.png"
-  }
+    shortcut: "/favicon.png",
+  },
 };
 
 export default function ServicesPage() {

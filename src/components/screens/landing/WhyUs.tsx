@@ -1,19 +1,10 @@
 "use client";
-import { useState } from "react";
-import { Button } from "@/components/atoms";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
 
 const WhyUs = () => {
 
     return (
 
         <>
-
-
             <div className="w-full h-fit mx-auto">
 
                 <div

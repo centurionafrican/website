@@ -6,7 +6,7 @@ import CardSVG from "@/assets/icons/CardSVG";
 import CaretDownSVG from "@/assets/icons/CaretDownSVG";
 import {
   default as CaretLeftSVG,
-  default as CaretRightSVG
+  default as CaretRightSVG,
 } from "@/assets/icons/CaretRightSVG";
 import CaretUpSVG from "@/assets/icons/CaretUpSVG";
 import CheckCircle from "@/assets/icons/CheckCircleSVG";
@@ -57,6 +57,9 @@ import CloseSVG from "@/assets/icons/CloseSVG";
 import DateStartSVG from "@/assets/icons/DateStartSVG";
 import DateEndSVG from "@/assets/icons/DateStartSVG";
 import CheckSVGWhite from "@/assets/icons/checkSVGWhite";
+import CertifiedSVG from "@/assets/icons/CertifiedSVG";
+import WheelSVG from "@/assets/icons/WheelSVG";
+import ArrowUpRightSVG from "@/assets/icons/ArrowUpRightSVG";
 
 export default function Icon({ name = "home" }: IconInterface) {
   let IconName: JSX.Element = <span />;
@@ -228,6 +231,15 @@ export default function Icon({ name = "home" }: IconInterface) {
       break;
     case "insurance":
       IconName = InsuranceSVG({ height: "1em", width: "1em" });
+      break;
+    case "certified":
+      IconName = CertifiedSVG({ height: "1em", width: "1em" });
+      break;
+    case "wheel":
+      IconName = WheelSVG({ height: "1em", width: "1em" });
+      break;
+    case "arrow-up-right":
+      IconName = ArrowUpRightSVG({ height: "1em", width: "1em" });
       break;
     default:
       console.warn(`Unknown icon name: ${name}`);

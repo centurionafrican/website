@@ -11,11 +11,11 @@ const ACCORDION_ITEMS: AccordionItem[] = [
   },
   {
     title: "Audits & Assessments",
-    path: "services/audit-and-assessments",
+    path: "services/audits-and-assessments",
     content: [
       {
         title: "Audits & Assessments sub",
-        path: "services/audit-and-assessments",
+        path: "services/audits-and-assessments",
       },
     ],
   },

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PhysicalSecurity from "@/screens/services/physical-security";
 
 export const metadata: Metadata = {
-  title: "Audit and assessments  | Centurionafrica security group",
+  title: "Audits and assessments  | Centurionafrica security group",
   description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",

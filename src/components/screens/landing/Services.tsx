@@ -100,19 +100,19 @@ const ServicesSection = () => {
     >
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-2 items-center mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-8 col-span-2" variants={itemVariants}>
             <motion.div variants={itemVariants}>
               <h2 className="text-[#252932] md:text-7xl text-6xl font-normal mb-4">
                 Our <br />
                 <span className="text-secondary font-bold">Services</span>
               </h2>
-              <p className="text-[#252932] leading-relaxed max-w-xl">
+              <p className="text-[#252932] leading-relaxed max-w-3xl">
                 Centurion Group delivers comprehensive security solutions,
                 offering meticulous security assessments, advanced electronics
                 and surveillance services, and highly trained security guards.

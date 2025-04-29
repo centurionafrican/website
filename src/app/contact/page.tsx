@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { toast, Toaster } from 'sonner';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
+import { MainLayout } from '@/layouts';
+import Hero from '@/components/screens/landing/Hero';
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -23,6 +25,7 @@ const contactInfo = [
     content: 'contact@centurionafrica.rw',
   },
 ];
+
 
 interface ContactFormData {
   firstName: string;
@@ -74,16 +77,22 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <MainLayout>
+      <section className='flex flex-col w-full'>
+
+      <Hero path={'/images/centurion_gako_37.jpg'} title='Contact us' classname='max-h-screen h-[374px]'/>
+      <section className='relative min-h-[1050px] mb-20 md:mb-0 md:min-h-[651px] flex flex-col items-center bg-[#F6F8FF]'>
+      <div className='w-full h-[112px] bg-[#EE5B2C] z-0'></div>
+    <section className=" bg-white/80 backdrop-blur-md py-[48px] z-30 rounded lg:w-[1276px] absolute top-4 min-h-[563px]">
       <Toaster position="top-center" richColors />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+      <div className=" px-4  sm:px-6 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-4 lg:w-[414px]" 
           >
             <div className='mb-3'>
                 <h1 className='text-[#09090B] text-[45px]'>We’d love to hear from you.</h1>
@@ -128,11 +137,12 @@ const ContactForm = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
+            className=''
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className='flex gap-5'>
-              <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+              <div className='flex gap-5 w-full'>
+              <div className='w-1/2'>
+                <label className="block font-medium text-[#0F172A] mb-1">
                   First Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -157,8 +167,8 @@ const ContactForm = () => {
               </div>
               
 
-              <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
+              <div className='w-1/2'>
+                <label className="block font-medium text-[#0F172A] mb-1">
                   Last Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -182,10 +192,10 @@ const ContactForm = () => {
                 )}
               </div>
              </div>
-             <div className='flex gap-5'>
+             <div className='flex gap-5 w-full'>
 
-              <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
+              <div className='w-1/2'>
+                <label className="block font-medium text-[#0F172A] mb-1">
                   Email<span className="text-red-500">*</span>
                 </label>
                 <input
@@ -209,8 +219,8 @@ const ContactForm = () => {
                 )}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
+              <div className='w-1/2'>
+                <label className="block  font-medium text-[#0F172A] mb-1">
                   Telephone <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -236,7 +246,7 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
+                <label className="block font-medium text-[#0F172A] mb-1">
                   Subject of the Message <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -257,12 +267,12 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#AEAEB2] mb-1">
-                  Your Message<span className="text-red-500">*</span>
+                <label className="block font-medium text-[#0F172A] mb-1">
+                   Message<span className="text-red-500">*</span>
                 </label>
                 <textarea
                   rows={6}
-                  className={`w-full p-3 bg-[#FAFAFA] border border-[#e4e4e4] ${
+                  className={`w-full h-[121px] p-3 bg-[#FAFAFA] border border-[#e4e4e4] ${
                     errors.message ? 'border-red-500' : 'border-gray-200'
                   } rounded-md focus:outline-none focus:ring-2 focus:ring-secondary`}
                   placeholder="How we can help?"
@@ -284,7 +294,7 @@ const ContactForm = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center px-6 py-3 bg-secondary text-white rounded-lg hover:bg-green-600 transition-colors disabled:bg-gray-400"
+                className="inline-flex items-center px-6 py-3 bg-secondary text-white rounded-lg hover:bg-white hover:text-black hover:border border-secondary transition-colors disabled:bg-gray-400"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -314,7 +324,7 @@ const ContactForm = () => {
                   </>
                 ) : (
                   <>
-                    Submit
+                    Send
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -337,6 +347,11 @@ const ContactForm = () => {
         </div>
       </div>
     </section>
+
+    </section>
+    </section>
+
+    </MainLayout>
   );
 };
 

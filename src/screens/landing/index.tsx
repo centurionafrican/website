@@ -10,7 +10,11 @@ import Partners from "@/components/screens/landing/Partners";
 export default function LandingScreen() {
   return (
     <div className='flex flex-1 flex-col items-center justify-center landing_font '>
-      <Hero path={'/landing/hero.svg'} title="Trusted by Businesses." spanTitle="Powered by Expertise. "  description="Partner with a security provider that understands the demands of 
+      <Hero
+        path={'/landing/hero.svg'}
+        title="Trusted by Businesses."
+        spanTitle="Powered by Expertise. "
+        description="Partner with a security provider that understands the demands of 
             corporate environments and compliance."/>
       {/* <TrustedBy /> */}
       {/* <Services /> */}

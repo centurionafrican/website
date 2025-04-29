@@ -1,21 +1,16 @@
 "use client";
-import { useState } from "react";
-import { Button } from "@/components/atoms";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-interface HeroProps{
-  path: string, 
+interface HeroProps {
+  path: string,
   classname?: string,
   title?: string,
   spanTitle?: string,
   description?: string
 }
 
-
-const Hero = ({path, classname, title, spanTitle, description}: HeroProps) => {
+const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -41,8 +36,8 @@ const Hero = ({path, classname, title, spanTitle, description}: HeroProps) => {
     visible: (delay: number) => ({
       opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.5, 
+      transition: {
+        duration: 0.5,
         ease: "easeOut",
         delay: delay
       }
@@ -53,7 +48,6 @@ const Hero = ({path, classname, title, spanTitle, description}: HeroProps) => {
     <div className={`${classname} relative w-full h-screen flex items-center overflow-hidden `}>
       <div className="absolute inset-0 z-0">
         <Image
-          // src="/landing/hero.svg" 
           src={path}
           alt="Security professional background"
           fill
@@ -70,35 +64,33 @@ const Hero = ({path, classname, title, spanTitle, description}: HeroProps) => {
         animate="visible"
       >
         <div className="max-w-6xl pt-40 lg:pt-60">
-          <motion.h1 
+          <motion.h1
             className="text-white  mb-3 flex flex-col gap-2"
             variants={itemVariants}
           >
-            <motion.span 
+            <motion.span
               custom={0}
               variants={textHighlightVariants}
               className="block text-5xl md:text-6xl lg:text-7xl font-normal leading-light"
             >
               {title}
             </motion.span>
-            <motion.span 
+            <motion.span
               custom={0.3}
               variants={textHighlightVariants}
               className="block text-secondary text-5xl md:text-6xl lg:text-7xl font-bold leading-light"
             >
               {spanTitle}
-      
+
             </motion.span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-white font-thin md:text-lg  max-w-2xl mb-8"
             variants={itemVariants}
           >
             {description}
           </motion.p>
-          
-         
         </div>
       </motion.div>
 

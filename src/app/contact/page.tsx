@@ -128,8 +128,6 @@ const ContactForm = () => {
                     className="text-white"
                   />
                 </div>
-              
-
             </div>
           </motion.div>
 

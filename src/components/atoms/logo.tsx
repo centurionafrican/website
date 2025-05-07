@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import Primary from "@/assets/images/centurion.svg";
-import LogoWhite from "@/assets/images/centurion.svg";
+import Primary from "@/assets/images/logo.svg";
+import LogoWhite from "@/assets/images/logo.svg";
 
 export function CompanyLogo({
   theme = "primary",

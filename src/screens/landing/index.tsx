@@ -6,6 +6,8 @@ import AboutSection from "@/components/screens/landing/ChooseUs";
 import WhyUs from "@/components/screens/landing/WhyUs";
 import WorkWithUs from "@/components/screens/landing/WorkWithUs";
 import Partners from "@/components/screens/landing/Partners";
+import HistorySection from "@/components/screens/landing/History";
+import SecuritySection from "@/components/screens/landing/Security";
 
 export default function LandingScreen() {
   return (
@@ -18,6 +20,8 @@ export default function LandingScreen() {
             corporate environments and compliance."/>
       {/* <TrustedBy /> */}
       <AboutSection />
+      <HistorySection />
+      <SecuritySection />
       {/* <Industries /> */}
       <Services />
       <WhyUs />

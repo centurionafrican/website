@@ -22,7 +22,7 @@ const config: Config = {
         muted: "#737373",
         subtle: "#626F81",
         gray: {
-          50: "#F6F6F6",
+          50: "#F6F8FF",
           100: "#E7E7E7",
           200: "#D1D1D1",
           300: "#B0B0B0",

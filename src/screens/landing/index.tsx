@@ -17,8 +17,9 @@ export default function LandingScreen() {
         description="Partner with a security provider that understands the demands of 
             corporate environments and compliance."/>
       {/* <TrustedBy /> */}
-      {/* <Services /> */}
       <AboutSection />
+      {/* <Industries /> */}
+      <Services />
       <WhyUs />
       <Partners />
       <WorkWithUs />

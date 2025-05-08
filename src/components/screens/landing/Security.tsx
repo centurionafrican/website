@@ -136,7 +136,7 @@ const SecuritySection = () => {
         </motion.div>
 
         <motion.div
-          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] mb-12"
+          className="relative w-full h-[200px] sm:h-[300px] md:h-[500px] lg:h-[600px] mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

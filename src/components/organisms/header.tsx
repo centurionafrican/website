@@ -37,7 +37,6 @@ export default function Header({
         const sectionTop = section.getBoundingClientRect().top;
         const sectionId = section.id.toUpperCase();
         
-        // If the section top is near the top of the viewport (with some offset for better UX)
         if (sectionTop <= 150) {
           currentSection = sectionId;
         }

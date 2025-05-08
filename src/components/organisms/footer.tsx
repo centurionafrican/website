@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-black relative overflow-hidden landing_font border-t border-t-gray-100">
+    <footer className="w-full bg-black relative overflow-hidden landing_font ">
       <motion.div
         className="absolute opacity-25 w-[67.5rem] h-[49.75rem] -top-[2.8125rem] left-0 backdrop-blur-[160px] z-0"
         initial={{ x: 0 }}

@@ -8,6 +8,7 @@ import WorkWithUs from "@/components/screens/landing/WorkWithUs";
 import Partners from "@/components/screens/landing/Partners";
 import HistorySection from "@/components/screens/landing/History";
 import SecuritySection from "@/components/screens/landing/Security";
+import Industries from "@/components/screens/landing/Industries";
 
 export default function LandingScreen() {
   return (
@@ -22,6 +23,8 @@ export default function LandingScreen() {
       <AboutSection />
       <HistorySection />
       <SecuritySection />
+      <Industries />
+
       {/* <Industries /> */}
       <Services />
       <WhyUs />

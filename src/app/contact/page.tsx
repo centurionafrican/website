@@ -9,7 +9,7 @@ import Hero from '@/components/screens/landing/Hero';
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY;
 
 const contactInfo = [
   {
@@ -25,7 +25,6 @@ const contactInfo = [
     content: 'contact@centurionafrica.rw',
   },
 ];
-
 
 interface ContactFormData {
   firstName: string;
@@ -48,12 +47,31 @@ const ContactForm = () => {
     const loadingToast = toast.loading('Sending message...');
 
     try {
+      // Format date for email template
+      const currentDate = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      // Instead of passing our own HTML template, we'll use EmailJS's template system
+      // and just pass the variables it needs to replace
       const templateParams = {
-        from_name: data.firstName + ' ' + data.lastName,
-        to_name: 'REIP Global',
-        message: data.message,
-        reply_to: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        tel: data.tel,
         subject: data.subject,
+        message: data.message,
+        currentDate: currentDate,
+        year: new Date().getFullYear(),
+        
+        // Additional fields for compatibility with the EmailJS template
+        from_name: data.firstName + ' ' + data.lastName,
+        to_name: 'CenturionAfrica',
+        reply_to: data.email,
       };
 
       const result = await emailjs.send(
@@ -70,6 +88,7 @@ const ContactForm = () => {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      console.error('Email error:', error);
       toast.error('Failed to send message. Please try again.', {
         id: loadingToast,
       });
@@ -95,7 +114,7 @@ const ContactForm = () => {
             className="space-y-4 lg:w-[414px]" 
           >
             <div className='mb-3'>
-                <h1 className='text-[#09090B] text-[45px]'>We’d love to hear from you.</h1>
+                <h1 className='text-[#09090B] text-[45px]'>We'd love to hear from you.</h1>
                 <p className='text-[#626F81]'>Want to get in touch with us? Either fill out the form with your inquiry or reach us directly at our toll free number</p>
             </div>
             {contactInfo.map((info, index) => (

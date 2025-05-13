@@ -14,25 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-black relative overflow-hidden landing_font border-t border-t-gray-100">
-      <motion.div
-        className="absolute opacity-25 w-[67.5rem] h-[49.75rem] -top-[2.8125rem] left-0 backdrop-blur-[160px] z-0"
-        initial={{ x: 0 }}
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, #c3c3c3 13.5%, rgba(127, 208, 231, 0) 100%)",
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-0 opacity-25 w-[48.375rem] h-[40.0625rem] right-0 backdrop-blur-[160px] z-0"
-        initial={{ x: 0 }}
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, #d5855a 13.5%, rgba(127, 208, 231, 0) 100%)",
-        }}
-      />
-
+    <footer className="w-full bg-black relative overflow-hidden landing_font ">
       <div className="relative z-10 py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -138,7 +120,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-secondary/20 text-center py-6 relative z-10">
+      <div className="bg-secondary/40 text-center py-6 relative z-10">
         <p className="text-white text-sm">
           © {new Date().getFullYear()} Centurionafrica security group. All rights
           reserved.

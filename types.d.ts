@@ -78,3 +78,44 @@ interface ContactFormData {
   email: string;
   message: string;
 }
+
+export type IndustryType = 
+  | 'airports'
+  | 'hospitality'
+  | 'critical-infrastructure'
+  | 'government-buildings'
+  | 'construction-sites'
+  | 'education'
+  | 'public-safety'
+  | 'residence-commercial'
+  | 'health-care'
+  | 'retail'
+  | 'manufacturing-plants';
+
+export interface SecurityFeature {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  buttons: string[];
+}
+
+export interface IndustryContent {
+  title: string;
+  description: string;
+  features: SecurityFeature[];
+}
+
+export interface IndustryOption {
+  id: IndustryType;
+  label: string;
+}
+
+export interface FeatureCard {
+  title: string;
+  description: string;
+}
+
+export interface IndustryContentMap {
+  [key: string]: IndustryContent;
+}

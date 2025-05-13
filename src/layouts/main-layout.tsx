@@ -5,7 +5,7 @@ export default function MainLayout({ children }: ChildrenProps) {
   return (
     <div>
       <Header  topHeader/>
-      <main className="flex items-center justify-center w-full">
+      <main className="flex items-center justify-center w-full bg-black">
         {children}
       </main>
       <Footer />

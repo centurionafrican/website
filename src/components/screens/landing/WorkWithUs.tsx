@@ -19,39 +19,40 @@ const WorkWithUs = () => {
               border: "1px solid rgba(246, 248, 255, 0.08)"
             }}
           >
-            <h2 className="text-white text-center text-6xl font-light mb-8">
-              Join our <span className="text-[#FF5C35] font-normal">Team</span>
+            <h2 className="text-white text-center text-6xl font-bold mb-8">
+              Join our <span className="text-primary">Team</span>
             </h2>
             
-            <p className="text-white text-center leading-relaxed max-w-3xl mb-2 font-light">
+            <p className="text-white/60 text-center leading-relaxed max-w-3xl mb-2 font-light">
               At CenturionAfrica, our Guards are locally employed and fairly compensated to reflect our 
               values. By choosing us, you choose to empower Rwandans and contribute to raising the 
               standard of employment in the Rwandan security industry - Guard benefits
             </p>
             
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
-              <div className="bg-[#252932] px-4 py-2 text-white border-[#E6D8CC1A]/10 border">
+            <div className="flex flex-wrap justify-center gap-1 mb-2">
+              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
                 Competitive Salary
               </div>
-              <div className="bg-[#252932] px-4 py-2 text-white border-[#E6D8CC1A]/10 border">
+              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
                 Housing
               </div>
-              <div className="bg-[#252932] px-4 py-2 text-white border-[#E6D8CC1A]/10 border">
+              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
                 Breakfast, Lunch & Dinner
               </div>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="bg-[#252932] px-4 py-2 text-white border-[#E6D8CC1A]/10 border">
+            <div className="flex flex-wrap justify-center gap-1 mb-4">
+              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
                 Health Insurance
               </div>
-              <div className="bg-[#252932] px-4 py-2 text-white border-[#E6D8CC1A]/10 border">
+              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
                 Transportation
               </div>
             </div>
             
             <Link 
-              href="/contact"
+              href="https://zohorecruit.com"
+              target="_blank"
               className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
             >
               JOIN US NOW

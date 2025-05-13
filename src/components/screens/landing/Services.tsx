@@ -28,14 +28,14 @@ const ServiceCard = ({
 
   return (
     <motion.div
-      className="bg-[#13191D] lg:p-4 p-6 h-full"
+      className="bg-secondary lg:p-4 p-6 h-full"
       whileHover={{ y: -5, transition: { duration: 0.3 } }}
     >
       <div className="bg-white p-3 w-fit mb-8">
         <Icon name={icon} />
       </div>
-      <h2 className="text-white text-2xl font-normal mb-4">{title}</h2>
-      <p className="text-white text-base mb-8">{description}</p>
+      <h2 className="text-white text-2xl font-normal mb-2">{title}</h2>
+      <p className="text-white/60 text-sm mb-8">{description}</p>
       {learnMore && (
         <button
           className="text-white text-base font-medium hover:underline flex items-center gap-3"
@@ -108,11 +108,11 @@ const ServicesSection = () => {
         >
           <motion.div className="space-y-8 col-span-2" variants={itemVariants}>
             <motion.div variants={itemVariants}>
-              <h2 className="text-[#252932] md:text-7xl text-6xl font-normal mb-4">
+              <h2 className="text-secondary md:text-7xl text-6xl font-normal mb-4">
                 Our <br />
-                <span className="text-secondary font-bold">Services</span>
+                <span className="text-primary font-bold">Services</span>
               </h2>
-              <p className="text-[#252932] leading-relaxed max-w-3xl">
+              <p className="text-secondary/70 leading-relaxed max-w-3xl">
                 Centurion Group delivers comprehensive security solutions,
                 offering meticulous security assessments, advanced electronics
                 and surveillance services, and highly trained security guards.

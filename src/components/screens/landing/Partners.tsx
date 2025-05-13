@@ -48,7 +48,7 @@ const Partners = () => {
     >
       <div className="max-w-6xl w-full mx-auto px-4 lg:px-8">
         <motion.h2 
-          className="text-[#252932] md:text-[45px] text-6xl font-normal mb-4"
+          className="text-secondary md:text-[45px] text-6xl font-normal mb-4"
           variants={itemVariants}
         >
           Trusted by a diverse range of <br />

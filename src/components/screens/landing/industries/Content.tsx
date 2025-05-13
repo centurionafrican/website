@@ -92,7 +92,7 @@ const IndustriesContent: React.FC<IndustriesContentProps> = ({
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-dark-900 text-white p-6 lg:p-8 rounded-sm"
+        className="text-white"
       >
         <motion.h2 
           className="text-4xl lg:text-5xl font-light mb-6"
@@ -104,15 +104,15 @@ const IndustriesContent: React.FC<IndustriesContentProps> = ({
         </motion.h2>
         
         <motion.div 
-          className="text-gray-300 mb-10 space-y-4"
+          className="text-gray-300 mb-10 space-y-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
           {currentContent.description.split('\n\n').map((paragraph, idx) => (
-            <p key={idx} className="leading-relaxed">
+            <div key={idx} className="text-sm text-white/70 leading-relaxed">
               {paragraph}
-            </p>
+            </div>
           ))}
         </motion.div>
         

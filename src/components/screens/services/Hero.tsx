@@ -44,7 +44,7 @@ const Hero = () => {
     <div className="relative w-full h-sceen flex items-center overflow-hidden ">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/centurion_gako_37.jpg"
+          src="/landing/hero.svg"
           alt="Security professional background"
           fill
           className="object-cover object-center "
@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="relative z-20 max-w-7xl container mx-auto px-4 md:px-4 lg:px-0 h-full flex flex-col justify-center"
+        className="relative z-20 max-w-5xl container mx-auto px-4 md:px-4 lg:px-0 h-full flex flex-col justify-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

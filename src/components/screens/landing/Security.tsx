@@ -31,30 +31,30 @@ const SecuritySection = () => {
     { name: "GUINEA-CONAKRY", x: 31, y: 48 },
     { name: "RWANDA", x: 54, y: 54 },
     { name: "MOZAMBIQUE", x: 56, y: 65 },
-    { name: "COMOROS", x: 65, y: 60 }
+    { name: "COMOROS", x: 65, y: 60 },
   ];
 
   const stats: StatCard[] = [
     {
       icon: "/firm.svg",
       value: "2019",
-      description: "Our firm is founded"
+      description: "Our firm is founded",
     },
     {
       icon: "/moon.svg",
       value: "804",
-      description: "Active guards"
+      description: "Active guards",
     },
     {
       icon: "/pending.svg",
       value: "600",
-      description: "Pending for deployment"
+      description: "Pending for deployment",
     },
     {
       icon: "/ellipse.svg",
       value: "012",
-      description: "Countries"
-    }
+      description: "Countries",
+    },
   ];
 
   const containerVariants = {
@@ -63,9 +63,9 @@ const SecuritySection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -73,8 +73,8 @@ const SecuritySection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const locationVariants = {
@@ -83,16 +83,16 @@ const SecuritySection = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 0.5 + (i * 0.1),
+        delay: 0.5 + i * 0.1,
         duration: 0.4,
         type: "spring",
-        stiffness: 200
-      }
-    })
+        stiffness: 200,
+      },
+    }),
   };
 
   return (
-    <section className="relative w-full py-20 md:py-32">
+    <section className="relative w-full py-20 md:py-12">
       <div className="absolute inset-0 z-0">
         <Image
           src="/security.svg"
@@ -101,48 +101,50 @@ const SecuritySection = () => {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-[#13191D]/10 z-10"></div>
+        <div className="absolute inset-0 bg-secondary/10 z-10"></div>
       </div>
-      
-      <div className="relative z-20 max-w-6xl mx-auto px-4 lg:px-8">
+
+      <div className="relative z-20 max-w-5xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="mb-16"
         >
-          <motion.span 
+          <motion.span
             variants={itemVariants}
             className="uppercase text-white text-sm tracking-wide"
           >
             WHAT WE PROTECT
           </motion.span>
-          
-          <motion.h2 
+
+          <motion.h2
             variants={itemVariants}
             className="text-white md:text-7xl text-5xl font-bold mt-2"
           >
             Security to everyone, <br />
             anywhere.
           </motion.h2>
-          
-          <motion.p
+
+          <motion.div
             variants={itemVariants}
-            className="text-white max-w-4xl mt-6 font-light"
+            className="text-white/60 max-w-4xl mx-auto mt-2 font-light"
           >
-            Centurion Group delivers comprehensive security solutions, offering meticulous security assessments, advanced electronics and surveillance services, and highly trained security guards. From cutting-edge technology to expertly trained personnel, our integrated approach ensures our clients' unmatched safety and peace of mind
-          </motion.p>
+            Centurion Group delivers comprehensive security solutions, offering
+            meticulous security assessments, advanced electronics and
+            surveillance services, and highly trained security guards. From
+            cutting-edge technology to expertly trained personnel, our
+            integrated approach ensures our clients' unmatched safety and peace
+            of mind
+          </motion.div>
         </motion.div>
 
         <motion.div
-          className="relative w-full h-[200px] sm:h-[300px] md:h-[500px] lg:h-[600px] mb-12"
+          className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[400px]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-    
           {locations.map((location, index) => (
             <motion.div
               key={index}
@@ -152,44 +154,31 @@ const SecuritySection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               className="absolute z-10"
-              style={{ 
-                left: `${location.x}%`, 
-                top: `${location.y}%` 
+              style={{
+                left: `${location.x}%`,
+                top: `${location.y}%`,
               }}
-            >
-              {/* <div className="flex items-center">
-                <div className="flex items-center">
-                  <div className="bg-secondary text-white text-xs py-1 px-2 rounded-full whitespace-nowrap flex items-center">
-                    <span>{location.name}</span>
-                    <div className="ml-1 w-3 h-3 bg-white rounded-full flex items-center justify-center">
-                      <div className="w-1 h-1 bg-secondary rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-            </motion.div>
+            ></motion.div>
           ))}
         </motion.div>
-
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-36"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-secondary p-8 text-white"
+              className="bg-primary p-8 text-white"
               whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             >
               <div className="mb-4">
-                <Image 
-                  src={stat.icon} 
+                <Image
+                  src={stat.icon}
                   alt={stat.description}
-                  width={36} 
+                  width={36}
                   height={36}
                 />
               </div>

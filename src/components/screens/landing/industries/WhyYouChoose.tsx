@@ -12,7 +12,7 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, delay }) => {
   return (
     <motion.div 
-      className="bg-[#F6F8FF14] border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white"
+      className="bg-primary/70 border border-[#F6F8FF14] backdrop-blur-md p-5 text-white"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}

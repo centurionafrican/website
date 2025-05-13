@@ -50,9 +50,9 @@ const AccordionLayout = ({ children }: any) => {
   }, [pathname]);
 
   return (
-    <div className="w-full relative pb-16">
+    <div className="w-full relative pb-16 bg-white">
       <HeroSubtitle title={heroTitle} />
-      <div className="flex flex-col md:flex-row gap-9 mx-auto max-w-7xl z-50">
+      <div className="flex flex-col md:flex-row gap-9 mx-auto max-w-5xl z-50">
         <div className="static -translate-y-32">
           <Accordion
             items={ACCORDION_ITEMS}

@@ -76,10 +76,6 @@ export default function Header({
       href: "/industries",
     },
     {
-      name: "TEAM",
-      href: "/team",
-    },
-    {
       name: "CAREER",
       href: "/career",
     },
@@ -189,7 +185,7 @@ export default function Header({
 
   return (
     <motion.header
-      className={`w-full fixed ${topHeader ? "lg:top-0 top-0" : "top-0"} left-0 z-40 py-4 px-4
+      className={`w-full fixed z-0 ${topHeader ? "lg:top-0 top-0" : "top-0"} left-0 z-40 py-4 px-4
         ${scrolled 
           ? "bg-black/75 backdrop-blur-md" 
           : "bg-transparent"
@@ -198,7 +194,8 @@ export default function Header({
       initial="hidden"
       animate="visible"
     >
-      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0">
+      <div className="absolute h-64 bg-gradient-to-b from-black/100 to-transparent w-full top-0 -z-0 left-0" />
+      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0 z-10">
         <motion.div variants={logoVariants}>
           <Link
             href="/"
@@ -216,13 +213,13 @@ export default function Header({
                   href={`/#${nav.name.toLowerCase()}`}
                   className={`inline-flex items-center text-sm font-medium tracking-wider transition-all duration-300 relative
                     ${nav.name === activeSection 
-                      ? "text-secondary" 
-                      : "text-white hover:text-secondary/80"}`}
+                      ? "text-white/50" 
+                      : "text-white hover:text-white/80"}`}
                 >
                   {nav.name}
                   {nav.name === activeSection && (
                     <motion.span
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
                       layoutId="activeNavIndicator"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -233,27 +230,25 @@ export default function Header({
               </motion.div>
             ))}
           </div>
-          <motion.div 
+          <div 
             className="hidden lg:block"
-            variants={contactBtnVariants}
-            whileHover="hover"
           >
             <Link 
               href="/contact"
-              className="inline-flex items-center px-6 py-2 text-sm font-medium bg-secondary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
+              className="relative z-30 inline-flex items-center px-6 py-2 text-sm font-medium bg-primary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
             >
               CONTACT US
               <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </Link>
-          </motion.div>
+          </div>
         </div>
 
         <Button
           variant="ghost"
           size="icon"
-          className="lg:hidden text-white w-auto"
+          className="lg:hidden text-white w-auto z-20"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (

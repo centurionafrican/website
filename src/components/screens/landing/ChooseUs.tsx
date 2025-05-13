@@ -90,7 +90,7 @@ const AboutSection = () => {
       id="about" 
       className="relative w-full bg-[#F6F8FF] py-20 md:py-32"
     >
-      <div className="max-w-6xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto px-0 sm:px-4 md:px-8">
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
           initial="hidden"
@@ -100,11 +100,11 @@ const AboutSection = () => {
         >
           <motion.div className="space-y-8" variants={itemVariants}>
             <motion.div variants={itemVariants}>
-              <h2 className="text-[#252932] md:text-7xl text-6xl font-normal mb-4">
+              <h2 className="text-secondary md:text-7xl text-6xl font-normal mb-4">
                 About <br />
-                <span className="text-secondary font-bold">Centurion</span>
+                <span className="text-primary font-bold">Centurion</span>
               </h2>
-              <p className="text-[#252932] leading-relaxed max-w-xl">
+              <p className="text-secondary/70 leading-relaxed max-w-xl">
                 Centurion provides bespoke security solutions from highly trained security guards to modern state-of-the-art technology and the latest surveillance equipment to give you a flexible and adjustable approach to securing your business.
               </p>
             </motion.div>
@@ -137,7 +137,7 @@ const AboutSection = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 "
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}

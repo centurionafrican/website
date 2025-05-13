@@ -51,21 +51,21 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
           src={path}
           alt="Security professional background"
           fill
-          className="object-cover object-center "
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent z-10"></div>
       </div>
 
       <motion.div
-        className="relative z-20 max-w-7xl container mx-auto px-4 md:px-4 lg:px-0 h-full flex flex-col justify-center"
+        className="relative z-20 max-w-5xl container mx-auto md:px-4 lg:px-0 h-full flex flex-col"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-6xl pt-40 lg:pt-60">
+        <div className="max-w-6xl absolute bottom-12">
           <motion.h1
-            className="text-white  mb-3 flex flex-col gap-2"
+            className="text-white b-3 flex flex-col"
             variants={itemVariants}
           >
             <motion.span
@@ -78,7 +78,7 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
             <motion.span
               custom={0.3}
               variants={textHighlightVariants}
-              className="block text-secondary text-5xl md:text-6xl lg:text-7xl font-bold leading-light"
+              className="block text-primary text-5xl md:text-6xl lg:text-7xl font-bold leading-light"
             >
               {spanTitle}
 

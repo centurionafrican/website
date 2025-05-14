@@ -10,8 +10,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Define the missing types
+interface AccordionItem {
+  title: string;
+  path?: string;
+  content?: AccordionItem[];
+}
+
+interface AccordionProps {
+  items: AccordionItem[];
+}
+
+// Animation variants for the menu
+const menuVariants = {
+  closed: { x: "-100%" },
+  open: { x: 0 },
+  exit: { x: "-100%" }
+};
+
 export default function Accordion({ items }: AccordionProps) {
-  const [activeIndexes, setActiveIndexes] = useState<string[]>([]);
+  const [activeIndexes, setActiveIndexes] = useState<any>([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -20,7 +38,7 @@ export default function Accordion({ items }: AccordionProps) {
   }, [pathname]);
 
   const findParentIndexes = (
-    items: AccordionItem[],
+    items: any[],
     targetPath: string,
     parentPath: string = ""
   ): string[] => {

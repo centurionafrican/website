@@ -8,7 +8,7 @@ interface SecurityFeatureProps {
   title: string;
   description: string;
   icon: string;
-  buttons?: string[];
+  buttons: string[];
   delay?: number;
 }
 
@@ -16,45 +16,42 @@ const SecurityFeature: React.FC<SecurityFeatureProps> = ({
   title,
   description,
   icon,
-  buttons = [],
+  buttons,
   delay = 0
 }) => {
   return (
     <motion.div
-      className=""
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay, duration: 0.5 }}
+      className="bg-dark-800/40 p-2 backdrop-blur-sm"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.4 }}
     >
       <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-14 h-14  rounded-md flex items-center justify-center">
-          <Image 
-            src={icon} 
-            alt={title} 
-            width={14} 
-            height={14} 
-            className="text-white w-10 h-10"
-          />
+        <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+          <Image src={icon} alt={title} width={32} height={32} />
         </div>
-        <div>
-          <h3 className="text-2xl font-medium">{title}</h3>
-          <div className="text-gray-300 space-y-2 mb-4">
+        
+        <div className="flex-1">
+          <h3 className="text-xl font-normal mb-2">{title}</h3>
+          
+          <div className="text-sm text-white/70 space-y-2 mb-4">
             {description.split('\n\n').map((paragraph, idx) => (
-              <div key={idx} className="text-sm text-white/70 leading-relaxed">
-                {paragraph}
-              </div>
+              <p key={idx}>{paragraph}</p>
             ))}
           </div>
           
           {buttons.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2">
               {buttons.map((button, idx) => (
-                <motion.span
+                <motion.button
                   key={idx}
-                  className="py-2 bg-transparent text-white rounded-sm"
+                  className="bg-white text-gray-900 px-2 py-1 text-sm font-normal hover:bg-white/90 transition-colors"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: delay + 0.2 + (idx * 0.1), duration: 0.3 }}
                 >
-                  #{button}
-                </motion.span>
+                  {button}
+                </motion.button>
               ))}
             </div>
           )}

@@ -1,8 +1,8 @@
-// src/components/industries/IndustriesSidebar.tsx
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { useIndustry } from "@/context/industrieContext";
 
 export type IndustryType =
   | "airports"
@@ -17,16 +17,43 @@ export type IndustryType =
   | "retail"
   | "manufacturing-plants";
 
+interface SidebarItemProps {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+const SidebarItem: React.FC<SidebarItemProps> = ({ 
+  active, 
+  onClick, 
+  children
+}) => {
+  return (
+    <motion.button
+      onClick={onClick}
+      className={`w-full text-left py-2 px-4 transition-all duration-300 border border-white/10 cursor-pointer backdrop-blur-md ${
+        active 
+          ? "bg-primary text-white"
+          : "bg-black/20 text-gray-300 hover:bg-dark-800"
+      }`}
+      animate={{ 
+        backgroundColor: active ? 'var(--color-primary)' : 'rgba(0, 0, 0, 0.2)'
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      {children}
+    </motion.button>
+  );
+};
+
 interface IndustrySidebarProps {
-  activeIndustry?: IndustryType;
-  onSelectIndustry?: (industry: IndustryType) => void;
+  className?: string;
 }
 
 const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
-  activeIndustry = "hospitality",
-  onSelectIndustry,
+  className = "",
 }) => {
-  const [selected, setSelected] = useState<IndustryType>(activeIndustry);
+  const { activeIndustry, setActiveIndustry } = useIndustry();
 
   const industries = [
     { id: "airports" as IndustryType, label: "Airports" },
@@ -54,16 +81,13 @@ const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
     },
   ];
 
-  const handleSelect = (industry: IndustryType) => {
-    setSelected(industry);
-    if (onSelectIndustry) {
-      onSelectIndustry(industry);
-    }
+  const handleIndustryClick = (industry: IndustryType) => {
+    setActiveIndustry(industry);
   };
 
   return (
     <motion.div
-      className="bg-dark-900 overflow-hidden"
+      className={`bg-dark-900 overflow-hidden sticky top-0 ${className}`}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
@@ -72,16 +96,12 @@ const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
         <ul className="flex flex-col gap-2">
           {industries.map((industry) => (
             <li key={industry.id}>
-              <button
-                onClick={() => handleSelect(industry.id)}
-                className={`w-full text-left py-2 px-4 transition-all duration-300 border border-white/10 cursor-pointer backdrop-blur-md ${
-                  selected === industry.id
-                    ? "bg-primary text-white"
-                    : "bg-black/20 text-gray-300 hover:bg-dark-800"
-                }`}
+              <SidebarItem
+                active={activeIndustry === industry.id}
+                onClick={() => handleIndustryClick(industry.id)}
               >
                 {industry.label}
-              </button>
+              </SidebarItem>
             </li>
           ))}
         </ul>

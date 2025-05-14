@@ -29,8 +29,13 @@ export const IndustryProvider: React.FC<IndustryProviderProps> = ({
   const [activeIndustry, setActiveIndustry] = useState<IndustryType>(initialIndustry);
 
   return (
-    <IndustryContext.Provider value={{ activeIndustry, setActiveIndustry }}>
+    <IndustryContext.Provider value={{ 
+      activeIndustry, 
+      setActiveIndustry
+    }}>
       {children}
     </IndustryContext.Provider>
   );
 };
+
+export default IndustryProvider;

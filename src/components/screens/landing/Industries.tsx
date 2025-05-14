@@ -26,7 +26,7 @@ const IndustriesPage: React.FC<IndustriesPageProps> = ({
           <IndustriesHero />
           <div className="py-0 lg:py-0">
             <div className="flex flex-col lg:flex-row gap-6">
-              <div className="w-full lg:w-1/4">
+              <div className="w-full lg:w-1/4 lg:sticky lg:top-24 lg:self-start">
                 <IndustriesSidebar />
               </div>
 

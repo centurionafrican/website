@@ -23,7 +23,7 @@ const AccordionLayout = ({ children }: any) => {
   };
 
   const findTitleByPath = (
-    items: AccordionItem[],
+    items: any[],
     targetPath: string,
     parentPath: string = ""
   ): string | null => {
@@ -56,8 +56,8 @@ const AccordionLayout = ({ children }: any) => {
         <div className="static -translate-y-32">
           <Accordion
             items={ACCORDION_ITEMS}
-            activeIndexes={activeIndexes}
-            toggleAccordion={toggleAccordion}
+            // activeIndexes={activeIndexes}
+            // toggleAccordion={toggleAccordion}
           />
         </div>
         <div className="mt-10">{children}</div>

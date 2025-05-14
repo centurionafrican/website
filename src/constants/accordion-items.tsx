@@ -1,4 +1,4 @@
-const ACCORDION_ITEMS: AccordionItem[] = [
+const ACCORDION_ITEMS: any[] = [
   {
     title: "Physical Security",
     path: "services/physical-security",

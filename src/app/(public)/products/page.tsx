@@ -3,7 +3,7 @@ import { MainLayout } from "@/layouts/";
 import LandingScreen from "@/screens/landing";
 import AboutScreen from "@/screens/about";
 import ServicesScreen from "@/screens/services/physical-security";
-import ProductScreen from "@/screens/products";
+// import ProductScreen from "@/screens/products"; // Commented out as this module is missing
 
 export const metadata: Metadata = {
   title: "Products on offer | Centurionafrica security group",
@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <MainLayout>
-      <ProductScreen />
+      {/* Temporarily replaced ProductScreen with a div */}
+      <div>Products Page Content (Placeholder)</div>
     </MainLayout>
   );
 }

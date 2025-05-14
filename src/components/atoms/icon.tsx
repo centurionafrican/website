@@ -47,8 +47,9 @@ import WalletSVG from "@/assets/icons/WalletSVG";
 import InsuranceSVG from "@/assets/icons/InsuranceSVG";
 import SubscribersSVG from "@/assets/icons/SubscribersSVG";
 import CarSVG from "@/assets/icons/CarSVG";
-import QuotationVG from "@/assets/icons/QuotationSVG";
-import PoliciesSVG from "@/assets/icons/PoliciesSVG";
+// AIB-related imports removed
+// import QuotationVG from "@/assets/icons/QuotationSVG";
+// import PoliciesSVG from "@/assets/icons/PoliciesSVG";
 import DashboardSVG from "@/assets/icons/DashboardSVG";
 import LoadingSVG from "@/assets/icons/LoadingSVG";
 import MenuSVG from "@/assets/icons/MenuSVG";
@@ -91,12 +92,13 @@ export default function Icon({ name = "home" }: IconInterface) {
     case "subscribers":
       IconName = SubscribersSVG({ height: "1em", width: "1em" });
       break;
-    case "quotation":
-      IconName = QuotationVG({ height: "1em", width: "1em" });
-      break;
-    case "policies":
-      IconName = PoliciesSVG({ height: "1em", width: "1em" });
-      break;
+    // AIB-related cases removed
+    // case "quotation":
+    //   IconName = QuotationVG({ height: "1em", width: "1em" });
+    //   break;
+    // case "policies":
+    //   IconName = PoliciesSVG({ height: "1em", width: "1em" });
+    //   break;
     case "bug":
       IconName = BugSVG({ height: "1em", width: "1em" });
       break;

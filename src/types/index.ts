@@ -1,13 +1,3 @@
-export * from "./user.interface";
-export * from "./vehicle.interface";
-export * from "./insurer.interface";
-export * from "./subscriber.interface";
-export * from "./quotation.interface";
-export * from "./policy.interface";
-export * from "./icons";
-export * from "./transaction.interface";
-export * from "./payment.interface";
-
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import type { ReactNode } from "react";

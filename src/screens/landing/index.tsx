@@ -10,7 +10,7 @@ import Industries from "@/components/screens/landing/Industries";
 
 export default function LandingScreen() {
   return (
-    <div className='flex flex-1 flex-col items-center justify-center landing_font '>
+    <div className='flex flex-1 flex-col items-center justify-center landing_font'>
       <Hero
         path={'/guards_II.jpg'}
         title="Trusted by Businesses."
@@ -19,11 +19,11 @@ export default function LandingScreen() {
             corporate environments and compliance."/>
       <AboutSection />
       <HistorySection />
-      <SecuritySection />
-      <Industries />
+       <SecuritySection /> 
+       <Industries /> 
       <Services />
       <WhyUs />
-      <Partners />
+       <Partners /> 
       <WorkWithUs />
     </div>
   );

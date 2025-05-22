@@ -3,7 +3,7 @@
 const WhyUs = () => {
   return (
     <>
-      <div className="w-full h-fit mx-auto" id="industries">
+      <div className="w-full h-fit mx-auto px-4 lg:px-0" id="industries">
         <div
           className="relative bg-cover bg-center "
           style={{ backgroundImage: "url('/images/kl_18.jpg')" }}

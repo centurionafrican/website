@@ -92,7 +92,7 @@ const SecuritySection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 md:py-12">
+    <section className="relative w-full py-20 md:py-12 px-4 sm:px-0" id='security'>
       <div className="absolute inset-0 z-0">
         <Image
           src="/security.svg"
@@ -127,7 +127,7 @@ const SecuritySection = () => {
 
           <motion.div
             variants={itemVariants}
-            className="text-white/60 max-w-4xl mx-auto mt-2 font-light"
+            className="text-white/60 max-w-7xl mx-auto mt-2 font-light"
           >
             Centurion Group delivers comprehensive security solutions, offering
             meticulous security assessments, advanced electronics and

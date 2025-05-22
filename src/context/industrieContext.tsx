@@ -1,41 +1,75 @@
 "use client";
 
-import { IndustryType } from '@/components/screens/landing/industries/Sidebar';
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useRef } from "react";
+
+export type IndustryType =
+  | "airports"
+  | "hospitality"
+  | "critical-infrastructure"
+  | "government-buildings"
+  | "construction-sites"
+  | "education"
+  | "public-safety"
+  | "residence-commercial"
+  | "health-care"
+  | "retail"
+  | "manufacturing-plants";
 
 interface IndustryContextType {
   activeIndustry: IndustryType;
   setActiveIndustry: (industry: IndustryType) => void;
+  sectionRefs: React.MutableRefObject<Record<IndustryType, HTMLDivElement | null>>;
+  isScrolling: boolean;
+  setIsScrolling: (value: boolean) => void;
+  scrollToIndustry: (industry: IndustryType) => void;
 }
 
-const defaultContext: IndustryContextType = {
-  activeIndustry: 'hospitality',
-  setActiveIndustry: () => {},
-};
+const IndustryContext = createContext<IndustryContextType | undefined>(undefined);
 
-const IndustryContext = createContext<IndustryContextType>(defaultContext);
-
-export const useIndustry = () => useContext(IndustryContext);
-
-interface IndustryProviderProps {
-  children: ReactNode;
-  initialIndustry?: IndustryType;
-}
-
-export const IndustryProvider: React.FC<IndustryProviderProps> = ({ 
-  children, 
-  initialIndustry = 'hospitality' 
-}) => {
+export const IndustryProvider: React.FC<{
+  children: React.ReactNode;
+  initialIndustry: IndustryType;
+}> = ({ children, initialIndustry }) => {
   const [activeIndustry, setActiveIndustry] = useState<IndustryType>(initialIndustry);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const sectionRefs = useRef<Record<IndustryType, HTMLDivElement | null>>({} as Record<IndustryType, HTMLDivElement | null>);
+
+  const scrollToIndustry = (industry: IndustryType) => {
+    if (sectionRefs.current[industry] && !isScrolling) {
+      setIsScrolling(true);
+      setActiveIndustry(industry);
+      
+      sectionRefs.current[industry]?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    }
+  };
 
   return (
-    <IndustryContext.Provider value={{ 
-      activeIndustry, 
-      setActiveIndustry
-    }}>
+    <IndustryContext.Provider
+      value={{
+        activeIndustry,
+        setActiveIndustry,
+        sectionRefs,
+        isScrolling,
+        setIsScrolling,
+        scrollToIndustry
+      }}
+    >
       {children}
     </IndustryContext.Provider>
   );
 };
 
-export default IndustryProvider;
+export const useIndustry = () => {
+  const context = useContext(IndustryContext);
+  if (context === undefined) {
+    throw new Error("useIndustry must be used within a IndustryProvider");
+  }
+  return context;
+};

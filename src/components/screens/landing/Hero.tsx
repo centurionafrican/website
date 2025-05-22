@@ -45,7 +45,7 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
   };
 
   return (
-    <div className={`${classname} relative w-full h-screen flex items-center overflow-hidden `}>
+    <div className={`${classname} relative w-full h-screen flex items-center overflow-hidden px-4 sm:px-0`}>
       <div className="absolute inset-0 z-0">
         <Image
           src={path}

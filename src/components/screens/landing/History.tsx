@@ -38,12 +38,6 @@ const HistorySection = () => {
       description: "Incorporation of Centurion Africa in Rwanda",
       position: "left",
     },
-    {
-      year: "2019",
-      description:
-        "Centurion is founded as a specialized private security company, providing high end security services in Rwanda, Africa and the Middle East",
-      position: "right",
-    },
   ];
 
   const containerVariants = {
@@ -68,8 +62,9 @@ const HistorySection = () => {
 
   return (
     <section
-      className="relative w-full py-20 md:py-32"
+      className="relative w-full py-20 md:py-32 px-4 sm:px-0"
       style={{ background: "linear-gradient(to bottom, #13191D, #212F38)" }}
+      id ='history'
     >
       <div className="max-w-5xl mx-auto px-0 sm:px-4 md:px-8">
         <motion.div
@@ -108,7 +103,7 @@ const HistorySection = () => {
 
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-500 md:hidden"></div>
 
-          <div className="space-y-10 md:space-y-16 relative">
+          <div className="space-y-10 md:space-y-4 relative">
             {events.map((event, index) => (
               <motion.div
                 key={index}

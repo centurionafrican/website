@@ -10,7 +10,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ title, description }: FeatureCardProps) => (
   <motion.div 
-    className="bg-[#13191D] lg:p-12 p-6 h-full"
+    className="bg-[#13191D] hover:bg-primary lg:p-12 p-6 h-full"
     whileHover={{ y: -5, transition: { duration: 0.3 } }}
   >
     <h2 className="text-white text-2xl font-normal mb-2">{title}</h2>
@@ -88,7 +88,7 @@ const AboutSection = () => {
   return (
     <section 
       id="about" 
-      className="relative w-full bg-[#F6F8FF] py-20 md:py-32"
+      className="relative w-full bg-[#F6F8FF] py-20 md:py-32 px-4 sm:px-0"
     >
       <div className="max-w-6xl mx-auto px-0 sm:px-4 md:px-8">
         <motion.div 
@@ -118,7 +118,7 @@ const AboutSection = () => {
               <ImageCard 
                 src="/about/man.svg" 
                 alt="Security guard with radio" 
-                className="h-full"
+                className="h-full  object-contain"
               />
             </motion.div>
             <motion.div className="col-span-2 md:col-span-1 space-y-4">

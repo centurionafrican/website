@@ -37,7 +37,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
           : "bg-black/20 text-gray-300 hover:bg-dark-800"
       }`}
       animate={{ 
-        backgroundColor: active ? 'var(--color-primary)' : 'rgba(0, 0, 0, 0.2)'
+        backgroundColor: active ? 'rgba(238, 91, 34, 1)' : 'rgba(0, 0, 0, 0.2)'
       }}
       transition={{ duration: 0.3 }}
     >
@@ -53,7 +53,7 @@ interface IndustrySidebarProps {
 const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
   className = "",
 }) => {
-  const { activeIndustry, setActiveIndustry } = useIndustry();
+  const { activeIndustry, scrollToIndustry, isScrolling } = useIndustry();
 
   const industries = [
     { id: "airports" as IndustryType, label: "Airports" },
@@ -82,12 +82,14 @@ const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
   ];
 
   const handleIndustryClick = (industry: IndustryType) => {
-    setActiveIndustry(industry);
+    if (!isScrolling) {
+      scrollToIndustry(industry);
+    }
   };
 
   return (
     <motion.div
-      className={`bg-dark-900 overflow-hidden sticky top-0 ${className}`}
+      className={`bg-dark-900 overflow-hidden sticky top-32 ${className}`}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}

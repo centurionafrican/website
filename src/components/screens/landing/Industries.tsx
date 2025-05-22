@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { IndustryProvider } from "@/context/industrieContext";
 import IndustriesSidebar, { IndustryType } from "./industries/Sidebar";
@@ -12,7 +12,7 @@ interface IndustriesPageProps {
 }
 
 const IndustriesPage: React.FC<IndustriesPageProps> = ({
-  initialIndustry = "hospitality",
+  initialIndustry = "airports",
 }) => {
   return (
     <IndustryProvider initialIndustry={initialIndustry}>
@@ -20,17 +20,19 @@ const IndustriesPage: React.FC<IndustriesPageProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen bg-secondary w-full relative"
+        className="min-h-screen bg-secondary w-full relative px-4 lg:px-0"
       >
         <div className="max-w-5xl mx-auto z-10 relative">
-          <IndustriesHero />
+          <div className="sticky top-12 z-20 bg-secondary pt-8">
+            <IndustriesHero />
+          </div>
           <div className="py-0 lg:py-0">
             <div className="flex flex-col lg:flex-row gap-6">
-              <div className="w-full lg:w-1/4 lg:sticky lg:top-24 lg:self-start">
+              <div className="w-full lg:w-1/4 lg:sticky lg:top-[340px] lg:self-start">
                 <IndustriesSidebar />
               </div>
 
-              <div className="w-full lg:w-3/4 pb-24">
+              <div className="w-full lg:w-3/4 pb-24 relative">
                 <IndustriesContent />
               </div>
             </div>

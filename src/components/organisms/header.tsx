@@ -68,13 +68,22 @@ export default function Header({
       href: "/about",
     },
     {
-      name: "SERVICES",
-      href: "/services",
+      name: "HISTORY",
+      href: "/history",
+    },
+    {
+      name: "SECURITY",
+      href: "/security",
     },
     {
       name: "INDUSTRIES",
       href: "/industries",
     },
+    {
+      name: "SERVICES",
+      href: "/services",
+    },
+   
     {
       name: "CAREER",
       href: "/career",

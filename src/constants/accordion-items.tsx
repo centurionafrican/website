@@ -4,6 +4,10 @@ const ACCORDION_ITEMS: any[] = [
     path: "services/physical-security",
   },
   {
+    title: "Close Protection",
+    path: "services/close-protection",
+  },
+  {
     title: "Audits & Assessments",
     path: "services/audits-and-assessments",
   },

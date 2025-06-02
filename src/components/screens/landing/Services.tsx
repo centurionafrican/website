@@ -55,7 +55,14 @@ const ServicesSection = () => {
       path: "/services/physical-security",
       icon: "certified",
       description:
-        "Centurion Africa provides global security with highly trained, employed guards for any scenario, leveraging Rwandan government support, and former Defense Force soldiers.",
+        "Centurion Security Group provides global security with highly trained, employed guards for any scenario, leveraging Rwandan government support, and former Defense Force soldiers.",
+    },
+    {
+      title: "Close Protection",
+      path: "/services/close-protection",
+      icon: "certified",
+      description:
+        "Centurion Security Group provides global security with highly trained, employed guards for any scenario, leveraging Rwandan government support, and former Defense Force soldiers.",
     },
     {
       title: "Audits and Assessments",
@@ -113,7 +120,7 @@ const ServicesSection = () => {
                 <span className="text-primary font-bold">Services</span>
               </h2>
               <p className="text-secondary/70 leading-relaxed max-w-3xl">
-                Centurion Group delivers comprehensive security solutions,
+                Centurion Security Group delivers comprehensive security solutions,
                 offering meticulous security assessments, advanced electronics
                 and surveillance services, and highly trained security guards.
                 From cutting-edge technology to expertly trained personnel, our

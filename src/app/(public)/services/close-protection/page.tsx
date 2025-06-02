@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import TechnologicalServices from "@/screens/services/technological-services";
+import CloseProtection from "@/screens/services/close-protection";
 
 export const metadata: Metadata = {
-  title: "Technological services  | Centurionafrica security group",
+  title: "Close protection  | Centurionafrica security group",
   description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",
@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <TechnologicalServices />;
+  return <CloseProtection />;
 }

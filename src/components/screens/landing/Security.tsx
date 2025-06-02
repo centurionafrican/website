@@ -129,7 +129,7 @@ const SecuritySection = () => {
             variants={itemVariants}
             className="text-white/60 max-w-7xl mx-auto mt-2 font-light"
           >
-            Centurion Group delivers comprehensive security solutions, offering
+            Centurion Security Group delivers comprehensive security solutions, offering
             meticulous security assessments, advanced electronics and
             surveillance services, and highly trained security guards. From
             cutting-edge technology to expertly trained personnel, our

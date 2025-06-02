@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const PhysicalSecurity = () => {
+const TechnologicalServices = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,32 +65,31 @@ const PhysicalSecurity = () => {
             className="text-2xl sm:text-3xl lg:text-2xl font-normal mb-3 sm:mb-5"
             variants={titleVariants}
           >
-            Guarding
-          </motion.h2>
+Video Surveillance          </motion.h2>
           <motion.div className="space-y-2" variants={containerVariants}>
             <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              We provide guards for virtually any kind of Physical Object, Building or Space that needs to be protected. Depending on the nature of the mission, we provide uniformed Armed or Unarmed Guards.
+              From small offices to large industrial sites, we help deploy high-definition CCTV systems that provide real-time monitoring and forensic video review capabilities. Our guards are trained to work in sync with these systems, ensuring immediate response and continuous oversight.
             </motion.p>
 
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Patrol                </h3>
+                Access Control Systems                </h3>
                
                 <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
+              Managing who enters your premises is a critical layer of security. The surveillance system we provide uses advanced access control technology to restrict unauthorized access to the restricted areas as well as various checkpoints. The system provides secure access to authorized personnel unauthorized access by potential intruders.
                 </motion.p>
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Pedestrian & Vehicle Checks                </h3>
+                Perimeter Intrusion Detection              </h3>
                 <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
@@ -99,20 +98,27 @@ const PhysicalSecurity = () => {
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
+              Protect your boundaries with smart sensor technology, alarms, and motion detection systems designed to detect unauthorized access before it becomes a threat. Our guards are trained to respond quickly to alerts, reinforcing your perimeter with both technology and presence.
                 </motion.p>                </motion.p>
               </motion.div>
 
-              {/* <motion.div variants={itemVariants}>
+   
+              <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Close Protection Officer               </h3>
-                <p className="text-base text-gray-600">
-                  Centurion CatSystems is the technological arm of the Centurion
-                  Group. We supply all sorts of security technology, ranging
-                  from surveillance systems to analytics tools to screening
-                  devices.
-                </p>
-              </motion.div> */}
+                Technology-Enabled Guarding             </h3>
+                <motion.p
+              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              variants={textVariants}
+            >
+  <motion.p
+              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              variants={textVariants}
+            >
+              We train all guards assigned to tech-supported sites to use the equipment effectively, conduct system-assisted patrols, and communicate efficiently through mobile and surveillance platforms.
+                </motion.p>                </motion.p>
+              </motion.div>
+
+   
             </motion.div>
           </motion.div>
         </div>
@@ -121,4 +127,4 @@ const PhysicalSecurity = () => {
   );
 };
 
-export default PhysicalSecurity;
+export default TechnologicalServices;

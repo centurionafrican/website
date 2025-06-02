@@ -71,7 +71,7 @@ export const industryData: Record<IndustryType, IndustryContentType> = {
       {
         id: 'physical-security',
         title: 'Physical security',
-        description: `Centurion Africa provides highly trained guards that patrol, monitor activity, 
+        description: `Centurion Security Group provides highly trained guards that patrol, monitor activity, 
                     deter theft, intrusions and respond immediately to any security breaches.`,
         icon: '/cent.svg',
         buttons: ['Live Patrol', 'Guarding']
@@ -294,7 +294,7 @@ export const industryData: Record<IndustryType, IndustryContentType> = {
       {
         id: 'physical-security',
         title: 'Physical Security',
-        description: `Centurion Africa provides highly trained guards that patrol, monitor activity, deter 
+        description: `Centurion Security Group provides highly trained guards that patrol, monitor activity, deter 
                     Intrusion and respond immediately to any security breaches.`,
         icon: '/cent.svg',
         buttons: ['Live Patrols', 'Guarding']
@@ -338,7 +338,7 @@ export const industryData: Record<IndustryType, IndustryContentType> = {
   'public-safety': {
     title: 'Public Safety',
     description: `Public security is a top priority for both individuals and organizations. Here are the 
-                 many ways that Centurion Group can help protect public spaces and the people who use them.`,
+                 many ways that Centurion Security Group can help protect public spaces and the people who use them.`,
     features: [
       {
         id: 'surveillance-monitoring',
@@ -419,7 +419,7 @@ export const industryData: Record<IndustryType, IndustryContentType> = {
       {
         id: 'physical-security',
         title: 'Physical Security',
-        description: `Centurion Africa provides highly trained guards that patrol, monitor activity, 
+        description: `Centurion Security Group provides highly trained guards that patrol, monitor activity, 
                     deter Intrusion and respond immediately to any security breaches.`,
         icon: '/cent.svg',
         buttons: ['Guarding', 'Live Patrols']
@@ -544,7 +544,7 @@ export const industryData: Record<IndustryType, IndustryContentType> = {
       {
         id: 'physical-security',
         title: 'Physical Security',
-        description: `Centurion Africa provides highly trained guards that patrol, monitor activity, 
+        description: `Centurion Security Group provides highly trained guards that patrol, monitor activity, 
                     deter theft and respond immediately to any security breaches.`,
         icon: '/cent.svg',
         buttons: ['Live Patrols', 'Guarding']

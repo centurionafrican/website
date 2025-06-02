@@ -35,7 +35,7 @@ const HistorySection = () => {
     },
     {
       year: "2020",
-      description: "Incorporation of Centurion Africa in Rwanda",
+      description: "Incorporation of Centurion Security Group in Rwanda",
       position: "left",
     },
   ];
@@ -64,7 +64,7 @@ const HistorySection = () => {
     <section
       className="relative w-full py-20 md:py-32 px-4 sm:px-0"
       style={{ background: "linear-gradient(to bottom, #13191D, #212F38)" }}
-      id ='history'
+      id ='timeline'
     >
       <div className="max-w-5xl mx-auto px-0 sm:px-4 md:px-8">
         <motion.div
@@ -78,17 +78,14 @@ const HistorySection = () => {
             variants={itemVariants}
             className="text-primary md:text-7xl text-5xl font-bold text-left"
           >
-            A brief history
+            A brief timeline
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
             className="text-white/60 text-lg mt-6 text-left max-w-3xl"
           >
-            Centurion provides bespoke security solutions from highly trained
-            security guards to modern state-of-the-art technology and the latest
-            surveillance equipment to give you a flexible and adjustable
-            approach to securing your business.
+            From our first deployment to now: the milestones that matter in our commitment to setting the standard in private security.
           </motion.p>
         </motion.div>
 

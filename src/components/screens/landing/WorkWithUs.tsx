@@ -23,11 +23,11 @@ const WorkWithUs = () => {
               Join our <span className="text-primary">Team</span>
             </h2>
             
-            <p className="text-white/60 text-center leading-relaxed max-w-3xl mb-2 font-light">
+            {/* <p className="text-white/60 text-center leading-relaxed max-w-3xl mb-2 font-light">
               At CenturionAfrica, our Guards are locally employed and fairly compensated to reflect our 
               values. By choosing us, you choose to empower Rwandans and contribute to raising the 
               standard of employment in the Rwandan security industry - Guard benefits
-            </p>
+            </p> */}
             
             <div className="flex flex-wrap justify-center gap-1 mb-2">
               <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">

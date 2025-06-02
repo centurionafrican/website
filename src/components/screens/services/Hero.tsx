@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/atoms";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,6 +8,8 @@ import Link from "next/link";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Hero = () => {
+  const pathname = usePathname();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,6 +41,19 @@ const Hero = () => {
         delay: delay,
       },
     }),
+  };
+
+  const getDescriptionText = () => {
+    if (pathname === "/services/physical-security ") {
+      return "Our guards are typically drawn from a highly respected and well-trained forces unit are converted through training as Security Guards. Our locally employed guards are trained to adapt to any changing environment whilst maintaining the integrity of the protected people and/or object and are licensed to carry firearms.";
+    } else if (pathname === "/services/close-protection") {
+      return "Centurion Africa's risk assessments identify and evaluate security risks, providing clients with expert insights to mitigate risks effectively. Conducted by experienced professionals, these assessments help safeguard assets, reduce operational disruptions, and optimize security strategies. Our tailored approach ensures proactive risk management.";
+    }else if (pathname === "/services/audits-and-assessments") {
+      return "Centurion Africa's risk assessments identify and evaluate security risks, providing clients with expert insights to mitigate risks effectively. Conducted by experienced professionals, these assessments help safeguard assets, reduce operational disruptions, and optimize security strategies. Our tailored approach ensures proactive risk management.";
+    } else if (pathname === "/services/technological-services") {
+      return "We work with trusted technology partners to deliver modern, effective security infrastructure tailored to your needs. Our role is to ensure every solution is seamlessly integrated into your security strategy, with trained personnel ready to operate and respond.";
+    }
+    return "Our guards are typically drawn from a highly respected and well-trained forces unit are converted through training as Security Guards. Our locally employed guards are trained to adapt to any changing environment whilst maintaining the integrity of the protected people and/or object and are licensed to carry firearms.";
   };
 
   return (
@@ -77,12 +93,7 @@ const Hero = () => {
             className="text-gray-50/60 font-thin md:text-base  max-w-7xl mb-8"
             variants={itemVariants}
           >
-            Centurion Group delivers comprehensive security solutions, offering
-            meticulous security assessments, advanced electronics and
-            surveillance services, and highly trained security guards. From
-            cutting-edge technology to expertly trained personnel, our
-            integrated approach ensures our clients' unmatched safety and peace
-            of mind
+            {getDescriptionText()}
           </motion.p>
         </div>
       </motion.div>

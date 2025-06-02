@@ -12,10 +12,10 @@ const WhyUs = () => {
             <div className="max-w-6xl w-full mx-auto px-0 sm:px-4 md:px-8">
               <h2 className="text-white md:text-7xl text-6xl font-normal mb-4">
                 Why choose <br />
-                <span className="text-primary font-bold">Centurion</span>
+                <span className="text-primary font-bold">Centurion </span>
               </h2>
               <p className="text-white/60 leading-relaxed max-w-xl">
-                Centurion combines elite training, local empowerment, and
+                Centurion Security Group combines elite training, local empowerment, and
                 cutting-edge expertise to deliver unmatched security solutions
                 across Africa.
               </p>
@@ -61,7 +61,7 @@ const WhyUs = () => {
                   </p>
                 </div>
 
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+              {/* <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                     Large-Scale Project Execution
                   </h3>
@@ -69,14 +69,14 @@ const WhyUs = () => {
                     Successfully managing over 800 cameras across 200+ CCTV
                     sites, we deliver reliable, scalable solutions.
                   </p>
-                </div>
+                </div> */}
 
                 <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
-                    Custom Protection Solutions
+                  Close Protection Officers
                   </h3>
                   <p className="text-white/50">
-                    hether VIP protection or secured premises, our services are
+                    Whether VIP protection or secured premises, our services are
                     tailored to meet high-stakes requirements.
                   </p>
                 </div>

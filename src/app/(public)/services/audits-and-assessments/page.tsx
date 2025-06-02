@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PhysicalSecurity from "@/screens/services/physical-security";
+import AuditsAssessments from "@/screens/services/audits-assessments";
 
 export const metadata: Metadata = {
   title: "Audits and assessments  | Centurionafrica security group",
@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <PhysicalSecurity />;
+  return <AuditsAssessments />;
 }

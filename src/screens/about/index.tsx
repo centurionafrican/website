@@ -16,7 +16,7 @@ export default function LandingScreen() {
             corporate environments and compliance."/>
       <AboutSection />
       <Services />
-      <WhyUs />
+      {/* <WhyUs /> */}
       <Partners />
       <WorkWithUs />
     </div>

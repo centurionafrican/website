@@ -42,10 +42,10 @@ const WhyChooseSection: React.FC = () => {
       title: "Advanced Technologies",
       description: "From vehicle scanning to remote monitoring, we implement high-grade, modern security systems.",
     },
-    {
-      title: "Large-Scale Project Execution",
-      description: "Successfully managing over 800 cameras across 200+ CCTV sites, we deliver reliable, scalable solutions.",
-    },
+    // {
+    //   title: "Large-Scale Project Execution",
+    //   description: "Successfully managing over 800 cameras across 200+ CCTV sites, we deliver reliable, scalable solutions.",
+    // },
     {
       title: "Custom Protection Solutions",
       description: "Whether VIP protection or secured premises, our services are tailored to meet high-stakes requirements.",
@@ -53,11 +53,11 @@ const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-    <div className="w-full h-fit mx-auto">
-      <div
-        className="relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/kl_18.jpg')" }}
-      >
+    <div className="w-full h-fit mx-auto px-4 lg:px-0" >
+        <div
+          className="relative bg-cover bg-center "
+          style={{ backgroundImage: "url('/images/kl_18.jpg')" }}
+        >
         <div className="bg-black/40 backdrop-blur-md flex justify-center py-16 md:py-24">
           <div className="max-w-6xl w-full mx-auto px-4 lg:px-8">
             <motion.h2 

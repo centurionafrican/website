@@ -7,6 +7,7 @@ import Partners from "@/components/screens/landing/Partners";
 import HistorySection from "@/components/screens/landing/History";
 import SecuritySection from "@/components/screens/landing/Security";
 import Industries from "@/components/screens/landing/Industries";
+import WhyChooseSection from "@/components/screens/landing/industries/WhyYouChoose";
 
 export default function LandingScreen() {
   return (

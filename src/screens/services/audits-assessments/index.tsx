@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const PhysicalSecurity = () => {
+const AuditsAssessments = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,32 +65,29 @@ const PhysicalSecurity = () => {
             className="text-2xl sm:text-3xl lg:text-2xl font-normal mb-3 sm:mb-5"
             variants={titleVariants}
           >
-            Guarding
-          </motion.h2>
+Risk Assessment & Strategic Evaluation          </motion.h2>
           <motion.div className="space-y-2" variants={containerVariants}>
             <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              We provide guards for virtually any kind of Physical Object, Building or Space that needs to be protected. Depending on the nature of the mission, we provide uniformed Armed or Unarmed Guards.
-            </motion.p>
+At Centurion Africa, we believe that strong security starts with understanding your vulnerabilities. Our risk assessments are conducted by seasoned professionals who identify and evaluate threats unique to your operations and environment.            </motion.p>
 
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Patrol                </h3>
+                Insight-Driven Recommendations                </h3>
                
                 <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
-                </motion.p>
+Each assessment results in clear, actionable insights tailored to your context, whether you’re managing a construction site or a corporate office. We provide expert guidance on how to reduce exposure, safeguard assets, and enhance your overall security posture.                </motion.p>
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Pedestrian & Vehicle Checks                </h3>
+                Proactive, Not Reactive             </h3>
                 <motion.p
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
@@ -99,8 +96,7 @@ const PhysicalSecurity = () => {
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
-                </motion.p>                </motion.p>
+We don’t wait for problems to arise. Our approach is rooted in proactive risk management, helping you anticipate and prevent security disruptions before they occur. This foresight allows you to operate with confidence and clarity.                </motion.p>                </motion.p>
               </motion.div>
 
               {/* <motion.div variants={itemVariants}>
@@ -121,4 +117,4 @@ const PhysicalSecurity = () => {
   );
 };
 
-export default PhysicalSecurity;
+export default AuditsAssessments;

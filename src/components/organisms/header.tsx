@@ -1,45 +1,23 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Bell, Settings, LogOut, Menu, X } from "lucide-react";
-import { Button, Icon } from "@/components/atoms";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/atoms/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/avatar";
-import { useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/atoms";
 import { CompanyLogo } from "../atoms/logo";
-import { useUser } from "@/contexts/userContext";
-import { useFetch } from "@/hooks";
-import { fetchUserProfile } from "@/services/user";
 import { AnimatePresence, motion } from "framer-motion";
-import HeaderTop from "./headerTop";
+
+interface HeaderProps {
+  theme?: "dark" | "light";
+  topHeader?: boolean;
+}
 
 export default function Header({
   theme = "dark",
   topHeader = false,
-}: {
-  theme?: string;
-  topHeader?: boolean;
-}) {
-  const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-  const { user, logout, isAuthenticated, setUser } = useUser();
-  const { data } = useFetch(["profile"], () => fetchUserProfile());
-
-  useEffect(() => {
-    data && setUser(data.response);
-  }, [isAuthenticated, router, data]);
-
-  const handleLogout = () => {
-    logout();
-    router.push("/login");
-  };
+}: HeaderProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>("HOME");
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,53 +25,115 @@ export default function Header({
         setIsOpen(false);
       }
     };
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      
+      const sections = document.querySelectorAll('section[id]');
+      
+      let currentSection = "HOME";
+      
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionId = section.id.toUpperCase();
+        
+        if (sectionTop <= 150) {
+          currentSection = sectionId;
+        }
+      });
+      
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
 
   const navs = [
     {
-      name: "Home",
+      name: "HOME",
       href: "/",
     },
     {
-      name: "About us",
+      name: "ABOUT",
       href: "/about",
     },
     {
-      name: "Products",
-      href: "/products",
+      name: "TIMELINE",
+      href: "/timeline",
     },
     {
-      name: "Our Services",
+      name: "SECURITY",
+      href: "/security",
+    },
+    {
+      name: "INDUSTRIES",
+      href: "/industries",
+    },
+    {
+      name: "SERVICES",
       href: "/services",
+    },
+   
+    {
+      name: "CAREER",
+      href: "/career",
     },
   ];
 
   const menuVariants = {
     open: {
       opacity: 1,
-      y: 0,
+      height: "auto",
       transition: {
         type: "spring",
         stiffness: 300,
         damping: 30,
+        staggerChildren: 0.07,
+        delayChildren: 0.2,
       },
     },
     closed: {
       opacity: 0,
-      y: -20,
+      height: 0,
       transition: {
         type: "spring",
         stiffness: 300,
         damping: 30,
+        staggerChildren: 0.05,
+        staggerDirection: -1,
       },
     },
   };
 
-  // Animation variants
+  const menuItemVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 20,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
+
   const headerVariants = {
-    hidden: { opacity: 0, y: -10 },
+    hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -108,7 +148,7 @@ export default function Header({
 
   const navItemVariants = {
     hidden: { opacity: 0, y: -5 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -132,7 +172,7 @@ export default function Header({
     },
   };
 
-  const buttonVariants = {
+  const contactBtnVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
@@ -143,255 +183,134 @@ export default function Header({
         delay: 0.6,
       },
     },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
-    <>
-      {topHeader && <HeaderTop />}
-      <motion.header
-        className={`w-full fixed ${topHeader ? "lg:top-12 top-10" : "top-0"} left-0 z-40 py-2 px-4
-          ${
-            theme === "dark"
-              ? "bg-secondary/95 after:content-[''] after:absolute after:bottom-0 after:left-[15%] after:right-[15%] after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-[#8E9AF9] after:to-transparent"
-              : "bg-white/95 after:content-[''] after:absolute after:bottom-0 after:left-[15%] after:right-[15%] after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-[#8E9AF9] after:to-transparent"
-          }`}
-        variants={headerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="flex items-center justify-between h-16 w-full max-w-7xl mx-auto lg:px-0">
-          <motion.div variants={logoVariants}>
-            <Link
-              href="/"
-              className="flex items-center gap-2 self-center font-medium"
-            >
-              <CompanyLogo theme={theme === "dark" ? "white" : "primary"} />
-            </Link>
-          </motion.div>
+    <motion.header
+      className={`w-full fixed z-0 ${topHeader ? "lg:top-0 top-0" : "top-0"} left-0 z-40 py-4 px-4
+        ${scrolled 
+          ? "bg-black/75 backdrop-blur-md" 
+          : "bg-transparent"
+        } transition-all duration-300`}
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="absolute h-64 bg-gradient-to-b from-black/100 to-transparent w-full top-0 -z-0 left-0" />
+      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0 z-10">
+        <motion.div variants={logoVariants}>
+          <Link
+            href="/"
+            className="flex items-center gap-2 self-center"
+          >
+            <CompanyLogo theme="white" />
+          </Link>
+        </motion.div>
 
-          {/* Mobile Menu Button */}
-          <motion.div variants={buttonVariants}>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6 text-white" />
-              )}
-            </Button>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="space-x-2 flex flex-row justify-end">
-              {navs.map((nav, idx) => (
-                <motion.div key={idx} custom={idx} variants={navItemVariants}>
-                  <Link
-                    href={nav.href}
-                    className={`inline-flex items-center px-1 pt-1 text-sm
-                    ${theme === "dark" ? "text-white" : ""}
-                  `}
-                  >
-                    {nav.name}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div custom={navs.length} variants={navItemVariants}>
+        <div className="hidden lg:flex items-center space-x-8">
+          <div className="space-x-8 flex flex-row justify-end">
+            {navs.map((nav, idx) => (
+              <motion.div key={idx} custom={idx} variants={navItemVariants}>
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_FRONTEND_URL}/resources/profile.pdf`}
-                  className={`inline-flex items-center px-1 pt-1 text-sm
-                    ${theme === "dark" ? "text-white" : ""}
-                  `}
+                  href={`/#${nav.name.toLowerCase()}`}
+                  className={`inline-flex items-center text-sm font-medium tracking-wider transition-all duration-300 relative
+                    ${nav.name === activeSection 
+                      ? "text-white/50" 
+                      : "text-white hover:text-white/80"}`}
                 >
-                  Company profile
+                  {nav.name}
+                  {nav.name === activeSection && (
+                    <motion.span
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                      layoutId="activeNavIndicator"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
                 </Link>
               </motion.div>
-            </div>
-            {!isAuthenticated && (
-              <motion.div className="flex gap-1" variants={buttonVariants}>
-                <Button
-                  variant="outline"
-                  onClick={() => router.push("/contact")}
-                >
-                  Contact us
-                </Button>
-              </motion.div>
-            )}
-            {isAuthenticated && (
-              <motion.div className="flex gap-1" variants={buttonVariants}>
-                {/* <Button
-                  variant='ghost'
-                  size='icon'
-                  className='relative bg-gray-50 h-9 w-9 flex items-center justify-center rounded-full'
-                >
-                  <Bell className='h-5 w-5' />
-                  <span className='absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full'></span>
-                </Button> */}
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <div className="flex items-center ml-4 cursor-pointer">
-                      <div
-                        className={`text-sm px-2 max-w-36 w-full truncate
-                        ${theme === "dark" ? "text-white" : "text-base"}
-                        `}
-                      >
-                        Hello, {user?.first_name}
-                      </div>
-                      <Avatar>
-                        <AvatarImage
-                          src="/avatars/admin.png"
-                          alt={`${user?.first_name ?? ""} ${user?.last_name ?? ""}`}
-                        />
-                        <AvatarFallback>
-                          {`${user?.first_name?.charAt(0) ?? ""}${user?.last_name?.charAt(0) ?? ""}`.toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                    </div>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56" align="end" forceMount>
-                    <DropdownMenuLabel
-                      className="font-normal cursor-pointer hover:bg-gray-50 rounded-sm"
-                      onClick={() => router.push("/account/profile")}
-                    >
-                      <div className="flex flex-col space-y-1 ">
-                        <p className="text-sm font-medium leading-none">
-                          {`${user?.first_name ?? ""} ${user?.last_name ?? ""}`}
-                        </p>
-                        <p className="text-xs leading-none text-gray-400">
-                          {user?.email}
-                        </p>
-                      </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem
-                      onClick={() => router.push("/account/quotations/create")}
-                    >
-                      <Icon name="plus" />
-                      <span>New insurance</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => router.push("/account")}>
-                      <Icon name="policies" />
-                      <span>My Policies</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => router.push("/account/vehicles")}
-                    >
-                      <Icon name="car" />
-                      <span>Vehicles</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={handleLogout}>
-                      <Icon name="logout" />
-                      <span>Log out</span>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </motion.div>
-            )}
+            ))}
           </div>
-
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial="closed"
-                animate="open"
-                exit="closed"
-                variants={menuVariants}
-                className={`absolute top-16 left-0 w-full p-4 shadow-lg
-                ${theme === "dark" ? "bg-secondary" : "bg-white"}
-                lg:hidden
-              `}
-              >
-                <div className="flex flex-col space-y-4">
-                  {navs.map((nav, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 * idx, duration: 0.3 }}
-                    >
-                      <Link
-                        href={nav.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`text-sm font-medium
-                        ${theme === "dark" ? "text-white" : "text-gray-900"}
-                      `}
-                      >
-                        {nav.name}
-                      </Link>
-                    </motion.div>
-                  ))}
-                  {!isAuthenticated ? (
-                    <motion.div
-                      className="flex flex-col gap-2 pt-4"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.3 }}
-                    >
-                      <Button
-                        variant="outline"
-                        onClick={() => router.push("/contact")}
-                      >
-                        Contact us
-                      </Button>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      className="flex flex-col items-start justify-center gap-2 pt-4 bg-gray-50"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.3 }}
-                    >
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>My policies</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>Vehicles</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Settings className="h-4 w-4" />
-                        <span>Notifications</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setIsOpen(false);
-                          handleLogout();
-                        }}
-                      >
-                        <LogOut className="h-4 w-4" />
-                        <span>Log out</span>
-                      </Button>
-                    </motion.div>
-                  )}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div 
+            className="hidden lg:block"
+          >
+            <Link 
+              href="/contact"
+              className="relative z-30 inline-flex items-center px-6 py-2 text-sm font-medium bg-primary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
+            >
+              CONTACT US
+              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
-      </motion.header>
-    </>
+
+        <Button
+          variant="ghost"
+          size="icon"
+          className="lg:hidden text-white w-auto z-20"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? (
+            <X className="h-10 w-10" />
+          ) : (
+            <Menu className="h-10 w-10" />
+          )}
+        </Button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="absolute top-16 left-0 w-full overflow-hidden bg-black/90 backdrop-blur-md lg:hidden"
+            >
+              <div className="flex flex-col space-y-4 p-6">
+                {navs.map((nav, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={menuItemVariants}
+                  >
+                    <Link
+                      href={`/#${nav.name.toLowerCase()}`}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-base font-medium block py-2 transition-colors duration-200
+                        ${nav.name === activeSection 
+                          ? "text-secondary" 
+                          : "text-white hover:text-secondary/80"}`}
+                    >
+                      {nav.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div variants={menuItemVariants}>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center px-6 py-2 text-sm font-medium bg-white text-gray-900 hover:bg-gray-100 transition-colors duration-200 mt-4"
+                  >
+                    CONTACT US
+                    <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.header>
   );
 }

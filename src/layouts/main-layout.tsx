@@ -4,8 +4,8 @@ import { Header, Footer } from "@/components/organisms";
 export default function MainLayout({ children }: ChildrenProps) {
   return (
     <div>
-      <Header theme="white" topHeader/>
-      <main className="flex items-center justify-center w-full">
+      <Header  topHeader/>
+      <main className="flex items-center justify-center w-full bg-black">
         {children}
       </main>
       <Footer />

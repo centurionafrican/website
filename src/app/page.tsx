@@ -3,8 +3,8 @@ import { MainLayout } from "@/layouts/";
 import LandingScreen from "@/screens/landing";
 
 export const metadata: Metadata = {
-  title: "Welcome to Alliance Insurance Brokers | We ensure you are insured!",
-  description: "Your dedicated insurance partner, today & tomorrow.",
+  title: "Trusted by business | powered by expertise",
+  description: "Partner with a security provider that understands the demands of corporate environments and compliance.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.png",

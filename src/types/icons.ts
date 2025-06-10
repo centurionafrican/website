@@ -57,7 +57,10 @@ interface IconInterface {
     | "arrow-right"
     | "edit"
     | "favorite"
-    | "check-white";
+    | "check-white"
+    | "certified"
+    | "wheel"
+    | "arrow-up-right";
 }
 
 export default IconInterface;

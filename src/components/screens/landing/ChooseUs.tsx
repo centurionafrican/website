@@ -1,15 +1,58 @@
 "use client";
 
-import { Button } from "@/components/atoms";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const ChooseUs = () => {
+interface FeatureCardProps {
+  title: string;
+  description: string;
+}
+
+const FeatureCard = ({ title, description }: FeatureCardProps) => (
+  <motion.div 
+    className="bg-[#13191D] hover:bg-primary lg:p-12 p-6 h-full"
+    whileHover={{ y: -5, transition: { duration: 0.3 } }}
+  >
+    <h2 className="text-white text-2xl font-normal mb-2">{title}</h2>
+    <p className="text-white text-sm">{description}</p>
+  </motion.div>
+);
+
+interface ImageCardProps {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const ImageCard = ({ src, alt, className = "" }: ImageCardProps) => (
+  <motion.div 
+    className={`relative overflow-hidden ${className}`}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3, ease: "easeInOut" }}
+  >
+    <Image 
+      src={src} 
+      alt={alt} 
+      fill 
+      className="object-cover"
+    />
+  </motion.div>
+);
+
+const AboutSection = () => {
   const features = [
-    { text: "Security and Privacy" },
-    { text: "Expert Support" },
-    { text: "Scalability and Flexibility" },
-    { text: "Cost-Effective Solutions" }
+    {
+      title: "Our Mission",
+      description: "To raise the standard of the security industry in Rwanda and keep up to date with the latest technology."
+    },
+    {
+      title: "Our Vision",
+      description: "Be Africa's and the Middle East's leading high-end security solution."
+    },
+    {
+      title: "Our Values",
+      description: "Our guards are trained in accordance with human rights standards, and are compensated fairly."
+    }
   ];
 
   const containerVariants = {
@@ -18,147 +61,100 @@ const ChooseUs = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.5
+        delayChildren: 0.3
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const imageContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
       transition: {
-        duration: 0.5
+        staggerChildren: 0.2
       }
     }
   };
 
   return (
-    <section
-      className='relative w-full overflow-hidden bg-secondary min-h-screen flex items-center py-16 lg:py-0'
-      id='about'
+    <section 
+      id="about" 
+      className="relative w-full bg-[#F6F8FF] py-20 md:py-32 px-4 sm:px-0"
     >
-      <Image
-        src='/landing/about_section_pg.svg'
-        alt='background pattern'
-        fill
-        className='object-cover object-center '
-        priority
-      />
-
-
-      <div className='max-w-7xl mx-auto px-4 lg:px-0 w-full relative z-10'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center'>
-          <motion.div
-            variants={containerVariants}
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, margin: "-100px" }}
-            className='space-y-8'
-          >
-            <motion.div variants={itemVariants} className='space-y-4'>
-              <h2 className='text-white/70 text-4xl lg:text-5xl xl:text-6xl font-normal tracking-tight funnel-sans-hero leading-[1.2]'>
-                Why choose <br />
-                <span className='text-white'>Alliance Insurance</span> <br />
-                <span className='text-white'>Brokers?</span>
+      <div className="max-w-6xl mx-auto px-0 sm:px-4 md:px-8">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+        >
+          <motion.div className="space-y-8" variants={itemVariants}>
+            <motion.div variants={itemVariants}>
+              <h2 className="text-secondary md:text-7xl text-6xl font-normal mb-4">
+                About <br />
+                <span className="text-primary font-bold">Centurion</span>
               </h2>
-              <p className='text-white/70  leading-relaxed max-w-xl'>
-                At Alliance Insurance Brokers, we are dedicated to providing
-                personalized, reliable, and efficient insurance solutions to
-                meet your unique needs. With years of experience and a
-                commitment to excellence, we've built a reputation for trust and
-                reliability.
+              <p className="text-secondary/70 leading-relaxed max-w-xl">
+                Centurion provides bespoke security solutions from highly trained security guards to modern state-of-the-art technology and the latest surveillance equipment to give you a flexible and adjustable approach to securing your business.
               </p>
             </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className='grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8'
-            >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className='flex items-center gap-3'
-                  variants={itemVariants}
-                >
-                  <div className='flex items-center justify-center '>
-                    <Image
-                      src='/landing/check.svg'
-                      alt='check icon'
-                      width={16}
-                      height={16}
-                      className='object-contain w-6 h-auto'
-                    />
-                  </div>
-                  <span className='text-white '>{feature.text}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* <motion.div
-              variants={itemVariants}
-              className='flex flex-col sm:flex-row gap-4'
-            >
-              <Button
-                variant='outline'
-                size='lg'
-                className='text-primary hover:bg-white/10 hover:text-white w-full sm:w-auto'
-              >
-                Get a quote
-              </Button>
-            </motion.div> */}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className='relative aspect-square lg:aspect-auto lg:h-[600px] w-full'
+          <motion.div 
+            className="grid grid-cols-2 gap-4 h-[400px]"
+            variants={imageContainerVariants}
           >
-            <motion.div
-              className='absolute inset-0 z-50'
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [0.1, 0.15, 0.1],
-                rotate: 360
-              }}
-              transition={{
-                opacity: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                rotate: {
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear"
-                }
-              }}
-            >
-              <Image
-                src='/landing/twoarrows.svg'
-                alt='Rotating arrows'
-                fill
-                className='object-contain'
+            <motion.div className="col-span-2 md:col-span-1 space-y-4">
+              <ImageCard 
+                src="/about/man.svg" 
+                alt="Security guard with radio" 
+                className="h-full  object-contain"
               />
             </motion.div>
-
-            <div className='relative z-10 w-full h-full'>
-              <Image
-                src='/landing/save-house.svg'
-                alt='happy couple with keys'
-                fill
-                className='object-contain'
-                priority
+            <motion.div className="col-span-2 md:col-span-1 space-y-4">
+              <ImageCard 
+                src="/about/street.svg" 
+                alt="City street view" 
+                className="h-[48%] mb-4"
               />
-            </div>
+              <ImageCard 
+                src="/about/girls.svg" 
+                alt="Security training" 
+                className="h-[48%]"
+              />
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          {features.map((feature, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <FeatureCard 
+                title={feature.title} 
+                description={feature.description} 
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default ChooseUs;
+export default AboutSection;

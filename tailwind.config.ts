@@ -13,8 +13,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#1986C3",
-        secondary: "#272D63",
+        primary: "#EE5B2C",
+        secondary: "#212F38",
         tertiary: "#3541AB",
         accent: "#7BDDE2",
         white: "#FFFFFF",
@@ -22,7 +22,7 @@ const config: Config = {
         muted: "#737373",
         subtle: "#626F81",
         gray: {
-          50: "#F6F6F6",
+          50: "#F6F8FF",
           100: "#E7E7E7",
           200: "#D1D1D1",
           300: "#B0B0B0",
@@ -97,9 +97,9 @@ const config: Config = {
         scroll2: "scroll2 15s linear infinite",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-givonic)", ...defaultTheme.fontFamily.sans],
         mono: [...defaultTheme.fontFamily.mono],
-        inter: ["var(--font-inter)"],
+        givonic: ["var(--font-givonic)"],
       },
       fontSize: {
         xs: [

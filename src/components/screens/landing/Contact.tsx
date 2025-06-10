@@ -9,9 +9,10 @@ const Contact = () => {
   const router = useRouter();
   return (
     <div
-      className='py-24   w-full relative landing_font overflow-hidden bg-secondary'
+      className='py-24   w-full relative landing_font overflow-hidden bg-primary'
       id='contact'
     >
+      dkdkd
       <Image
         src='/landing/left_contact.svg'
         alt='left arrow'

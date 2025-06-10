@@ -1,24 +1,24 @@
 import Hero from "@/components/screens/landing/Hero";
 import Services from "@/components/screens/landing/Services";
-import Products from "@/components/screens/landing/Products";
-import Contact from "@/components/screens/landing/Contact";
-import ChooseUs from "@/components/screens/landing/ChooseUs";
-import Faq from "@/components/screens/landing/Faq";
-import Image from "next/image";
-import TrustedBy from "@/components/screens/landing/Trusted";
-import HeroAbout from "@/components/screens/about/Hero";
-import AboutAib from "@/components/screens/about/Services";
-import ClientSection from "@/components/screens/about/ClientSection";
-import OurPartners from "@/components/screens/about/OurPartners";
+import AboutSection from "@/components/screens/landing/ChooseUs";
+import WhyUs from "@/components/screens/landing/WhyUs";
+import WorkWithUs from "@/components/screens/landing/WorkWithUs";
+import Partners from "@/components/screens/landing/Partners";
 
-export default function AboutScreen() {
+export default function LandingScreen() {
   return (
-    <div className='flex flex-1 min-h-screen flex-col items-center justify-center landing_font '>
-      <HeroAbout />
-      <AboutAib />
-      <ClientSection />
-      <OurPartners />
-      <Contact />
+    <div className='flex flex-1 flex-col items-center justify-center landing_font '>
+      <Hero
+        path={'/guards_lining.jpg'}
+        title="Trusted by Businesses."
+        spanTitle="Powered by Expertise. "
+        description="Partner with a security provider that understands the demands of 
+            corporate environments and compliance."/>
+      <AboutSection />
+      <Services />
+      {/* <WhyUs /> */}
+      <Partners />
+      <WorkWithUs />
     </div>
   );
 }

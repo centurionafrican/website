@@ -8,12 +8,38 @@ const Partners = () => {
   const logosContainerRef = useRef<HTMLDivElement>(null);
 
   const logos = [
+    // Alliance group companies
+    "/images/kabc.svg",
+    "/images/aib_logo.svg",
+    
+    // Shelter Group companies
     "/images/irembo.png",
-    "/images/bk.png",
+    "/images/movinpeck.png",
+    "/images/green-complexe.jpg",
+    // "/images/king-faysal.png",
+    
+    // Mota-Engil group companies
+    "/images/mota-engil.png",
+    "/images/bion-tech.png",
+    "/images/green-hills.png",
+    "/images/la-palisee.png",
+    "/images/airport.png",
+    
+    // Companies without subsidiaries
+    "/images/remco.png",
     "/images/rwandair.png",
+    "/images/agri-bloom.jpg",
+    "/images/kigali-golf.png",
+    "/images/global-security.jpeg",
+    // "/images/centurion-catsystems.png",
+    
+    // Duplicate some for smooth animation
+    "/images/kabc.svg",
+    "/images/aib_logo.svg",
     "/images/irembo.png",
-    "/images/rwandair.png",
-    "/images/bk.png",
+    "/images/movinpeck.png",
+    "/images/green-complexe.jpg",
+    "/images/remco.png",
   ];
 
   const containerVariants = {
@@ -68,7 +94,7 @@ const Partners = () => {
           variants={itemVariants}
         >
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-            {logos.slice(0, 6).map((src, index) => (
+            {logos.slice(0, 12).map((src, index) => (
               <div 
                 key={index} 
                 className="relative w-full h-16 sm:h-20 flex items-center justify-center"
@@ -92,12 +118,12 @@ const Partners = () => {
         >
           <motion.div
             className="flex items-center gap-10 xl:gap-12"
-            animate={{ x: [0, -1500] }}
+            animate={{ x: [0, -2000] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 40,
                 ease: "linear",
               },
             }}

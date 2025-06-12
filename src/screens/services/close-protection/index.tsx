@@ -72,13 +72,19 @@ const CloseProtection = () => {
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-At Centurion Africa, we understand the importance of personalized and comprehensive security solutions. That is why we offer Close Protection Officer (CPO) services tailored to meet our client’s unique needs.
-<br />
-<br />
-Centurion Africa provides flexible and adaptable solutions. Whether you need a single CPO, a driver, or a combination of both, our services are designed to seamlessly integrate into your travel plans. Our team can be deployed ahead of time to assess and secure the area, ensuring your safety and peace of mind from the moment you arrive. 
+              At Centurion Africa, we understand the importance of personalized
+              and comprehensive security solutions. That is why we offer Close
+              Protection Officer (CPO) services tailored to meet our client’s
+              unique needs.
+              <br />
+              <br />
+              Centurion Africa provides flexible and adaptable solutions.
+              Whether you need a single CPO, a driver, or a combination of both,
+              our services are designed to seamlessly integrate into your travel
+              plans. Our team can be deployed ahead of time to assess and secure
+              the area, ensuring your safety and peace of mind from the moment
+              you arrive.
             </motion.p>
-
-           
           </motion.div>
         </div>
       </motion.div>

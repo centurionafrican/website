@@ -3,7 +3,7 @@
 const WhyUs = () => {
   return (
     <>
-      <div className="w-full h-fit mx-auto px-4 lg:px-0" id="industries">
+      <div className="w-full h-fit mx-auto px-4 lg:px-0" id="why-choose">
         <div
           className="relative bg-cover bg-center "
           style={{ backgroundImage: "url('/images/kl_18.jpg')" }}
@@ -15,13 +15,13 @@ const WhyUs = () => {
                 <span className="text-primary font-bold">Centurion </span>
               </h2>
               <p className="text-white/60 leading-relaxed max-w-xl">
-                Centurion Security Group combines elite training, local empowerment, and
-                cutting-edge expertise to deliver unmatched security solutions
-                across Africa.
+                Centurion Security Group combines elite training, local
+                empowerment, and cutting-edge expertise to deliver unmatched
+                security solutions across Africa.
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 hover:bg-primary border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                     Expertly trained personnel
                   </h3>
@@ -31,7 +31,7 @@ const WhyUs = () => {
                   </p>
                 </div>
 
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 hover:bg-primary border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                     Local Empowerment
                   </h3>
@@ -41,7 +41,7 @@ const WhyUs = () => {
                   </p>
                 </div>
 
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 hover:bg-primary border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                     Proven Industry Expertise
                   </h3>
@@ -51,7 +51,7 @@ const WhyUs = () => {
                   </p>
                 </div>
 
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 hover:bg-primary border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                     Advanced Technologies
                   </h3>
@@ -61,19 +61,9 @@ const WhyUs = () => {
                   </p>
                 </div>
 
-              {/* <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 hover:bg-primary border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
-                    Large-Scale Project Execution
-                  </h3>
-                  <p className="text-white/50">
-                    Successfully managing over 800 cameras across 200+ CCTV
-                    sites, we deliver reliable, scalable solutions.
-                  </p>
-                </div> */}
-
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
-                  <h3 className="text-xl font-semibold mb-2">
-                  Close Protection Officers
+                    Close Protection Officers
                   </h3>
                   <p className="text-white/50">
                     Whether VIP protection or secured premises, our services are

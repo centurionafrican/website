@@ -62,7 +62,7 @@ const HistorySection = () => {
 
   return (
     <section
-      className="relative w-full py-20 md:py-32 px-4 sm:px-0"
+      className="relative w-full py-16 md:py-16 px-4 sm:px-0"
       style={{ background: "linear-gradient(to bottom, #13191D, #212F38)" }}
       id ='timeline'
     >
@@ -72,18 +72,18 @@ const HistorySection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="mb-6  max-w-5xl mx-auto"
+          className="mb-6 max-w-5xl mx-auto text-center flex flex-col items-center"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-primary md:text-7xl text-5xl font-bold text-left"
+            className="text-primary md:text-6xl text-3xl font-bold text-center"
           >
             A brief timeline
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-white/60 text-lg mt-6 text-left max-w-3xl"
+            className="text-white/60 text-lg mt-2 text-center max-w-3xl"
           >
             From our first deployment to now: the milestones that matter in our commitment to setting the standard in private security.
           </motion.p>
@@ -94,12 +94,10 @@ const HistorySection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="relative mt-24"
+          className="relative mt-6"
         >
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-500 transform -translate-x-1/2 hidden md:block"></div>
-
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-500 md:hidden"></div>
-
           <div className="space-y-10 md:space-y-4 relative">
             {events.map((event, index) => (
               <motion.div
@@ -108,7 +106,7 @@ const HistorySection = () => {
                 className="relative"
               >
                 <div className="md:hidden flex">
-                  <div className="absolute left-8 top-6 -ml-[14px] h-[28px] w-[28px] rounded-full bg-[#FFD8CC] border-4 border-[#212F38] flex items-center justify-center">
+                  <div className="absolute left-8 top-4 -ml-[14px] h-[28px] w-[28px] rounded-full bg-[#FFD8CC] border-4 border-[#212F38] flex items-center justify-center">
                     <div className="h-[14px] w-[14px] rounded-full bg-primary"></div>
                   </div>
                   <div className="ml-20">
@@ -131,9 +129,9 @@ const HistorySection = () => {
                   <div className="grid grid-cols-2 gap-0 items-center">
                     {event.position === "left" ? (
                       <>
-                        <div className="justify-self-end pr-8 relative">
-                          <div className="bg-white py-4 px-6 max-w-md">
-                            <p className="text-secondary">
+                        <div className="justify-self-end pr-8  relative">
+                          <div className="bg-white py-2 px-4 max-w-md">
+                            <p className="text-secondary text-sm">
                               {event.description}
                             </p>
                           </div>
@@ -157,8 +155,8 @@ const HistorySection = () => {
                         </div>
 
                         <div className="justify-self-start pl-8 relative">
-                          <div className="bg-white py-4 px-6 max-w-md">
-                            <p className="text-secondary">
+                          <div className="bg-white py-2 px-4 max-w-md">
+                            <p className="text-secondary text-sm">
                               {event.description}
                             </p>
                           </div>

@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 const IndustriesHero: React.FC = () => {
   return (
-    <div className="mx-auto max-w-5xl w-full py-12">
+    <div className="mx-auto max-w-6xl w-full pt-6 pb-2">
       <motion.div
         className="text-white"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div>
+        <div className="mt-16">
           <motion.p
             className="text-sm md:text-base uppercase tracking-wider"
             initial={{ opacity: 0 }}

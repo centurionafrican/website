@@ -13,30 +13,29 @@ const HistorySection = () => {
     {
       year: "2024",
       description:
-        "Started process to incorporate Centurion Guinea and Centurion Qatar",
-      position: "left",
-    },
-    {
-      year: "2024",
-      description:
-        "Incorporation of Centurion Security Group to manage the sister and affiliate companies",
+        "Started the process to incorporate Centurion Guinea and Centurion Qatar",
       position: "right",
     },
     {
-      year: "2022",
-      description: "Incorporation of Centurion Security Mozambique Limitada",
+      year: "2024",
+      description: "Incorporation of Centurion Security Group to manage the sister and affiliate companies",
       position: "left",
     },
     {
       year: "2022",
       description:
-        "Incorporation of Centurion CatSystems in Rwanda as a sister company",
+        "Incorporation of Centurion Security Mozambique Limitada",
       position: "right",
     },
     {
       year: "2020",
-      description: "Incorporation of Centurion Security Group in Rwanda",
+      description: "Incorporation of Centurion Africa in Rwanda",
       position: "left",
+    },
+    {
+      year: "2019",
+      description: "Centurion is founded as a specialized private security company, providing high end security services in Rwanda, Africa and the Middle East",
+      position: "right",
     },
   ];
 

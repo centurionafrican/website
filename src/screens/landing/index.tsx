@@ -8,6 +8,8 @@ import HistorySection from "@/components/screens/landing/History";
 import SecuritySection from "@/components/screens/landing/Security";
 import Industries from "@/components/screens/landing/Industries";
 import WhyChooseSection from "@/components/screens/landing/industries/WhyYouChoose";
+import CloseProtectionOfficerSection from "@/components/screens/landing/CloseProtectionOfficer";
+import CenturionAfricaSection from "@/components/screens/landing/CenturionAfrica";
 
 export default function LandingScreen() {
   return (
@@ -20,10 +22,12 @@ export default function LandingScreen() {
             corporate environments and compliance."/>
       <AboutSection />
       <HistorySection />
+      <CenturionAfricaSection />
        <SecuritySection /> 
        <Industries /> 
-      <Services />
-      <WhyUs />
+       <Services />
+       <CloseProtectionOfficerSection />
+       <WhyUs />
        <Partners /> 
       <WorkWithUs />
     </div>

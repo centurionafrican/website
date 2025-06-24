@@ -55,28 +55,21 @@ const ServicesSection = () => {
       path: "/services/physical-security",
       icon: "certified",
       description:
-        "Centurion Security Group provides global security with highly trained, employed guards for any scenario, leveraging Rwandan government support, and former Defense Force soldiers.",
+        "Centurion Africa provides highly trained and professional security guards. Our locally employed guards are trained to adapt to any changing environment whilst maintaining the integrity of the protected people and/or object and are licensed to carry firearms.",
     },
     {
-      title: "Close Protection",
-      path: "/services/close-protection",
-      icon: "certified",
-      description:
-        "Centurion Security Group provides global security with highly trained, employed guards for any scenario, leveraging Rwandan government support, and former Defense Force soldiers.",
-    },
-    {
-      title: "Audits and Assessments",
+      title: "Close Protection Officers",
       path: "/services/audits-and-assessments",
       icon: "wheel",
       description:
-        "We conduct security risk audits to assess and recommend controls, plug vulnerabilities, and inform resource allocation and tooling decisions from an attacker's perspective.",
+        "At Centurion Africa, we understand the importance of personalized and comprehensive security solutions. That is why we offer Close Protection Officer (CPO) services tailored to meet our client’s unique needs.",
     },
     {
       title: "Technological Services",
       path: "/services/technological-services",
       icon: "wheel",
       description:
-        "We conduct security risk audits to assess and recommend controls, plug vulnerabilities, and inform resource allocation and tooling decisions from an attacker's perspective.",
+        "We work with trusted technology partners to deliver modern, effective security infrastructure tailored to your needs. Our role is to ensure every solution is seamlessly integrated into your security strategy, with trained personnel ready to operate and respond.",
     },
   ];
 
@@ -120,12 +113,7 @@ const ServicesSection = () => {
                 <span className="text-primary font-bold">Services</span>
               </h2>
               <p className="text-secondary/70 leading-relaxed max-w-3xl">
-                Centurion Security Group delivers comprehensive security solutions,
-                offering meticulous security assessments, advanced electronics
-                and surveillance services, and highly trained security guards.
-                From cutting-edge technology to expertly trained personnel, our
-                integrated approach ensures our clients' unmatched safety and
-                peace of mind.
+              Centurion Security Group offers a full spectrum of security services, including security assessments, surveillance systems, and expertly trained guards. Our integrated solutions are designed to adapt to each client’s needs.
               </p>
             </motion.div>
           </motion.div>

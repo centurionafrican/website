@@ -31,7 +31,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   return (
     <motion.button
       onClick={onClick}
-      className={`w-full text-left py-2 px-4 transition-all duration-300 border border-white/10 cursor-pointer backdrop-blur-md ${
+      className={`w-full text-left py-1.5 px-4 transition-all duration-300 border border-white/10 cursor-pointer backdrop-blur-md ${
         active 
           ? "bg-primary text-white"
           : "bg-black/20 text-gray-300 hover:bg-dark-800"
@@ -89,13 +89,13 @@ const IndustriesSidebar: React.FC<IndustrySidebarProps> = ({
 
   return (
     <motion.div
-      className={`bg-dark-900 overflow-hidden sticky top-32 ${className}`}
+      className={`bg-dark-900 overflow-hidden sticky top-4 ${className}`}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
       <nav>
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-1">
           {industries.map((industry) => (
             <li key={industry.id}>
               <SidebarItem

@@ -5,7 +5,7 @@ import { toast, Toaster } from "sonner";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { MainLayout } from "@/layouts";
-import Hero from "@/components/screens/landing/Hero";
+import {  Instagram, Linkedin } from "lucide-react";
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -47,20 +47,17 @@ const ContactForm = () => {
     const loadingToast = toast.loading("Sending message...");
 
     try {
-      // Format date for email template
-      const currentDate = new Date().toLocaleString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+      const currentDate = new Date().toLocaleString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
       });
 
-      // Instead of passing our own HTML template, we'll use EmailJS's template system
-      // and just pass the variables it needs to replace
       const templateParams = {
         from_name: data.firstName + " " + data.lastName,
-        to_name: "REIP Global",
+        to_name: "Centurion Security Group",
         message: data.message,
         reply_to: data.email,
         subject: data.subject,
@@ -99,6 +96,17 @@ const ContactForm = () => {
     },
   };
 
+  const socialMedia = [
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/centuriongrouprw?igsh=MWxhcnE0NHg0NGhvdw==",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/centurion-group-lmtd/",
+    },
+  ];
+
   return (
     <MainLayout>
       <section className="flex flex-col w-full">
@@ -126,7 +134,7 @@ const ContactForm = () => {
               <motion.h1 className="text-white  mb-3 flex flex-col gap-2">
                 <motion.span
                   custom={0}
-                  className="block text-5xl md:text-6xl lg:text-7xl font-normal leading-light"
+                  className="block text-5xl md:text-6xl lg:text-6xl font-normal leading-light"
                 >
                   Contact us
                 </motion.span>
@@ -156,41 +164,45 @@ const ContactForm = () => {
                     </p>
                   </div>
                   <div className="flex flex-col gap-2">
-                  {contactInfo.map((info, index) => (
-                    <motion.div
-                      key={info.content}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="flex space-x-2"
-                    >
-                      <div className="h-8 w-8 bg-primary/20 flex items-center justify-center">
-                        <Image
-                          src={info.icon}
-                          alt={info.content}
-                          width={18}
-                          height={18}
-                          className="text-white h-4 w-4"
-                        />
-                      </div>
-                      <div
-                        className={` ${index == 2 ? "text-primary underline" : "text-[#171717]"} `}
+                    {contactInfo.map((info, index) => (
+                      <motion.div
+                        key={info.content}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="flex space-x-2"
                       >
-                        {info.content}
-                      </div>
-                    </motion.div>
-                  ))}
+                        <div className="h-8 w-8 bg-primary/20 flex items-center justify-center">
+                          <Image
+                            src={info.icon}
+                            alt={info.content}
+                            width={18}
+                            height={18}
+                            className="text-white h-4 w-4"
+                          />
+                        </div>
+                        <div
+                          className={` ${index == 2 ? "text-primary underline" : "text-[#171717]"} `}
+                        >
+                          {info.content}
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
                   <div className="flex flex-col gap-3 mt-5">
                     <p className="">Follow us on social Media</p>
-                    <div className="w-10 h-10 rounded-full grid place-content-center bg-gray-100">
-                      <Image
-                        src="/contact/linkedin.svg"
-                        alt="linkedin icon"
-                        width={14}
-                        height={14}
-                        className="text-white"
-                      />
+                    <div className="flex gap-4 mt-6">
+                      {socialMedia.map((Item, index) => (
+                        <motion.a
+                          key={index}
+                          href={Item.href}
+                          className="bg-primary p-2 text-white hover:bg-gray-700 transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Item.icon size={20} />
+                        </motion.a>
+                      ))}
                     </div>
                   </div>
                 </div>

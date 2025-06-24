@@ -46,7 +46,7 @@ const CenturionAfricaSection = () => {
   return (
     <section
       id="centurion-africa"
-      className="relative w-full  bg-gradient-to-br from-[#F6F8FF] via-[#F8FAFF] to-[#F4F6FF] py-20 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full  bg-gradient-to-br from-[#F6F8FF] via-[#F8FAFF] to-[#F4F6FF] py-10 md:py-12 lg:py-20 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-0 w-80 h-80 bg-gradient-to-br from-primary/80 to-transparent rounded-full blur-3xl"></div>
@@ -68,9 +68,9 @@ const CenturionAfricaSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <motion.div variants={headerVariants} className="mb-16 md:mb-20 lg:mb-24">
+          <motion.div variants={headerVariants} className="mb-6 md:mb-8 lg:mb-10">
             <div className="relative">
-              <h1 className="text-secondary text-4xl sm:text-5xl md:text-left text-center md:text-6xl lg:text-7xl font-normal mb-8 leading-tight tracking-tight">
+              <h1 className="text-secondary text-4xl sm:text-5xl md:text-left text-center md:text-6xl font-normal mb-8 leading-tight tracking-tight">
                 Centurion{" "}
                 <span className="text-primary font-bold relative inline-block">
                   Africa
@@ -81,7 +81,7 @@ const CenturionAfricaSection = () => {
             </div>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto space-y-12 md:space-y-16 lg:space-y-20">
+          <div className="max-w-6xl mx-auto space-y-6 md:space-y-12">
             <motion.div 
               variants={paragraphVariants} 
               className="relative"
@@ -105,13 +105,6 @@ const CenturionAfricaSection = () => {
               </p>
             </motion.div>
           </div>
-
-          <motion.div 
-            variants={paragraphVariants}
-            className="mt-16 md:mt-20 lg:mt-24 flex justify-center"
-          >
-            <div className="w-32 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

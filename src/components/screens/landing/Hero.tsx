@@ -71,14 +71,14 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
             <motion.span
               custom={0}
               variants={textHighlightVariants}
-              className="block text-5xl md:text-6xl lg:text-7xl font-normal leading-light"
+              className="block text-5xl md:text-6xl lg:text-6xl font-normal leading-light"
             >
               {title}
             </motion.span>
             <motion.span
               custom={0.3}
               variants={textHighlightVariants}
-              className="block text-primary text-5xl md:text-6xl lg:text-7xl font-bold leading-light"
+              className="block text-primary text-5xl md:text-6xl lg:text-6xl font-bold leading-light"
             >
               {spanTitle}
 

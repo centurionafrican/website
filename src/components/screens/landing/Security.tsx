@@ -104,7 +104,7 @@ const SecuritySection = () => {
         <div className="absolute inset-0 bg-secondary/10 z-10"></div>
       </div>
 
-      <div className="relative z-20 max-w-5xl mx-auto">
+      <div className="relative z-20 max-w-5xl mx-auto mt-12">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -119,7 +119,7 @@ const SecuritySection = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-white md:text-7xl text-5xl font-bold mt-2"
+            className="text-white md:text-6xl text-5xl font-bold"
           >
             Security to everyone, <br />
             anywhere.

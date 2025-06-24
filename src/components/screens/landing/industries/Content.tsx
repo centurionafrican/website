@@ -85,7 +85,7 @@ const IndustriesContent: React.FC = () => {
   }, [activeIndustry, isScrolling, setIsScrolling]);
 
   return (
-    <div ref={contentRef} className="space-y-32">
+    <div ref={contentRef} className="space-y-6">
       {industries.map((industry) => {
         const data = industryData && industryData[industry]
           ? industryData[industry]
@@ -100,13 +100,13 @@ const IndustriesContent: React.FC = () => {
             data-industry={industry}
             className="scroll-section-header"
           >
-            <h2 className="text-4xl lg:text-5xl font-light mb-16 text-white">
+            <h2 className="text-3xl lg:text-4xl font-light mb-3 text-white">
               {data.title}
             </h2>
 
             <div className="text-white">
               <motion.div 
-                className="text-white mb-16 space-y-2"
+                className="text-white mb-2 space-y-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -119,7 +119,7 @@ const IndustriesContent: React.FC = () => {
               </motion.div>
               
               <motion.div 
-                className="space-y-8"
+                className="space-y-1 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}

@@ -98,17 +98,6 @@ Each assessment results in clear, actionable insights tailored to your context, 
             >
 We don’t wait for problems to arise. Our approach is rooted in proactive risk management, helping you anticipate and prevent security disruptions before they occur. This foresight allows you to operate with confidence and clarity.                </motion.p>                </motion.p>
               </motion.div>
-
-              {/* <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Close Protection Officer               </h3>
-                <p className="text-base text-gray-600">
-                  Centurion CatSystems is the technological arm of the Centurion
-                  Group. We supply all sorts of security technology, ranging
-                  from surveillance systems to analytics tools to screening
-                  devices.
-                </p>
-              </motion.div> */}
             </motion.div>
           </motion.div>
         </div>

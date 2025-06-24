@@ -72,47 +72,48 @@ const PhysicalSecurity = () => {
               className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              We provide guards for virtually any kind of Physical Object, Building or Space that needs to be protected. Depending on the nature of the mission, we provide uniformed Armed or Unarmed Guards.
+              We provide guards for virtually any kind of Physical Object,
+              Building or Space that needs to be protected. Depending on the
+              nature of the mission, we provide uniformed Armed or Unarmed
+              Guards.
             </motion.p>
 
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Patrol                </h3>
-               
+                  Patrol{" "}
+                </h3>
+
                 <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
-              variants={textVariants}
-            >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
+                  className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                  variants={textVariants}
+                >
+                  Live guard patrols are one of the most effecting ways of
+                  securing large areas and perimeters in high and less dense
+                  areas. Our guards are trained to spot any abnormalities and
+                  respond accordingly.
                 </motion.p>
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Pedestrian & Vehicle Checks                </h3>
+                  Pedestrian & Vehicle Checks{" "}
+                </h3>
                 <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
-              variants={textVariants}
-            >
-  <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
-              variants={textVariants}
-            >
-                Live guard patrols are one of the most effecting ways of securing large areas and perimeters in high and less dense areas. Our guards are trained to spot any abnormalities and respond accordingly.
-                </motion.p>                </motion.p>
+                  className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                  variants={textVariants}
+                >
+                  <motion.p
+                    className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                    variants={textVariants}
+                  >
+                    Live guard patrols are one of the most effecting ways of
+                    securing large areas and perimeters in high and less dense
+                    areas. Our guards are trained to spot any abnormalities and
+                    respond accordingly.
+                  </motion.p>{" "}
+                </motion.p>
               </motion.div>
-
-              {/* <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
-                Close Protection Officer               </h3>
-                <p className="text-base text-gray-600">
-                  Centurion CatSystems is the technological arm of the Centurion
-                  Group. We supply all sorts of security technology, ranging
-                  from surveillance systems to analytics tools to screening
-                  devices.
-                </p>
-              </motion.div> */}
             </motion.div>
           </motion.div>
         </div>

@@ -51,7 +51,7 @@ const CloseProtectionOfficerSection = () => {
           variants={containerVariants}
         >
           <motion.div variants={headerVariants} className="mb-16 md:mb-20">
-            <h2 className="text-secondary text-center md:text-left text-5xl md:text-7xl font-normal mb-8 leading-tight">
+            <h2 className="text-secondary text-center md:text-left text-5xl md:text-6xl font-normal mb-8 leading-tight">
               Close protection{" "}
               <span className="text-primary font-bold relative">
                 officers
@@ -60,8 +60,8 @@ const CloseProtectionOfficerSection = () => {
             </h2>
           </motion.div>
 
-          <motion.div variants={paragraphVariants} className="mb-12 md:mb-16">
-            <p className="text-secondary/80  text-center md:text-left  leading-relaxed max-w-5xl mx-auto">
+          <motion.div variants={paragraphVariants} className="mb-12 md:mb-16 ">
+            <p className="text-secondary/80  text-center md:text-left  leading-relaxed max-w-6xl mx-auto">
               Our guards undergo The Highfield Close Protection Officer (CPO) course, an advanced training program 
               designed to equip security professionals with essential skills for high-risk environments. This intensive 
               course includes specialized training in{" "}
@@ -74,7 +74,7 @@ const CloseProtectionOfficerSection = () => {
           </motion.div>
 
           <motion.div variants={paragraphVariants}>
-            <p className="text-secondary/80 text-center md:text-left  leading-relaxed max-w-5xl mx-auto">
+            <p className="text-secondary/80 text-center md:text-left  leading-relaxed max-w-6xl mx-auto">
               Centurion Africa provides flexible and adaptable solutions. Whether you need a single CPO, a driver, 
               or a combination of both, our services are designed to seamlessly integrate into your travel plans. 
               Our team can be deployed ahead of time to assess and secure the area, ensuring your safety and peace 

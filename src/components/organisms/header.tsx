@@ -17,7 +17,7 @@ export default function Header({
 }: HeaderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState<string>("HOME");
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,20 +28,20 @@ export default function Header({
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      
-      const sections = document.querySelectorAll('section[id]');
-      
-      let currentSection = "HOME";
-      
-      sections.forEach(section => {
+
+      const sections = document.querySelectorAll("section[id]");
+
+      let currentSection = "home";
+
+      sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionId = section.id.toUpperCase();
-        
+
         if (sectionTop <= 150) {
           currentSection = sectionId;
         }
       });
-      
+
       if (currentSection !== activeSection) {
         setActiveSection(currentSection);
       }
@@ -49,9 +49,9 @@ export default function Header({
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    
+
     handleScroll();
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
@@ -60,32 +60,28 @@ export default function Header({
 
   const navs = [
     {
-      name: "HOME",
+      name: "home",
       href: "/",
     },
     {
-      name: "ABOUT",
+      name: "about",
       href: "/about",
     },
     {
-      name: "TIMELINE",
-      href: "/timeline",
-    },
-    {
-      name: "SECURITY",
+      name: "security",
       href: "/security",
     },
     {
-      name: "INDUSTRIES",
+      name: "industries",
       href: "/industries",
     },
     {
-      name: "SERVICES",
+      name: "services",
       href: "/services",
     },
-   
+
     {
-      name: "CAREER",
+      name: "career",
       href: "/career",
     },
   ];
@@ -195,35 +191,35 @@ export default function Header({
   return (
     <motion.header
       className={`w-full fixed z-0 ${topHeader ? "lg:top-0 top-0" : "top-0"} left-0 z-40 py-4 px-4
-        ${scrolled 
-          ? "bg-black/75 backdrop-blur-md" 
-          : "bg-transparent"
+        ${
+          scrolled ? "bg-black/75 backdrop-blur-md" : "bg-transparent"
         } transition-all duration-300`}
       variants={headerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="absolute h-64 bg-gradient-to-b from-black/100 to-transparent w-full top-0 -z-0 left-0" />
-      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0 z-10">
+      {!scrolled && (
+        <div className="absolute h-64 bg-gradient-to-b from-black/100 to-transparent w-full top-0 -z-0 left-0" />
+      )}
+      <div className="flex items-center justify-between md:h-16 h-10 w-full max-w-7xl mx-auto lg:px-0 z-50">
         <motion.div variants={logoVariants}>
-          <Link
-            href="/"
-            className="flex items-center gap-2 self-center"
-          >
+          <Link href="/" className="flex items-center gap-2 self-center">
             <CompanyLogo theme="white" />
           </Link>
         </motion.div>
 
-        <div className="hidden lg:flex items-center space-x-8">
-          <div className="space-x-8 flex flex-row justify-end">
+        <div className="hidden lg:flex items-center space-x-4 z-50">
+          <div className="space-x-2 flex flex-row justify-end">
             {navs.map((nav, idx) => (
               <motion.div key={idx} custom={idx} variants={navItemVariants}>
                 <Link
                   href={`/#${nav.name.toLowerCase()}`}
-                  className={`inline-flex items-center text-sm font-medium tracking-wider transition-all duration-300 relative
-                    ${nav.name === activeSection 
-                      ? "text-white/50" 
-                      : "text-white hover:text-white/80"}`}
+                  className={`inline-flex px-2 py-3 items-center text-sm font-medium transition-all duration-300 relative cursor-pointer uppercase
+                    ${
+                      nav.name === activeSection
+                        ? "text-white"
+                        : "text-white hover:text-white/80"
+                    }`}
                 >
                   {nav.name}
                   {nav.name === activeSection && (
@@ -239,16 +235,24 @@ export default function Header({
               </motion.div>
             ))}
           </div>
-          <div 
-            className="hidden lg:block"
-          >
-            <Link 
+          <div className="hidden lg:block">
+            <Link
               href="/contact"
               className="relative z-30 inline-flex items-center px-6 py-2 text-sm font-medium bg-primary text-white hover:text-black hover:bg-gray-100 transition-colors duration-200"
             >
               CONTACT US
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <svg
+                className="ml-2 w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </Link>
           </div>
@@ -278,17 +282,16 @@ export default function Header({
             >
               <div className="flex flex-col space-y-4 p-6">
                 {navs.map((nav, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={menuItemVariants}
-                  >
+                  <motion.div key={idx} variants={menuItemVariants}>
                     <Link
                       href={`/#${nav.name.toLowerCase()}`}
                       onClick={() => setIsOpen(false)}
                       className={`text-base font-medium block py-2 transition-colors duration-200
-                        ${nav.name === activeSection 
-                          ? "text-secondary" 
-                          : "text-white hover:text-secondary/80"}`}
+                        ${
+                          nav.name === activeSection
+                            ? "text-secondary"
+                            : "text-white hover:text-secondary/80"
+                        }`}
                     >
                       {nav.name}
                     </Link>
@@ -301,8 +304,18 @@ export default function Header({
                     className="inline-flex items-center px-6 py-2 text-sm font-medium bg-white text-gray-900 hover:bg-gray-100 transition-colors duration-200 mt-4"
                   >
                     CONTACT US
-                    <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <svg
+                      className="ml-2 w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
                     </svg>
                   </Link>
                 </motion.div>

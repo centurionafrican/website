@@ -83,7 +83,7 @@ const Hero = () => {
             <motion.span
               custom={0}
               variants={textHighlightVariants}
-              className="block text-5xl md:text-6xl lg:text-7xl font-normal leading-light"
+              className="block text-5xl md:text-6xl lg:text-6xl font-normal leading-light"
             >
               Our services
             </motion.span>

@@ -21,14 +21,16 @@ const IndustriesPage: React.FC<IndustriesPageProps> = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="min-h-screen bg-secondary w-full relative px-4 lg:px-0"
-      >
-        <div className="max-w-5xl mx-auto z-10 relative">
-          <div className="sticky top-12 z-20 bg-secondary pt-8">
+        >
+        <div className="max-w-5xl mx-auto z-10 relative"
+        id="industries"
+        >
+          <div className="pt-2">
             <IndustriesHero />
           </div>
           <div className="py-0 lg:py-0">
             <div className="flex flex-col lg:flex-row gap-6">
-              <div className="w-full lg:w-1/4 lg:sticky lg:top-[340px] lg:self-start">
+              <div className="w-full lg:w-1/4 lg:sticky lg:top-[120px] lg:self-start pb-12">
                 <IndustriesSidebar />
               </div>
 

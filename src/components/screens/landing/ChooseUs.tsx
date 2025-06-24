@@ -100,9 +100,9 @@ const AboutSection = () => {
         >
           <motion.div className="space-y-8" variants={itemVariants}>
             <motion.div variants={itemVariants}>
-              <h2 className="text-secondary md:text-7xl text-6xl font-normal mb-4">
+              <h2 className="text-secondary md:text-5xl text-3xl font-normal mb-4">
                 About <br />
-                <span className="text-primary font-bold">Centurion</span>
+                <span className="text-primary font-bold">Centurion Security Group</span>
               </h2>
               <p className="text-secondary/70 leading-relaxed max-w-xl">
                 Centurion provides bespoke security solutions from highly trained security guards to modern state-of-the-art technology and the latest surveillance equipment to give you a flexible and adjustable approach to securing your business.
@@ -123,7 +123,7 @@ const AboutSection = () => {
             </motion.div>
             <motion.div className="col-span-2 md:col-span-1 space-y-4">
               <ImageCard 
-                src="/about/street.svg" 
+                src="/about/street.jpg" 
                 alt="City street view" 
                 className="h-[48%] mb-4"
               />

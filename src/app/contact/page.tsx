@@ -134,7 +134,7 @@ const ContactForm = () => {
               <motion.h1 className="text-white  mb-3 flex flex-col gap-2">
                 <motion.span
                   custom={0}
-                  className="block text-5xl md:text-6xl lg:text-7xl font-normal leading-light"
+                  className="block text-5xl md:text-6xl lg:text-6xl font-normal leading-light"
                 >
                   Contact us
                 </motion.span>

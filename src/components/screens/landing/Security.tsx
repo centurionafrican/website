@@ -119,7 +119,7 @@ const SecuritySection = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-white md:text-7xl text-5xl font-bold"
+            className="text-white md:text-6xl text-5xl font-bold"
           >
             Security to everyone, <br />
             anywhere.
@@ -129,12 +129,7 @@ const SecuritySection = () => {
             variants={itemVariants}
             className="text-white/60 max-w-7xl mx-auto mt-2 font-light"
           >
-            Centurion Security Group delivers comprehensive security solutions, offering
-            meticulous security assessments, advanced electronics and
-            surveillance services, and highly trained security guards. From
-            cutting-edge technology to expertly trained personnel, our
-            integrated approach ensures our clients' unmatched safety and peace
-            of mind
+           Centurion Security Group protects what matters wherever it matters. Our teams operate across diverse settings, delivering tailored security solutions.
           </motion.div>
         </motion.div>
 

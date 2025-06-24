@@ -37,12 +37,7 @@ const IndustriesHero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Centurion Security Group delivers comprehensive security solutions, offering
-            meticulous security assessments, advanced electronics and
-            surveillance services, and highly trained security guards. From
-            cutting-edge technology to expertly trained personnel, our
-            integrated approach ensures our clients' unmatched safety and peace
-            of mind.
+           From construction to critical infrastructure, finance, and government institutions, Centurion Security Group provides specialized security solutions across a range of industries.
           </motion.p>
         </div>
       </motion.div>

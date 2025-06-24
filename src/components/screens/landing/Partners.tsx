@@ -12,20 +12,17 @@ const Partners = () => {
     "/images/kabc.svg",
     "/images/aib_logo.svg",
     
-    // Shelter Group companies
     "/images/irembo.png",
     "/images/movinpeck.png",
     "/images/green-complexe.jpg",
     // "/images/king-faysal.png",
     
-    // Mota-Engil group companies
     "/images/mota-engil.png",
     "/images/bion-tech.png",
     "/images/green-hills.png",
     "/images/la-palisee.png",
     "/images/airport.png",
     
-    // Companies without subsidiaries
     "/images/remco.png",
     "/images/rwandair.png",
     "/images/agri-bloom.jpg",
@@ -33,7 +30,6 @@ const Partners = () => {
     "/images/global-security.jpeg",
     // "/images/centurion-catsystems.png",
     
-    // Duplicate some for smooth animation
     "/images/kabc.svg",
     "/images/aib_logo.svg",
     "/images/irembo.png",

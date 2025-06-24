@@ -10,7 +10,7 @@ const WhyUs = () => {
         >
           <div className="bg-black/40 backdrop-blur-md flex justify-center py-[120px]">
             <div className="max-w-6xl w-full mx-auto px-0 sm:px-4 md:px-8">
-              <h2 className="text-white md:text-7xl text-6xl font-normal mb-4">
+              <h2 className="text-white md:text-6xl text-6xl font-normal mb-4">
                 Why choose <br />
                 <span className="text-primary font-bold">Centurion </span>
               </h2>
@@ -68,6 +68,14 @@ const WhyUs = () => {
                   <p className="text-white/50">
                     Whether VIP protection or secured premises, our services are
                     tailored to meet high-stakes requirements.
+                  </p>
+                </div>
+                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                  <h3 className="text-xl font-semibold mb-2">
+                  Fair Employment and Benefits
+                  </h3>
+                  <p className="text-white/50">
+                  We take care of our people. Our guards receive competitive salaries, housing, transport, and meals. Fair treatment means better performance and greater peace of mind for our clients.
                   </p>
                 </div>
               </div>

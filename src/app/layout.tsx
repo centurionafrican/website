@@ -43,7 +43,7 @@ export default async function RootLayout({ children }: ChildrenProps) {
         <meta name="keywords" content={metadata.keywords} />
       </head>
       <body
-        className={`${givonic.className} h-full flex flex-col justify-between`}
+        // className={`${givonic.className} h-full flex flex-col justify-between`}
       >
         <section className="flex-1">
           <TooltipProvider>{children}</TooltipProvider>

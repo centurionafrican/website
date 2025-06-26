@@ -47,7 +47,7 @@ const Hero = () => {
     if (pathname === "/services/physical-security ") {
       return "Our guards are typically drawn from a highly respected and well-trained forces unit are converted through training as Security Guards. Our locally employed guards are trained to adapt to any changing environment whilst maintaining the integrity of the protected people and/or object and are licensed to carry firearms.";
     } else if (pathname === "/services/close-protection") {
-      return "Centurion Africa's risk assessments identify and evaluate security risks, providing clients with expert insights to mitigate risks effectively. Conducted by experienced professionals, these assessments help safeguard assets, reduce operational disruptions, and optimize security strategies. Our tailored approach ensures proactive risk management.";
+      return "At Centurion Africa, we understand the importance of personalized and comprehensive security solutions. That is why we offer Close Protection Officer (CPO) services tailored to meet our client’s unique needs.";
     }else if (pathname === "/services/audits-and-assessments") {
       return "Centurion Africa's risk assessments identify and evaluate security risks, providing clients with expert insights to mitigate risks effectively. Conducted by experienced professionals, these assessments help safeguard assets, reduce operational disruptions, and optimize security strategies. Our tailored approach ensures proactive risk management.";
     } else if (pathname === "/services/technological-services") {

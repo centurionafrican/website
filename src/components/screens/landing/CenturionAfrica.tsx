@@ -74,8 +74,8 @@ const CenturionAfricaSection = () => {
                 Centurion{" "}
                 <span className="text-primary font-bold relative inline-block">
                   Africa
-                  <div className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-0.5 md:h-1 bg-gradient-to-r from-primary via-primary to-primary/50 rounded-full"></div>
-                  <div className="absolute -bottom-2 md:-bottom-4 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
+                  {/* <div className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-0.5 md:h-1 bg-gradient-to-r from-primary via-primary to-primary/50 rounded-full"></div>
+                  <div className="absolute -bottom-2 md:-bottom-4 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div> */}
                 </span>
               </h1>
             </div>

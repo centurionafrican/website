@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import CloseProtection from "@/screens/services/close-protection";
 
 export const metadata: Metadata = {
-  title: "Close protection  | Centurionafrica security group",
+  title: "Close protection officer  | Centurionafrica security group",
   description: "Trusted by business | powered by expertise.",
   icons: {
     icon: "/icon.svg",

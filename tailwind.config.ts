@@ -96,11 +96,11 @@ const config: Config = {
         scroll: "scroll 15s linear infinite",
         scroll2: "scroll2 15s linear infinite",
       },
-      fontFamily: {
-        sans: ["var(--font-givonic)", ...defaultTheme.fontFamily.sans],
-        mono: [...defaultTheme.fontFamily.mono],
-        givonic: ["var(--font-givonic)"],
-      },
+      // fontFamily: {
+      //   sans: ["var(--font-givonic)", ...defaultTheme.fontFamily.sans],
+      //   mono: [...defaultTheme.fontFamily.mono],
+      //   givonic: ["var(--font-givonic)"],
+      // },
       fontSize: {
         xs: [
           "0.75rem",

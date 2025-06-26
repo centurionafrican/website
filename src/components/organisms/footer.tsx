@@ -2,13 +2,14 @@
 
 import { CompanyLogo } from "../atoms/logo";
 import { motion } from "framer-motion";
-import {  Instagram, Linkedin } from "lucide-react";
+import {  Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
   const socialMedia = [
     { icon: Instagram, href: "https://www.instagram.com/centuriongrouprw?igsh=MWxhcnE0NHg0NGhvdw==" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/centurion-group-lmtd/" },
+    {icon: Twitter, href: "https://x.com/centurionRW/"}
   ];
 
   return (

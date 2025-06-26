@@ -68,32 +68,32 @@ const AuditsAssessments = () => {
 Risk Assessment & Strategic Evaluation          </motion.h2>
           <motion.div className="space-y-2" variants={containerVariants}>
             <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed"
               variants={textVariants}
             >
 At Centurion Africa, we believe that strong security starts with understanding your vulnerabilities. Our risk assessments are conducted by seasoned professionals who identify and evaluate threats unique to your operations and environment.            </motion.p>
 
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
+                <h3 className="text-xl sm:text-2xl  mb-3">
                 Insight-Driven Recommendations                </h3>
                
                 <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed"
               variants={textVariants}
             >
 Each assessment results in clear, actionable insights tailored to your context, whether you’re managing a construction site or a corporate office. We provide expert guidance on how to reduce exposure, safeguard assets, and enhance your overall security posture.                </motion.p>
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
+                <h3 className="text-xl sm:text-2xl  mb-3">
                 Proactive, Not Reactive             </h3>
                 <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed"
               variants={textVariants}
             >
   <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed"
               variants={textVariants}
             >
 We don’t wait for problems to arise. Our approach is rooted in proactive risk management, helping you anticipate and prevent security disruptions before they occur. This foresight allows you to operate with confidence and clarity.                </motion.p>                </motion.p>

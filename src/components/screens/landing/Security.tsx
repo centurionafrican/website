@@ -134,13 +134,13 @@ const SecuritySection = () => {
         </motion.div>
 
         <motion.div
-          className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[400px]"
+          className="relative w-full  "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          {locations.map((location, index) => (
+          {/* {locations.map((location, index) => (
             <motion.div
               key={index}
               custom={index}
@@ -154,13 +154,13 @@ const SecuritySection = () => {
                 top: `${location.y}%`,
               }}
             ></motion.div>
-          ))}
+          ))} */}
         </motion.div>
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-36"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:mt-48 mt-20  lg:pt-[700px] sm:pt-[700px]"
         >
           {stats.map((stat, index) => (
             <motion.div

@@ -2,6 +2,8 @@
 import Link from "next/link";
 
 const WorkWithUs = () => {
+  const isHiring = false;
+
   return (
     <>
       <div className="w-full h-fit mx-auto" id="career">
@@ -23,47 +25,67 @@ const WorkWithUs = () => {
               Join our <span className="text-primary">Team</span>
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-1 mb-2">
-              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
-                Competitive Salary
-              </div>
-              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
-                Housing
-              </div>
-              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
-                Breakfast, Lunch & Dinner
-              </div>
+            {/* Description text */}
+            <div className="text-center mb-12 max-w-3xl">
+              {isHiring ? (
+                <div>
+                  <p className="text-white mb-4 leading-relaxed">
+                    We're looking for passionate individuals who share our vision of transforming Africa through innovative solutions. Join our dynamic team and be part of something extraordinary.
+                  </p>
+                  {/* <p className="text-white/90 text-base">
+                    Ready to make an impact? We'd love to hear from you and explore how your talents can contribute to our mission.
+                  </p> */}
+                </div>
+              ) : (
+                <p className="text-white leading-relaxed">
+                  We are not hiring at the moment, but feel free to check back soon for future opportunities.
+                </p>
+              )}
             </div>
 
-            <div className="flex flex-wrap justify-center gap-1 mb-4">
-              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
-                Health Insurance
-              </div>
-              <div className="bg-secondary px-4 py-1.5 text-white border-[#FFFFFF]/10 border text-sm">
-                Transportation
-              </div>
-            </div>
-
-            <Link
-              href="https://zohorecruit.com"
-              target="_blank"
-              className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
-            >
-              JOIN US NOW
-              <svg
-                className="ml-2 w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            {/* Conditional button */}
+            {isHiring ? (
+              <Link
+                href="mailto:career@centurionafrica.rw"
+                target="_blank"
+                className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </Link>
+                JOIN US NOW
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </Link>
+            ) : (
+              <button
+                disabled
+                className="inline-flex items-center px-8 py-3 font-medium bg-gray-500 text-white cursor-not-allowed opacity-70"
+              >
+                NO OPENINGS AVAILABLE
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ const WhyUs = () => {
               <p className="text-white/60 leading-relaxed max-w-xl">
                 Centurion Security Group combines elite training, local
                 empowerment, and cutting-edge expertise to deliver unmatched
-                security solutions across Africa.
+                security solutions across Africa and the Middle East.
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
@@ -70,7 +70,7 @@ const WhyUs = () => {
                     tailored to meet high-stakes requirements.
                   </p>
                 </div>
-                <div className="bg-secondary/40 border border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
+                <div className="bg-secondary/40 border hover:bg-primary border-[#F6F8FF14] backdrop-blur-md rounded-[1px] p-5 text-white">
                   <h3 className="text-xl font-semibold mb-2">
                   Fair Employment and Benefits
                   </h3>

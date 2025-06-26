@@ -67,7 +67,7 @@ const ServicesSection = () => {
     },
     {
       title: "Close Protection Officers",
-      path: "/services/audits-and-assessments",
+      path: "/services/close-protection",
       image: "/service-3.svg",
       description:
         "At Centurion Africa, we understand the importance of personalized and comprehensive security solutions. That is why we offer Close Protection Officer (CPO) services tailored to meet our client’s unique needs.",

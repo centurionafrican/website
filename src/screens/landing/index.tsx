@@ -26,7 +26,7 @@ export default function LandingScreen() {
        <SecuritySection /> 
        <Industries /> 
        <Services />
-       <CloseProtectionOfficerSection />
+       {/* <CloseProtectionOfficerSection /> */}
        <WhyUs />
        <Partners /> 
       <WorkWithUs />

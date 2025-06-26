@@ -69,7 +69,7 @@ const PhysicalSecurity = () => {
           </motion.h2>
           <motion.div className="space-y-2" variants={containerVariants}>
             <motion.p
-              className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed"
               variants={textVariants}
             >
               We provide guards for virtually any kind of Physical Object,
@@ -80,12 +80,12 @@ const PhysicalSecurity = () => {
 
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
+                <h3 className="text-xl sm:text-2xl  mb-3">
                   Patrol{" "}
                 </h3>
 
                 <motion.p
-                  className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                  className=" text-gray-600 leading-relaxed"
                   variants={textVariants}
                 >
                   Live guard patrols are one of the most effecting ways of
@@ -96,15 +96,15 @@ const PhysicalSecurity = () => {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <h3 className="text-xl sm:text-2xl font-medium mb-3">
+                <h3 className="text-xl sm:text-2xl  mb-3">
                   Pedestrian & Vehicle Checks{" "}
                 </h3>
                 <motion.p
-                  className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                  className="text-base text-gray-600 leading-relaxed"
                   variants={textVariants}
                 >
                   <motion.p
-                    className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed"
+                    className="text-base text-gray-600 leading-relaxed"
                     variants={textVariants}
                   >
                     Live guard patrols are one of the most effecting ways of

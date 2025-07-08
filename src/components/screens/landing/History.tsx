@@ -18,7 +18,7 @@ const HistorySection = () => {
     },
     {
       year: "2024",
-      description: "Incorporation of Centurion Security Group to manage the sister and affiliate companies",
+      description: "Incorporation of Centurion Security Group to manage subsidiaries",
       position: "left",
     },
     {

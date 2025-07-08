@@ -15,7 +15,7 @@ export default function LandingScreen() {
   return (
     <div className='flex flex-1 flex-col items-center justify-center landing_font'>
       <Hero
-        path={'/guards_II.jpg'}
+        path={'/bg_centurion.jpg'}
         title="Trusted by Businesses."
         spanTitle="Powered by Expertise. "
         description="Partner with a security provider that understands the demands of 

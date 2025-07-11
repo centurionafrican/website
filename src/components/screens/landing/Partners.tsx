@@ -78,7 +78,7 @@ const Partners = () => {
   };
 
   const renderLogo = (src: string, index: number) => {
-    if (index === 0) { 
+    if (index === 4) { 
       return (
         <div 
           key={index} 

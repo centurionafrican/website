@@ -84,6 +84,14 @@ export default function Header({
       name: "career",
       href: "/career",
     },
+       {
+      name: "teams",
+      href: "/teams",
+    },
+    {
+      name: "news",
+      href: "/news",
+    },
   ];
 
   const menuVariants = {

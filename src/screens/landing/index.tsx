@@ -10,6 +10,8 @@ import Industries from "@/components/screens/landing/Industries";
 import WhyChooseSection from "@/components/screens/landing/industries/WhyYouChoose";
 import CloseProtectionOfficerSection from "@/components/screens/landing/CloseProtectionOfficer";
 import CenturionAfricaSection from "@/components/screens/landing/CenturionAfrica";
+import Team from "@/components/screens/landing/Team";
+import PressSection from "@/components/screens/landing/PressSection";
 
 export default function LandingScreen() {
   return (
@@ -29,6 +31,8 @@ export default function LandingScreen() {
        {/* <CloseProtectionOfficerSection /> */}
        <WhyUs />
        <Partners /> 
+       <Team />
+       <PressSection />
       <WorkWithUs />
     </div>
   );

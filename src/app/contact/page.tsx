@@ -16,6 +16,10 @@ const contactInfo = [
     icon: "/contact/location.svg",
     content: "29 KG 672 St, Kimihurura, Kigali, Rwanda",
   },
+   {
+    icon: "/contact/code.svg",
+    content: "+250 796 885 025",
+  },
   {
     icon: "/contact/code.svg",
     content: "6161",

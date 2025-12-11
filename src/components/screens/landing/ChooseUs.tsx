@@ -64,7 +64,7 @@ const AboutSection = () => {
         delayChildren: 0.3
       }
     }
-  };
+  } as any;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -73,7 +73,7 @@ const AboutSection = () => {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
-  };
+  } as any;
 
   const imageContainerVariants = {
     hidden: { opacity: 0 },
@@ -83,7 +83,7 @@ const AboutSection = () => {
         staggerChildren: 0.2
       }
     }
-  };
+  } as any;
 
   return (
     <section 

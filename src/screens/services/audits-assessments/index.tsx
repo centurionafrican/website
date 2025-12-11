@@ -13,8 +13,7 @@ const AuditsAssessments = () => {
         staggerChildren: 0.3,
       },
     },
-  };
-
+  } as any
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -25,7 +24,7 @@ const AuditsAssessments = () => {
         ease: "easeOut",
       },
     },
-  };
+  } as any;
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,7 +36,7 @@ const AuditsAssessments = () => {
         ease: "easeOut",
       },
     },
-  };
+  } as any;
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -49,7 +48,7 @@ const AuditsAssessments = () => {
         ease: "easeOut",
       },
     },
-  };
+  } as any;
 
   return (
     <section className="w-full bg-white">

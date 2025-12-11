@@ -67,7 +67,7 @@ const Partners = () => {
         staggerChildren: 0.2
       }
     }
-  };
+  } as any;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -76,7 +76,7 @@ const Partners = () => {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
-  };
+  } as any;
 
   const renderLogo = (src: string, index: number) => {
     if (index === 4) { 

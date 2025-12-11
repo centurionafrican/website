@@ -26,7 +26,7 @@ const menuVariants = {
   closed: { x: "-100%" },
   open: { x: 0 },
   exit: { x: "-100%" }
-};
+} as any;
 
 export default function Accordion({ items }: AccordionProps) {
   const [activeIndexes, setActiveIndexes] = useState<any>([]);
@@ -183,7 +183,7 @@ export default function Accordion({ items }: AccordionProps) {
         duration: 0.3,
       },
     },
-  };
+  } as any;
 
   const AccordionContent = () => (
     <div className="h-fit w-[280px] text-base p-4 rounded mt-12 bg-white border border-gray-200">

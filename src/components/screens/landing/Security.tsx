@@ -66,7 +66,7 @@ const SecuritySection = () => {
         delayChildren: 0.3,
       },
     },
-  };
+  } as any;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -75,7 +75,7 @@ const SecuritySection = () => {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" },
     },
-  };
+  } as any;
 
   const locationVariants = {
     hidden: { opacity: 0, scale: 0 },

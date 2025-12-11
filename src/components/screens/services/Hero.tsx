@@ -19,7 +19,7 @@ const Hero = () => {
         staggerChildren: 0.2,
       },
     },
-  };
+  } as any;
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -28,7 +28,7 @@ const Hero = () => {
       opacity: 1,
       transition: { duration: 0.8, ease: "easeOut" },
     },
-  };
+  } as any;
 
   const textHighlightVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -41,7 +41,7 @@ const Hero = () => {
         delay: delay,
       },
     }),
-  };
+  } as any;
 
   const getDescriptionText = () => {
     if (pathname === "/services/physical-security ") {

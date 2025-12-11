@@ -78,7 +78,7 @@ const ContactForm = () => {
         ease: "easeOut"
       }
     }
-  };
+  } as any;
 
   return (
     <div className='w-full'>

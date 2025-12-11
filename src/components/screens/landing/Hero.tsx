@@ -29,7 +29,7 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
       opacity: 1,
       transition: { duration: 0.8, ease: "easeOut" }
     }
-  };
+  } as any;
 
   const textHighlightVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -42,7 +42,7 @@ const Hero = ({ path, classname, title, spanTitle, description }: HeroProps) => 
         delay: delay
       }
     })
-  };
+  } as any;
 
   return (
     <div className={`${classname} relative w-full h-screen flex items-center overflow-hidden px-4 sm:px-0`}>

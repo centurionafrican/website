@@ -12,7 +12,7 @@ const CloseProtectionOfficerSection = () => {
         delayChildren: 0.2,
       },
     },
-  };
+  } as any;
 
   const headerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -21,7 +21,7 @@ const CloseProtectionOfficerSection = () => {
       y: 0,
       transition: { duration: 1, ease: "easeOut" },
     },
-  };
+  } as any;
 
   const paragraphVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -30,7 +30,7 @@ const CloseProtectionOfficerSection = () => {
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
-  };
+  } as any;
 
   return (
     <section

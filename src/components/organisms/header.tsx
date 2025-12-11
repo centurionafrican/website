@@ -117,7 +117,7 @@ export default function Header({
         staggerDirection: -1,
       },
     },
-  };
+  } as any;
 
   const menuItemVariants = {
     open: {
@@ -134,7 +134,7 @@ export default function Header({
         y: { stiffness: 1000 },
       },
     },
-  };
+  } as any;
 
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -148,7 +148,7 @@ export default function Header({
         delayChildren: 0.2,
       },
     },
-  };
+  } as any;
 
   const navItemVariants = {
     hidden: { opacity: 0, y: -5 },
@@ -161,7 +161,7 @@ export default function Header({
         delay: 0.3 + i * 0.1,
       },
     }),
-  };
+  } as any;
 
   const logoVariants = {
     hidden: { opacity: 0, x: -10 },
@@ -174,7 +174,7 @@ export default function Header({
         delay: 0.2,
       },
     },
-  };
+  } as const;
 
   const contactBtnVariants = {
     hidden: { opacity: 0, scale: 0.9 },

@@ -60,13 +60,17 @@ const ContactForm = () => {
       });
 
       const templateParams = {
-        from_name: data.firstName + " " + data.lastName,
+        from_name: `${data.firstName} ${data.lastName}`,
+        firstName: data.firstName,
+        lastName: data.lastName,
         to_name: "Centurion Security Group",
         message: data.message,
         reply_to: data.email,
+        email: data.email,
+        tel: data.tel,
         subject: data.subject,
         currentDate: currentDate,
-        year: new Date().getFullYear(),
+        year: new Date().getFullYear().toString(),
       };
 
       const result = await emailjs.send(
@@ -157,7 +161,7 @@ const ContactForm = () => {
                 <div className="w-5/12">
                   <div className="mb-3">
                     <h2 className="text-4xl font-bold">
-                      We’d love to hear
+                      We'd love to hear
                       <br />
                       from you.
                     </h2>

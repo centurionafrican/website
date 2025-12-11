@@ -26,7 +26,7 @@ const Partners = () => {
   const logos = [
     // Alliance group companies
     "/images/kabc.svg",
-    "/images/aib_logo.svg",
+  
     
     "/images/irembo.png",
     "/images/movinpeck.png",
@@ -38,17 +38,18 @@ const Partners = () => {
     "/images/green-hills.png",
     "/images/zaria_court1.webp",
     "/images/airport.png",
+    "/images/plm.png",
+    "/images/shelter.webp",
+    "/images/reip.jpg",
     
     "/images/remco.png",
     "/images/rwandair.png",
     "/images/agri-bloom.jpg",
     "/images/kigali-golf.png",
     "/images/global-security.jpeg",
-    "/images/pinnacle_hotel.png",
     // "/images/centurion-catsystems.png",
     
     "/images/kabc.svg",
-    "/images/aib_logo.svg",
     "/images/irembo.png",
     "/images/movinpeck.png",
     "/images/green-complexe.jpg",

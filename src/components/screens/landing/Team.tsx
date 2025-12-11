@@ -22,16 +22,17 @@ const Team = () => {
       position: "Director of Legal Affairs",
       image: "/images/och.jpg",
     },
+      {
+      name: "SCOVIA MBABAZI",
+      position: "Finance Manager",
+      image: "/images/finance.jpg",
+    },
     {
       name: "ALFRED MAZIMPAKA",
       position: "Project Manager",
       image: "/images/project-manager.jpg",
     },
-    {
-      name: "SCOVIA MBABAZI",
-      position: "Finance Manager",
-      image: "/images/finance.jpg",
-    },
+  
     {
       name: "DAPHINE INGABIRE",
       position: "Internal Audit Manager and Data Analyst",

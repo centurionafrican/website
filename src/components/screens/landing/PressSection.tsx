@@ -129,9 +129,28 @@ const PressSection = () => {
             <p className="text-secondary/70 leading-relaxed max-w-3xl">
               Discover how Centurion Security Group is making headlines across
               Africa and the Middle East. From industry recognition to community
-              engagement, stay updated with our latest news and achievements...
+              engagement, stay updated with our latest news and achievements.
             </p>
-           
+            <div className="bg-white p-6 rounded-lg shadow-md">
+  <h3 className="text-lg font-semibold mb-2">
+    Staff Medical Insurance Tender – Now Available
+  </h3>
+
+  <p className="text-gray-700 mb-4">
+    The Staff Medical Insurance Tender document is now available for download.
+    Interested bidders are encouraged to review the document and submit their
+    proposals accordingly.
+  </p>
+
+  <a
+    href="/TENDER DOCUMENT_RFP_INSURANCE 2026-2027.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block text-blue-600 font-medium hover:underline"
+  >
+    Download Tender Document
+  </a>
+</div>
           </motion.div>
         </motion.div>
 

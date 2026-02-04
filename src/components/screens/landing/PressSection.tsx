@@ -129,7 +129,7 @@ const PressSection = () => {
             <p className="text-secondary/70 leading-relaxed max-w-3xl">
               Discover how Centurion Security Group is making headlines across
               Africa and the Middle East. From industry recognition to community
-              engagement, stay updated with our latest news and achievements.
+              engagement, stay updated with our latest news and achievements...
             </p>
            
           </motion.div>

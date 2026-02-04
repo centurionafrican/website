@@ -143,7 +143,7 @@ const PressSection = () => {
   </p>
 
   <a
-    href="/TENDER DOCUMENT_RFP_INSURANCE 2026-2027.pdf"
+    href="/staff-medical-insurance-2026-2027.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block text-blue-600 font-medium hover:underline"

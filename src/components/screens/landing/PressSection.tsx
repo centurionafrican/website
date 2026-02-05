@@ -131,7 +131,7 @@ const PressSection = () => {
               Africa and the Middle East. From industry recognition to community
               engagement, stay updated with our latest news and achievements.
             </p>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+
   <h3 className="text-lg font-semibold mb-2">
     Staff Medical Insurance Tender – Now Available
   </h3>
@@ -150,7 +150,7 @@ const PressSection = () => {
   >
     Download Tender Document
   </a>
-</div>
+
           </motion.div>
         </motion.div>
 

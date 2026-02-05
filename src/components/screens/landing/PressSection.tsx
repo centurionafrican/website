@@ -148,7 +148,7 @@ const PressSection = () => {
     rel="noopener noreferrer"
     className="inline-block text-blue-600 font-medium hover:underline"
   >
-    Download Tender Document
+    Download
   </a>
 
           </motion.div>

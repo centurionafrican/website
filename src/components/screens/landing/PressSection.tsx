@@ -133,22 +133,26 @@ const PressSection = () => {
             </p>
 
   <h3 className="text-lg font-semibold mb-2">
-    Staff Medical Insurance Tender – Now Available
+    Invitation to Tender – Vehicle Rental Services
   </h3>
 
-  <p className="text-gray-700 mb-4">
-    The Staff Medical Insurance Tender document is now available for download.
-    Interested bidders are encouraged to review the document and submit their
-    proposals accordingly.
+  <p className="text-secondary/70 leading-relaxed max-w-3xl">
+    Centurion Africa Ltd invites eligible and qualified vehicle rental service providers to submit sealed bids for the provision of vehicle rental services under a framework agreement.
+
+Tender Reference: CAL/02/2026
+Issue Date: 17 February 2026
+Submission Deadline: 23 February 2026 at 10:00 AM
+
+Interested bidders are encouraged to review the detailed tender document and submit their proposals in accordance with the provided instructions.
   </p>
 
   <a
-    href="/staff-medical-insurance-2026-2027.pdf"
+    href="/invitation-to-tender-for-vehicle-rental-services.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block text-blue-600 font-medium hover:underline"
   >
-    Download
+    Download the full tender document here:
   </a>
 
           </motion.div>

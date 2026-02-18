@@ -1,8 +1,18 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const WorkWithUs = () => {
-  const isHiring = false;
+  const isHiring = true;
+
+  // Deadline: Feb 25, 2026 (Kigali time UTC+2)
+  const deadlineISO = "2026-02-25T23:59:59+02:00";
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(deadlineISO));
+
+  useEffect(() => {
+    const t = setInterval(() => setTimeLeft(getTimeLeft(deadlineISO)), 1000);
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <>
@@ -29,12 +39,52 @@ const WorkWithUs = () => {
             <div className="text-center mb-12 max-w-3xl">
               {isHiring ? (
                 <div>
-                  <p className="text-white mb-4 leading-relaxed">
-                    We're looking for passionate individuals who share our vision of transforming Africa through innovative solutions. Join our dynamic team and be part of something extraordinary.
+                  {/* NOW HIRING badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
+                    <span className="text-white font-semibold tracking-wide">
+                      NOW HIRING
+                    </span>
+                  </div>
+
+                  <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
+                    We are hiring a Senior Accountant and Customer Care Manager!
                   </p>
-                  {/* <p className="text-white/90 text-base">
-                    Ready to make an impact? We'd love to hear from you and explore how your talents can contribute to our mission.
-                  </p> */}
+
+                  <p className="text-white/90 mb-4 leading-relaxed">
+                    Apply before <span className="font-semibold">February 25th</span> and join the Centurion Team!
+                  </p>
+
+                  {/* Countdown */}
+                  <div className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-white mb-4">
+                    {timeLeft.isExpired ? (
+                      <span className="font-semibold">Deadline passed</span>
+                    ) : (
+                      <span className="font-semibold">
+                        Deadline in: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-white/90 leading-relaxed">
+                    Submit your CV at{" "}
+                    <a
+                      href="mailto:career@centurionafrica.rw"
+                      className="underline font-medium hover:text-[#FF5C35]"
+                    >
+                      career@centurionafrica.rw
+                    </a>
+                  </p>
+
+                  <p className="text-white/90 mt-2 leading-relaxed">
+                    For more contact{" "}
+                    <a
+                      href="tel:+250790004777"
+                      className="underline font-medium hover:text-[#FF5C35]"
+                    >
+                      +250790004777
+                    </a>
+                  </p>
                 </div>
               ) : (
                 <p className="text-white leading-relaxed">
@@ -43,28 +93,76 @@ const WorkWithUs = () => {
               )}
             </div>
 
-            {/* Conditional button */}
+            {/* Buttons */}
             {isHiring ? (
-              <Link
-                href="mailto:career@centurionafrica.rw"
-                target="_blank"
-                className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
-              >
-                JOIN US NOW
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                {/* View Job PDFs */}
+                <Link
+                  href="/senior-accountant.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </Link>
+                  View Senior Accountant PDF
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Link>
+
+                <Link
+                  href="/customer-care-manager.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"
+                >
+                  View Customer Care Manager PDF
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Link>
+
+                {/* Keep your original mail button */}
+                <Link
+                  href="mailto:career@centurionafrica.rw"
+                  target="_blank"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
+                >
+                  JOIN US NOW
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Link>
+              </div>
             ) : (
               <button
                 disabled
@@ -94,3 +192,21 @@ const WorkWithUs = () => {
 };
 
 export default WorkWithUs;
+
+function getTimeLeft(deadlineISO) {
+  const deadline = new Date(deadlineISO).getTime();
+  const now = Date.now();
+  const diff = deadline - now;
+
+  if (diff <= 0) {
+    return { isExpired: true, days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / (3600 * 24));
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { isExpired: false, days, hours, minutes, seconds };
+}

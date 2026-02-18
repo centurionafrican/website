@@ -5,7 +5,7 @@ const Team = () => {
     {
       name: "MANU S. DIEZI",
       position: "CEO",
-      image: "/images/ceo.jpg",
+      image: "/images/ceo.jpeg",
     },
     {
       name: "PATRICK GASANA R.",

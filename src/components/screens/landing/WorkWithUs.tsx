@@ -48,7 +48,7 @@ const WorkWithUs = () => {
                   </div>
 
                   <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
-                    We are hiring a Senior Accountant and Customer Care Manager!
+                    We are hiring a Junior & Senior Accountant and Customer Care Manager!
                   </p>
 
                   <p className="text-white/90 mb-4 leading-relaxed">
@@ -103,7 +103,7 @@ const WorkWithUs = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"
                 >
-                  View Senior Accountant PDF
+                  View Junior & Senior Accountant PDF
                   <svg
                     className="ml-2 w-5 h-5"
                     fill="none"

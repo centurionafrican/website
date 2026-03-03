@@ -132,7 +132,7 @@ const PressSection = () => {
               engagement, stay updated with our latest news and achievements.
             </p>
 
-<h3 className="text-lg font-semibold mb-2">
+{/*  <h3 className="text-lg font-semibold mb-2">
   Invitation to Tender – Vehicle Rental Services
 </h3>
 
@@ -160,7 +160,7 @@ const PressSection = () => {
   className="inline-block text-blue-600 font-medium hover:underline"
 >
   Download the full tender document here
-</a>
+</a> */}
 
 
           </motion.div>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Footer = () => {
   const socialMedia = [
-    { icon: Instagram, href: "https://www.instagram.com/centuriongrouprw?igsh=MWxhcnE0NHg0NGhvdw==" },
+    { icon: Instagram, href: "https://instagram.com/centurionsecuritygroup" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/centurion-group-lmtd/" },
     {icon: Twitter, href: "https://x.com/centurionRW/"}
   ];

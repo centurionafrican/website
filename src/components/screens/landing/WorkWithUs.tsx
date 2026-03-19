@@ -1,8 +1,19 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const WorkWithUs = () => {
-  const isHiring = false; // ❌ Hiring closed
+  // ✅ Hiring is now ACTIVE
+  const deadlineISO = "2026-03-27T23:59:59+02:00";
+
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(deadlineISO));
+
+  useEffect(() => {
+    const t = setInterval(() => setTimeLeft(getTimeLeft(deadlineISO)), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const isHiring = !timeLeft.isExpired;
 
   return (
     <>
@@ -25,15 +36,56 @@ const WorkWithUs = () => {
               Join our <span className="text-primary">Team</span>
             </h2>
 
-            {/* Description text */}
+            {/* Description */}
             <div className="text-center mb-12 max-w-3xl">
               {isHiring ? (
                 <div>
-                  {/* Hiring content here if needed in future */}
+                  {/* 🔥 NOW HIRING */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
+                    <span className="text-white font-semibold tracking-wide">
+                      NOW HIRING
+                    </span>
+                  </div>
+
+                  <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
+                    Health, Safety & Environment (HSE) Officer
+                  </p>
+
+                  <p className="text-white/90 mb-4 leading-relaxed">
+                    Opening Date:{" "}
+                    <span className="font-semibold">March 18, 2026</span>{" "}
+                    <br />
+                    Closing Date:{" "}
+                    <span className="font-semibold">March 27, 2026</span>
+                  </p>
+
+                  {/* Countdown */}
+                  <div className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-white mb-4">
+                    <span className="font-semibold">
+                      Apply within: {timeLeft.days}d {timeLeft.hours}h{" "}
+                      {timeLeft.minutes}m {timeLeft.seconds}s
+                    </span>
+                  </div>
+
+                  <p className="text-white/90 leading-relaxed">
+                    Please review the full job description and submit your
+                    application before the deadline.
+                  </p>
+
+                  <p className="text-white/90 mt-2 leading-relaxed">
+                    Send your application to{" "}
+                    <a
+                      href="mailto:career@centurionafrica.rw"
+                      className="underline font-medium hover:text-[#FF5C35]"
+                    >
+                      career@centurionafrica.rw
+                    </a>
+                  </p>
                 </div>
               ) : (
                 <div>
-                  {/* ✅ NO OPENING JOBS badge */}
+                  {/* ❌ CLOSED */}
                   <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
                     <span className="w-2 h-2 rounded-full bg-gray-300" />
                     <span className="text-white font-semibold tracking-wide">
@@ -42,15 +94,35 @@ const WorkWithUs = () => {
                   </div>
 
                   <p className="text-white leading-relaxed">
-                    We currently have no open positions available.
-                    Please check back soon for future career opportunities at Centurion.
+                    We currently have no open positions available. Please check
+                    back soon for future opportunities.
                   </p>
                 </div>
               )}
             </div>
 
-            {/* Button */}
-            {!isHiring && (
+            {/* Buttons */}
+            {isHiring ? (
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                {/* PDF */}
+                <Link
+                  href="/HSE Officer - ToRs.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"
+                >
+                  View Job Description
+                </Link>
+
+                {/* Apply */}
+                <Link
+                  href="mailto:career@centurionafrica.rw"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
+                >
+                  APPLY NOW
+                </Link>
+              </div>
+            ) : (
               <button
                 disabled
                 className="inline-flex items-center px-8 py-3 font-medium bg-gray-500 text-white cursor-not-allowed opacity-70"
@@ -66,3 +138,21 @@ const WorkWithUs = () => {
 };
 
 export default WorkWithUs;
+
+function getTimeLeft(deadlineISO) {
+  const deadline = new Date(deadlineISO).getTime();
+  const now = Date.now();
+  const diff = deadline - now;
+
+  if (diff <= 0) {
+    return { isExpired: true, days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / (3600 * 24));
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { isExpired: false, days, hours, minutes, seconds };
+}

@@ -18,7 +18,7 @@ const contactInfo = [
   },
    {
     icon: "/contact/code.svg",
-    content: "+250 795 577 656",
+    content: "+250 792 875 249",
   },
   // {
   //   icon: "/contact/code.svg",

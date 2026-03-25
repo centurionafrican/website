@@ -18,15 +18,15 @@ const contactInfo = [
   },
    {
     icon: "/contact/code.svg",
-    content: "+250 796 885 025",
+    content: "+250 795 577 656",
   },
-  {
-    icon: "/contact/code.svg",
-    content: "6161",
-  },
+  // {
+  //   icon: "/contact/code.svg",
+  //   content: "6161",
+  // },
   {
     icon: "/contact/email.svg",
-    content: "contact@centurionafrica.rw",
+    content: "customerservice@centurionafrica.rw",
   },
 ];
 
@@ -107,7 +107,7 @@ const ContactForm = () => {
   const socialMedia = [
     {
       icon: Instagram,
-      href: "https://www.instagram.com/centuriongrouprw?igsh=MWxhcnE0NHg0NGhvdw==",
+      href: "https://instagram.com/centurionsecuritygroup",
     },
     {
       icon: Linkedin,

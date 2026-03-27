@@ -155,7 +155,7 @@ const PressSection = () => {
 </p>
 
 <a
-  href="/TENDER DOCUMENT-IMPLEMENTATION OF ERP SYSTEM FOR CENTURION AFRICA.pdf"
+  href="/tender-erp-document.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block text-blue-600 font-medium hover:underline"

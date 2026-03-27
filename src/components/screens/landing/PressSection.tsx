@@ -133,7 +133,9 @@ const PressSection = () => {
             </p>
 
 <h3 className="text-lg font-semibold mb-2">
-  Invitation to Tender – Vehicle Rental Services
+  Invitation to Tender </h3>
+  <h3>
+  Implementation of a Security ERP System
 </h3>
 
 <p className="text-secondary/70 leading-relaxed max-w-3xl mb-4">

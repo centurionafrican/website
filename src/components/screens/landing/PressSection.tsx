@@ -155,7 +155,7 @@ const PressSection = () => {
 </p>
 
 <a
-  href="/tender-erp-document.pdf"
+  href="/tender_erp_document.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block text-blue-600 font-medium hover:underline"

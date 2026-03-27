@@ -132,35 +132,36 @@ const PressSection = () => {
               engagement, stay updated with our latest news and achievements.
             </p>
 
-{/*  <h3 className="text-lg font-semibold mb-2">
+<h3 className="text-lg font-semibold mb-2">
   Invitation to Tender – Vehicle Rental Services
 </h3>
 
 <p className="text-secondary/70 leading-relaxed max-w-3xl mb-4">
-  Centurion Africa Ltd invites eligible and qualified vehicle rental service 
-  providers to submit sealed bids for the provision of vehicle rental services 
-  under a framework agreement.
+  Centurion Africa Limited (CAL) invites qualified and experienced IT service 
+  providers to submit proposals for the implementation of a Security Enterprise 
+  Resource Planning (ERP) System.
 </p>
 
 <div className="text-secondary/80 leading-relaxed max-w-3xl mb-4 space-y-1">
-  <p><strong>Tender Reference:</strong> CAL/02/2026</p>
-  <p><strong>Issue Date:</strong> 17 February 2026</p>
-  <p><strong>Submission Deadline:</strong> 23 February 2026 at 10:00 AM</p>
+  <p><strong>Tender Reference:</strong> CAL/03/2026</p>
+  <p><strong>Issue Date:</strong> 27 March 2026</p>
+  <p><strong>Submission Deadline:</strong> 27 April 2026 at 2:00 PM</p>
 </div>
 
 <p className="text-secondary/70 leading-relaxed max-w-3xl mb-4">
-  Interested bidders are encouraged to review the detailed tender document 
-  and submit their proposals in accordance with the provided instructions.
+  Interested and eligible bidders are invited to submit both technical and 
+  financial proposals in accordance with the requirements outlined in the 
+  tender document.
 </p>
 
 <a
-  href="/invitation-to-tender-for-vehicle-rental-services.pdf"
+  href="/TENDER DOCUMENT-IMPLEMENTATION OF ERP SYSTEM FOR CENTURION AFRICA.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block text-blue-600 font-medium hover:underline"
 >
   Download the full tender document here
-</a> */}
+</a>
 
 
           </motion.div>

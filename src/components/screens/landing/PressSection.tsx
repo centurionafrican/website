@@ -111,7 +111,7 @@ const PressSection = () => {
       deadline: "2026-04-27T14:00:00",
       description:
         "Centurion Africa Limited (CAL) invites qualified and experienced IT service providers to submit proposals for the implementation of a Security Enterprise Resource Planning (ERP) System.",
-      file: "/tender_erp_document.pdf",
+      file: "/tender-erp-document.pdf",
     },
     {
       title: "Provision of Jungle Boots",

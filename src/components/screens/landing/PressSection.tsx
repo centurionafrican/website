@@ -120,7 +120,7 @@ const PressSection = () => {
       deadline: "2026-04-09T23:00:00",
       description:
         "Centurion Africa invites sealed bids from eligible and qualified suppliers for the supply and delivery of Jungle Boots suitable for field operations.",
-      file: "/provision_of_jungle_boos.pdf",
+      file: "/provisionofjungleboot.pdf",
     },
   ];
 

@@ -110,7 +110,7 @@ const PressSection = () => {
     issueDate: "30 April 2026",
     deadline: "2026-05-14T14:30:00",
     description:
-      "Centurion Africa Ltd invites sealed bids from eligible and qualified suppliers for the supply and delivery of dry food items, fresh produce, and meat products. The tender includes multiple sections and aims to support operations for approximately 40 staff.",
+      "Centurion Africa Ltd invites sealed bids from eligible and qualified suppliers for the supply and delivery of dry food items, fresh produce, and meat products.",
     file: "/FOOD_AND_RELATED_CONSUMABLES_SUPPLY.pdf",
     },
   ];

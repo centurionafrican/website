@@ -105,22 +105,13 @@ const PressSection = () => {
 
   const tenders: ITender[] = [
     {
-      title: "Implementation of a Security ERP System",
-      ref: "CAL/03/2026",
-      issueDate: "27 March 2026",
-      deadline: "2026-04-27T14:00",
-      description:
-        "Centurion Africa Limited (CAL) invites qualified and experienced IT service providers to submit proposals for the implementation of a Security Enterprise Resource Planning (ERP) System.",
-      file: "/tender-erp-document.pdf",
-    },
-    {
-      title: "Provision of Jungle Boots",
-      ref: "CAL/04/2026",
-      issueDate: "30 March 2026",
-      deadline: "2026-04-09T23:00",
-      description:
-        "Centurion Africa invites sealed bids from eligible and qualified suppliers for the supply and delivery of Jungle Boots suitable for field operations.",
-      file: "/provisionofjungleboot.pdf",
+      title: "Food and Related Consumables Supply",
+    ref: "CAL/05/2026",
+    issueDate: "30 April 2026",
+    deadline: "2026-05-14T14:30:00",
+    description:
+      "Centurion Africa Ltd invites sealed bids from eligible and qualified suppliers for the supply and delivery of dry food items, fresh produce, and meat products. The tender includes multiple sections and aims to support operations for approximately 40 staff.",
+    file: "/FOOD_AND_RELATED_CONSUMABLES_SUPPLY.pdf",
     },
   ];
 

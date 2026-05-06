@@ -120,7 +120,7 @@ const PressSection = () => {
       deadline: "2026-05-19T11:00:00",
       file: "/provisionofjungleboot.pdf",
       description:
-        "To procure durable jungle boots suitable for field operations.",
+        "Centurion Africa Limited (CAL) invites sealed bids from eligible and qualified suppliers for the supply and delivery of Jungle Boots",
     },
   ];
 

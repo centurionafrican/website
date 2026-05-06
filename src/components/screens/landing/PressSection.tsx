@@ -113,6 +113,15 @@ const PressSection = () => {
       "Centurion Africa Ltd invites sealed bids from eligible and qualified suppliers for the supply and delivery of dry food items, fresh produce, and meat products.",
     file: "/FOOD_AND_RELATED_CONSUMABLES_SUPPLY.pdf",
     },
+    {
+      title: "Provision of Jungle Boots",
+      ref: "CAL/05/2026",
+      issueDate: "5 May 2026",
+      deadline: "2026-05-19T11:00:00",
+      file: "/provisionofjungleboot.pdf",
+      description:
+        "To procure durable jungle boots suitable for field operations.",
+    },
   ];
 
   const [timeLeft, setTimeLeft] = useState<Record<number, { days: number; hours: number; minutes: number; seconds: number }>>({});

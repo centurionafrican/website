@@ -3,15 +3,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const WorkWithUs = () => {
+  // ✅ Hiring is now ACTIVE
   const deadlineISO = "2026-07-13T23:59:59+02:00";
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(deadlineISO));
 
   useEffect(() => {
-    const t = setInterval(
-      () => setTimeLeft(getTimeLeft(deadlineISO)),
-      1000
-    );
+    const t = setInterval(() => setTimeLeft(getTimeLeft(deadlineISO)), 1000);
     return () => clearInterval(t);
   }, []);
 
@@ -28,83 +26,66 @@ const WorkWithUs = () => {
           }}
         >
           <div
-            className="max-w-5xl w-full py-12 px-6 md:px-10 mx-auto flex flex-col items-center backdrop-blur-md"
+            className="max-w-4xl w-full py-12 px-8 mx-auto flex flex-col items-center backdrop-blur-md"
             style={{
               backgroundColor: "rgba(55, 60, 70, 0.2)",
               border: "1px solid rgba(246, 248, 255, 0.08)",
             }}
           >
-            {/* TITLE */}
-            <h2 className="text-white text-center text-5xl md:text-6xl font-bold mb-8">
+            <h2 className="text-white text-center text-6xl font-bold mb-8">
               Join our <span className="text-primary">Team</span>
             </h2>
 
-            {/* CONTENT */}
-            <div className="text-center mb-12 w-full">
+            {/* Description */}
+            <div className="text-center mb-12 max-w-3xl">
               {isHiring ? (
                 <div>
-                  {/* 2 COLUMN LAYOUT */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
-
-                    {/* LEFT COLUMN */}
-                    <div>
-                      <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
-                        <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
-                        <span className="text-white font-semibold tracking-wide">
-                          NOW HIRING
-                        </span>
-                      </div>
-
-                      <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
-                        Procurement Manager
-                      </p>
-
-                      <p className="text-white/90 leading-relaxed">
-                        Centurion Africa Ltd is seeking a highly motivated and experienced Procurement Manager to lead and manage the organization's procurement function and support operational and financial objectives through efficient procurement planning and execution.
-                      </p>
-
-                      <p className="text-white/90 mt-4 leading-relaxed">
-                        Please review the full job description and submit your application before the deadline.
-                      </p>
-                    </div>
-
-                    {/* RIGHT COLUMN */}
-                    <div className="space-y-5">
-
-                      <div className="text-white/90 leading-relaxed">
-                        <p><span className="font-semibold">Department:</span> Procurement Department</p>
-                        <p><span className="font-semibold">Location:</span> Kigali – Kimihurura</p>
-                        <p><span className="font-semibold">Employment Type:</span> Full-Time</p>
-                        <p><span className="font-semibold">Reports to:</span> Managing Director</p>
-                      </div>
-
-                      <div className="text-white/90 leading-relaxed">
-                        <p><span className="font-semibold">Opening Date:</span> June 26, 2026</p>
-                        <p><span className="font-semibold">Closing Date:</span> July 13, 2026</p>
-                      </div>
-
-                      {/* COUNTDOWN */}
-                      <div className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-white">
-                        <span className="font-semibold">
-                          Apply within: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
-                        </span>
-                      </div>
-
-                      <p className="text-white/90 leading-relaxed">
-                        Send your application to{" "}
-                        <a
-                          href="mailto:career@centurionafrica.rw"
-                          className="underline font-medium hover:text-[#FF5C35]"
-                        >
-                          career@centurionafrica.rw
-                        </a>
-                      </p>
-                    </div>
+                  {/* 🔥 NOW HIRING */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
+                    <span className="text-white font-semibold tracking-wide">
+                      NOW HIRING
+                    </span>
                   </div>
+
+                  <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
+                    Procurement Manager
+                  </p>
+
+                  <p className="text-white/90 mb-4 leading-relaxed">
+                    Opening Date:{" "}
+                    <span className="font-semibold">June 26, 2026</span>
+                    <br />
+                    Closing Date:{" "}
+                    <span className="font-semibold">July 13, 2026</span>
+                  </p>
+
+                  {/* Countdown */}
+                  <div className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-white mb-4">
+                    <span className="font-semibold">
+                      Apply within: {timeLeft.days}d {timeLeft.hours}h{" "}
+                      {timeLeft.minutes}m {timeLeft.seconds}s
+                    </span>
+                  </div>
+
+                  <p className="text-white/90 leading-relaxed">
+                    Please review the full job description and submit your
+                    application before the deadline.
+                  </p>
+
+                  <p className="text-white/90 mt-2 leading-relaxed">
+                    Send your application to{" "}
+                    <a
+                      href="mailto:career@centurionafrica.rw"
+                      className="underline font-medium hover:text-[#FF5C35]"
+                    >
+                      career@centurionafrica.rw
+                    </a>
+                  </p>
                 </div>
               ) : (
                 <div>
-                  {/* CLOSED */}
+                  {/* ❌ CLOSED */}
                   <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
                     <span className="w-2 h-2 rounded-full bg-gray-300" />
                     <span className="text-white font-semibold tracking-wide">
@@ -113,15 +94,17 @@ const WorkWithUs = () => {
                   </div>
 
                   <p className="text-white leading-relaxed">
-                    We currently have no open positions available. Please check back soon for future opportunities.
+                    We currently have no open positions available. Please check
+                    back soon for future opportunities.
                   </p>
                 </div>
               )}
             </div>
 
-            {/* BUTTONS */}
+            {/* Buttons */}
             {isHiring ? (
               <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                {/* PDF */}
                 <Link
                   href="/PROCUREMENT_MANAGER_RECRUITEMENT.pdf"
                   target="_blank"
@@ -131,6 +114,7 @@ const WorkWithUs = () => {
                   View Job Description
                 </Link>
 
+                {/* Apply */}
                 <Link
                   href="mailto:career@centurionafrica.rw"
                   className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
@@ -155,19 +139,13 @@ const WorkWithUs = () => {
 
 export default WorkWithUs;
 
-function getTimeLeft(deadlineISO: string) {
+function getTimeLeft(deadlineISO) {
   const deadline = new Date(deadlineISO).getTime();
   const now = Date.now();
   const diff = deadline - now;
 
   if (diff <= 0) {
-    return {
-      isExpired: true,
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-    };
+    return { isExpired: true, days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
 
   const totalSeconds = Math.floor(diff / 1000);
@@ -176,11 +154,5 @@ function getTimeLeft(deadlineISO: string) {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  return {
-    isExpired: false,
-    days,
-    hours,
-    minutes,
-    seconds,
-  };
+  return { isExpired: false, days, hours, minutes, seconds };
 }

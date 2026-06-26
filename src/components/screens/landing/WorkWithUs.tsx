@@ -160,7 +160,7 @@ const WorkWithUs = () => {
               <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
                 {/* PDF */}
                 <Link
-                  href="/procurement-manager-tor.pdf"
+                  href="/PROCUREMENT_MANAGER_RECRUITEMENT.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"

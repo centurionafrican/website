@@ -1,9 +1,9 @@
 "use client";
-
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const WorkWithUs = () => {
+  // ✅ Hiring is ACTIVE
   const deadlineISO = "2026-07-13T23:59:59+02:00";
 
   const [timeLeft, setTimeLeft] = useState(
@@ -11,167 +11,183 @@ const WorkWithUs = () => {
   );
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft(deadlineISO));
-    }, 1000);
-
-    return () => clearInterval(timer);
+    const t = setInterval(
+      () => setTimeLeft(getTimeLeft(deadlineISO)),
+      1000
+    );
+    return () => clearInterval(t);
   }, []);
 
   const isHiring = !timeLeft.isExpired;
 
   return (
-    <section id="career" className="w-full">
-      <div
-        className="relative bg-cover bg-center py-20"
-        style={{
-          backgroundImage: "url('/images/centurion_gako.svg')",
-        }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+    <>
+      <div className="w-full h-fit mx-auto" id="career">
+        <div
+          className="relative bg-cover bg-center sm:h-[607px] flex items-center justify-center"
+          style={{
+            backgroundImage:
+              "url('/images/centurion_gako.svg')",
+            backgroundBlendMode: "overlay",
+          }}
+        >
+          <div
+            className="max-w-4xl w-full py-12 px-8 mx-auto flex flex-col items-center backdrop-blur-md"
+            style={{
+              backgroundColor:
+                "rgba(55, 60, 70, 0.2)",
+              border:
+                "1px solid rgba(246, 248, 255, 0.08)",
+            }}
+          >
+            <h2 className="text-white text-center text-6xl font-bold mb-8">
+              Join our{" "}
+              <span className="text-primary">
+                Team
+              </span>
+            </h2>
 
-        <div className="relative max-w-6xl mx-auto px-4 flex justify-center">
-          {isHiring ? (
-            <div className="w-full max-w-2xl bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
-              {/* Badge */}
-              <div className="flex justify-center mb-5">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF5C35]/20 border border-[#FF5C35]/30">
-                  <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
-                  <span className="text-white text-sm font-semibold tracking-wide">
-                    NOW HIRING
-                  </span>
-                </div>
-              </div>
-
-              {/* Title */}
-              <h2 className="text-center text-4xl font-bold text-white mb-2">
-                Procurement Manager
-              </h2>
-
-              <p className="text-center text-white/80 mb-6">
-                Procurement Department • Kigali – Kamimura • Full-Time
-              </p>
-
-              {/* Details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="bg-white/10 rounded-xl p-4 text-center">
-                  <p className="text-white/60 text-sm">
-                    Opening Date
-                  </p>
-                  <p className="text-white font-semibold">
-                    26 June 2026
-                  </p>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 text-center">
-                  <p className="text-white/60 text-sm">
-                    Closing Date
-                  </p>
-                  <p className="text-white font-semibold">
-                    13 July 2026
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white/10 rounded-xl p-4 mb-6 text-center">
-                <p className="text-white/60 text-sm mb-1">
-                  Reporting Line
-                </p>
-                <p className="text-white font-semibold">
-                  Managing Director
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-white/80 text-center leading-relaxed mb-8">
-                Centurion Africa Ltd is seeking an experienced
-                Procurement Manager to lead and manage the
-                organization’s procurement function and support
-                operational and financial objectives through
-                effective procurement planning and execution.
-              </p>
-
-              {/* Countdown */}
-              <div className="bg-[#FF5C35]/15 border border-[#FF5C35]/30 rounded-2xl p-5 mb-8">
-                <p className="text-center text-white font-semibold mb-4">
-                  Application closes in
-                </p>
-
-                <div className="grid grid-cols-4 gap-3 text-center">
-                  <div>
-                    <p className="text-3xl font-bold text-white">
-                      {timeLeft.days}
-                    </p>
-                    <p className="text-white/60 text-xs">
-                      Days
-                    </p>
+            {/* Description */}
+            <div className="text-center mb-12 max-w-3xl">
+              {isHiring ? (
+                <div>
+                  {/* NOW HIRING */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
+                    <span className="text-white font-semibold tracking-wide">
+                      NOW HIRING
+                    </span>
                   </div>
 
-                  <div>
-                    <p className="text-3xl font-bold text-white">
-                      {timeLeft.hours}
-                    </p>
-                    <p className="text-white/60 text-xs">
-                      Hours
-                    </p>
+                  <p className="text-white mb-3 leading-relaxed text-lg font-semibold">
+                    Procurement Manager
+                  </p>
+
+                  <p className="text-white/90 mb-4 leading-relaxed">
+                    Department:{" "}
+                    <span className="font-semibold">
+                      Procurement Department
+                    </span>
+                    <br />
+                    Location:{" "}
+                    <span className="font-semibold">
+                      Kigali – Kamimura
+                    </span>
+                    <br />
+                    Employment Type:{" "}
+                    <span className="font-semibold">
+                      Full-Time
+                    </span>
+                    <br />
+                    Reports to:{" "}
+                    <span className="font-semibold">
+                      Managing Director
+                    </span>
+                  </p>
+
+                  <p className="text-white/90 mb-4 leading-relaxed">
+                    Opening Date:{" "}
+                    <span className="font-semibold">
+                      June 26, 2026
+                    </span>
+                    <br />
+                    Closing Date:{" "}
+                    <span className="font-semibold">
+                      July 13, 2026
+                    </span>
+                  </p>
+
+                  {/* Countdown */}
+                  <div className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-white mb-4">
+                    <span className="font-semibold">
+                      Apply within:{" "}
+                      {timeLeft.days}d{" "}
+                      {timeLeft.hours}h{" "}
+                      {timeLeft.minutes}m{" "}
+                      {timeLeft.seconds}s
+                    </span>
                   </div>
 
-                  <div>
-                    <p className="text-3xl font-bold text-white">
-                      {timeLeft.minutes}
-                    </p>
-                    <p className="text-white/60 text-xs">
-                      Minutes
-                    </p>
-                  </div>
+                  <p className="text-white/90 leading-relaxed">
+                    Centurion Africa Ltd is seeking a
+                    highly motivated and experienced
+                    Procurement Manager to lead and
+                    manage the organization's
+                    procurement function and support
+                    operational and financial
+                    objectives through efficient
+                    procurement planning and execution.
+                  </p>
 
-                  <div>
-                    <p className="text-3xl font-bold text-white">
-                      {timeLeft.seconds}
-                    </p>
-                    <p className="text-white/60 text-xs">
-                      Seconds
-                    </p>
-                  </div>
+                  <p className="text-white/90 mt-4 leading-relaxed">
+                    Please review the full job
+                    description and submit your
+                    application before the deadline.
+                  </p>
+
+                  <p className="text-white/90 mt-2 leading-relaxed">
+                    Send your application to{" "}
+                    <a
+                      href="mailto:career@centurionafrica.rw"
+                      className="underline font-medium hover:text-[#FF5C35]"
+                    >
+                      career@centurionafrica.rw
+                    </a>
+                  </p>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  {/* CLOSED */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-gray-300" />
+                    <span className="text-white font-semibold tracking-wide">
+                      NO OPENING JOBS
+                    </span>
+                  </div>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <p className="text-white leading-relaxed">
+                    We currently have no open
+                    positions available. Please check
+                    back soon for future
+                    opportunities.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Buttons */}
+            {isHiring ? (
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                {/* PDF */}
                 <Link
                   href="/procurement-manager-tor.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl bg-white text-secondary font-medium hover:bg-gray-100 transition text-center"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors duration-200"
                 >
                   View Job Description
                 </Link>
 
+                {/* Apply */}
                 <Link
                   href="mailto:career@centurionafrica.rw"
-                  className="px-6 py-3 rounded-xl bg-[#FF5C35] text-white font-medium hover:bg-[#e54d29] transition text-center"
+                  className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"
                 >
-                  Apply Now
+                  APPLY NOW
                 </Link>
               </div>
-            </div>
-          ) : (
-            <div className="max-w-xl w-full bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-10 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                No Open Positions
-              </h2>
-
-              <p className="text-white/70 leading-relaxed">
-                We currently have no vacancies available.
-                Please check back soon for future
-                opportunities at Centurion Africa Ltd.
-              </p>
-            </div>
-          )}
+            ) : (
+              <button
+                disabled
+                className="inline-flex items-center px-8 py-3 font-medium bg-gray-500 text-white cursor-not-allowed opacity-70"
+              >
+                NO OPENINGS AVAILABLE
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
@@ -193,13 +209,14 @@ function getTimeLeft(deadlineISO: string) {
   }
 
   const totalSeconds = Math.floor(diff / 1000);
-
-  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const days = Math.floor(
+    totalSeconds / (3600 * 24)
+  );
   const hours = Math.floor(
-    (totalSeconds % (60 * 60 * 24)) / (60 * 60)
+    (totalSeconds % (3600 * 24)) / 3600
   );
   const minutes = Math.floor(
-    (totalSeconds % (60 * 60)) / 60
+    (totalSeconds % 3600) / 60
   );
   const seconds = totalSeconds % 60;
 

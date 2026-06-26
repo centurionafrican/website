@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const WorkWithUs = () => {
-  // ✅ Hiring is now ACTIVE
   const deadlineISO = "2026-07-13T23:59:59+02:00";
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(deadlineISO));
@@ -19,16 +18,20 @@ const WorkWithUs = () => {
     <>
       <div className="w-full h-fit mx-auto" id="career">
         <div
-          className="relative bg-cover bg-center sm:h-[607px] flex items-center justify-center"
+          className="relative bg-cover bg-center min-h-[607px] flex items-center justify-center"
           style={{
             backgroundImage: "url('/images/centurion_gako.svg')",
             backgroundBlendMode: "overlay",
           }}
         >
+          {/* 🔥 Overlay to fix contrast without killing transparency */}
+          <div className="absolute inset-0 bg-black/20" />
+
+          {/* Glass container */}
           <div
-            className="max-w-4xl w-full py-12 px-8 mx-auto flex flex-col items-center backdrop-blur-md"
+            className="relative max-w-4xl w-full py-12 px-8 mx-auto flex flex-col items-center backdrop-blur-md bg-white/5"
             style={{
-              backgroundColor: "rgba(55, 60, 70, 0.2)",
+              backgroundColor: "rgba(55, 60, 70, 0.15)",
               border: "1px solid rgba(246, 248, 255, 0.08)",
             }}
           >
@@ -40,7 +43,7 @@ const WorkWithUs = () => {
             <div className="text-center mb-12 max-w-3xl">
               {isHiring ? (
                 <div>
-                  {/* 🔥 NOW HIRING */}
+                  {/* NOW HIRING */}
                   <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
                     <span className="w-2 h-2 rounded-full bg-[#FF5C35] animate-pulse" />
                     <span className="text-white font-semibold tracking-wide">
@@ -85,7 +88,7 @@ const WorkWithUs = () => {
                 </div>
               ) : (
                 <div>
-                  {/* ❌ CLOSED */}
+                  {/* CLOSED */}
                   <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
                     <span className="w-2 h-2 rounded-full bg-gray-300" />
                     <span className="text-white font-semibold tracking-wide">
@@ -104,7 +107,6 @@ const WorkWithUs = () => {
             {/* Buttons */}
             {isHiring ? (
               <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
-                {/* PDF */}
                 <Link
                   href="/PROCUREMENT_MANAGER_RECRUITEMENT.pdf"
                   target="_blank"
@@ -114,7 +116,6 @@ const WorkWithUs = () => {
                   View Job Description
                 </Link>
 
-                {/* Apply */}
                 <Link
                   href="mailto:career@centurionafrica.rw"
                   className="inline-flex items-center px-8 py-3 font-medium bg-[#FF5C35] text-white hover:bg-[#e54d29] transition-colors duration-200"

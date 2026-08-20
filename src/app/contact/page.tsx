@@ -16,6 +16,14 @@ const contactInfo = [
     icon: "/contact/location.svg",
     content: "29 KG 672 St, Kimihurura, Kigali, Rwanda",
   },
+  {
+    icon: "/contact/location.svg",
+    content: "Av.do Zimbabwe, No 1512, Bairro da Sommershield, Maputo, Mozambique",
+      },
+      {
+    icon: "/contact/location.svg",
+    content: "Bairo Cimento Rua 12 Casa No 352, Pemba, Mozambique",
+  },
 
    {
     icon: "/contact/code.svg",

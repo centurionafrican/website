@@ -59,11 +59,11 @@ const Team = () => {
       position: "Logistics Officer",
       image: "/images/logistic.jpg",
     },
-    {
-      name: "DIANE IRADUKUNDA",
-      position: "Procurement Manager",
-      image: "/images/proc.jpg",
-    },
+    // {
+    //   name: "DIANE IRADUKUNDA",
+    //   position: "Procurement Manager",
+    //   image: "/images/proc.jpg",
+    // },
     {
       name: "ANGE CLAIRETTE U.",
       position: "IT Manager and Systems Administrator",

@@ -106,22 +106,22 @@ const PressSection = () => {
   const tenders: ITender[] = [
     {
       title: "Food and Related Consumables Supply",
-    ref: "CAL/05/2026",
-    issueDate: "30 April 2026",
-    deadline: "2026-05-14T14:30:00",
+    ref: "CAL/07/2026",
+    issueDate: "03 September 2026",
+    deadline: "2026-09-18T11:00:00",
     description:
-      "Centurion Africa Ltd invites sealed bids from eligible and qualified suppliers for the supply and delivery of dry food items, fresh produce, and meat products.",
-    file: "/FOOD_AND_RELATED_CONSUMABLES_SUPPLY.pdf",
+      "Centurion Africa Ltd invites qualified suppliers to submit bids for the supply and delivery of food, cleaning materials, cooking gas, charcoal, and other items for security guards at the following locations: Kigali & Bugesera(Nyabagendwa)",
+    file: "/FoodSupplyTender.pdf",
     },
-    {
-      title: "Provision of Jungle Boots",
-      ref: "CAL/05/2026",
-      issueDate: "5 May 2026",
-      deadline: "2026-05-19T11:00:00",
-      file: "/provisionofjungleboot.pdf",
-      description:
-        "Centurion Africa Limited (CAL) invites sealed bids from eligible and qualified suppliers for the supply and delivery of Jungle Boots",
-    },
+    // {
+    //   title: "Provision of Jungle Boots",
+    //   ref: "CAL/05/2026",
+    //   issueDate: "5 May 2026",
+    //   deadline: "2026-05-19T11:00:00",
+    //   file: "/provisionofjungleboot.pdf",
+    //   description:
+    //     "Centurion Africa Limited (CAL) invites sealed bids from eligible and qualified suppliers for the supply and delivery of Jungle Boots",
+    // },
   ];
 
   const [timeLeft, setTimeLeft] = useState<Record<number, { days: number; hours: number; minutes: number; seconds: number }>>({});

@@ -107,8 +107,8 @@ const PressSection = () => {
     {
       title: "Food and Related Consumables Supply",
     ref: "CAL/07/2026",
-    issueDate: "24 September 2026",
-    deadline: "2026-09-25T11:00:00",
+    issueDate: "8 September 2026",
+    deadline: "2026-09-24T11:00:00",
     description:
       "Centurion Africa Ltd invites qualified suppliers to submit bids for the supply and delivery of food, cleaning materials, cooking gas, charcoal, and other items for security guards at the following locations: Kigali & Bugesera(Nyabagendwa)",
     file: "/FoodSupplyTender.pdf",

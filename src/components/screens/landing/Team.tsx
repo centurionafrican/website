@@ -50,7 +50,7 @@ const Team = () => {
       linkedin: "https://www.linkedin.com/in/levina-irebe-8a506a276/",
     },
     {
-      name: "JOSETTE MUKANINKINDI",
+      name: "JOSETTE MUSANINKINDI",
       position: "Human Resources Manager",
       image: "/images/hr.jpg",
     },
@@ -65,7 +65,7 @@ const Team = () => {
     //   image: "/images/proc.jpg",
     // },
     {
-      name: "ANGE CLAIRETTE U.",
+      name: "ANGE CLAIRETTE UWISHEMA",
       position: "IT Manager and Systems Administrator",
       image: "/images/it.jpg",
       linkedin: "https://www.linkedin.com/in/uwishema-ange-clairette-a25908142/",
